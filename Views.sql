@@ -9,30 +9,24 @@ DROP VIEW if exists standard_score_view;
 
 CREATE or replace VIEW checkpoint_scores_aoc AS
   SELECT
-    assessment_tool_mode.id                                  AS assessment_type,
     to_number(fa.series_name, '9999')                   AS assessment_number,
-    facility.id                                              AS facility,
     format('%s (%s)', aoc.reference, aoc.name)               AS area_of_concern,
-    department.id                                            AS department,
+    department.name                                            AS department_name,
     c.name                                                   AS checkpoint,
     cs.score                                                 AS score,
-    state.id                                                 AS state,
-    facility_type.id                                         AS facility_type,
     s.reference                                              AS standard,
     s.name                                                   AS standard_name,
     format('[%s, %s] - %s', aoc.reference, aoc.name, s.name) AS standard_description,
     fa.end_date                                              AS assessment_date,
     facility.name                                            AS facility_name,
-    fa.id                                                    as facility_assessment_id,
     assessment_tool_mode.name                                as assessment_tool_mode_name,
     aoc.reference                                            as area_of_concern_reference,
-    aoc.id                                                   as area_of_concern_id,
     facility_type.name                                       as faclity_type_name,
-    cl.id as checklist_id,
     cl.name as checklist_name,
     me.name as measurable_element_name,
     me.reference as measurable_element_reference,
-    fa.facility_name as non_coded_facility_name
+    fa.facility_name as non_coded_facility_name,
+    fa.id as facility_assessment_id
   FROM checkpoint_score cs
     INNER JOIN checkpoint c ON cs.checkpoint_id = c.id
     LEFT OUTER JOIN checklist cl ON cl.id = cs.checklist_id
@@ -70,7 +64,7 @@ CREATE VIEW assessment_denormalised AS
   SELECT
     facility_assessment.id                              facility_assessment_id,
     assessment_tool.name                                assessment_tool_name,
-    assessment_tool_mode.name                           program,
+    assessment_tool_mode.name                           "program",
     assessment_type.name                                assessment_type,
     facility.name                                       facility_name,
     facility_assessment.facility_name                   non_coded_facility_name,
