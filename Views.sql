@@ -12,6 +12,7 @@ CREATE or replace VIEW checkpoint_scores_aoc AS
     to_number(fa.series_name, '9999')                   AS assessment_number,
     format('%s (%s)', aoc.reference, aoc.name)               AS area_of_concern,
     department.name                                            AS department_name,
+    format('[%s, %s] - %s', aoc.reference, s.name, c.name) AS checkpoint_description,
     c.name                                                   AS checkpoint,
     cs.score                                                 AS score,
     s.reference                                              AS standard,
