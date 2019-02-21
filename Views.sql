@@ -1,6 +1,5 @@
 DROP VIEW if exists recent_facility_assessment_view;
 DROP VIEW if exists checkpoint_scores_aoc;
-drop VIEW IF EXISTS checkpoint_denormalised;
 DROP view if exists assessment_denormalised;
 DROP VIEW if exists checklist_score_view;
 DROP VIEW if exists area_of_concern_score_view;
@@ -43,20 +42,25 @@ CREATE or replace VIEW checkpoint_scores_aoc AS
     LEFT OUTER JOIN assessment_tool ON fa.assessment_tool_id = assessment_tool.id
     LEFT OUTER JOIN assessment_tool_mode ON assessment_tool_mode.id = assessment_tool.assessment_tool_mode_id;
 
+drop VIEW IF EXISTS checkpoint_denormalised;
 CREATE OR REPLACE VIEW checkpoint_denormalised AS
   SELECT
-    checkpoint.id           checkpoint_id,
-    measurable_element.id   measurable_element_id,
-    standard.id             standard_id,
-    area_of_concern.id      area_of_concern_id,
-    checklist.id            checklist_id,
-    assessment_tool.id      assessment_tool_id,
-    assessment_tool_mode.id assessment_tool_mode_id
+    assessment_tool_mode.name program_name,
+    assessment_tool.name      assessment_tool_name,
+    checklist.name            checklist_name,
+    area_of_concern.reference      area_of_concern_reference,
+    area_of_concern.name      area_of_concern_name,
+    standard.reference             standard_reference,
+    standard.name             standard_name,
+    measurable_element.reference   measurable_element_reference,
+    measurable_element.name   measurable_element_name,
+    checkpoint.name           checkpoint_name
   FROM checkpoint
     INNER JOIN measurable_element ON checkpoint.measurable_element_id = measurable_element.id
     INNER JOIN standard ON measurable_element.standard_id = standard.id
     INNER JOIN area_of_concern ON standard.area_of_concern_id = area_of_concern.id
-    INNER JOIN checklist ON checkpoint.checklist_id = checklist.id
+    inner join checklist_area_of_concern on area_of_concern.id = checklist_area_of_concern.area_of_concern_id
+    INNER JOIN checklist ON checkpoint.checklist_id = checklist.id and checklist_area_of_concern.checklist_id = checklist.id
     INNER JOIN assessment_tool ON checklist.assessment_tool_id = assessment_tool.id
     INNER JOIN assessment_tool_mode ON assessment_tool.assessment_tool_mode_id = assessment_tool_mode.id;
 
