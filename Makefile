@@ -18,7 +18,7 @@ define _download_db_backup
 endef
 
 define _apply_latest_db_local
-#	$(call _download_db_backup,$1)
+	$(call _download_db_backup,$1)
 	$(call _restore_db,$2,temp/facilities_assessment_$(shell date +%a).sql)
 endef
 
