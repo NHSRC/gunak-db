@@ -1,19 +1,13 @@
-DROP VIEW if exists recent_facility_assessment_view;
 DROP VIEW if exists checkpoint_scores_aoc;
-DROP view if exists assessment_denormalised;
-DROP VIEW if exists checklist_score_view;
-DROP VIEW if exists area_of_concern_score_view;
-DROP VIEW if exists standard_score_view;
-DROP VIEW if exists standard_score_view;
-
 CREATE or replace VIEW checkpoint_scores_aoc AS
   SELECT
-    to_number(fa.series_name, '9999')                   AS assessment_number,
+    to_number(fa.series_name, '9999')                        AS assessment_number,
     format('%s (%s)', aoc.reference, aoc.name)               AS area_of_concern,
-    department.name                                            AS department_name,
-    format('[%s, %s] - %s', aoc.reference, s.name, c.name) AS checkpoint_description,
+    department.name                                          AS department_name,
+    format('[%s, %s] - %s', aoc.reference, s.name, c.name)   AS checkpoint_description,
     c.name                                                   AS checkpoint,
     cs.score                                                 AS score,
+    cs.remarks                                               AS remarks,
     s.reference                                              AS standard,
     s.name                                                   AS standard_name,
     format('[%s, %s] - %s', aoc.reference, aoc.name, s.name) AS standard_description,
@@ -22,11 +16,11 @@ CREATE or replace VIEW checkpoint_scores_aoc AS
     assessment_tool_mode.name                                as assessment_tool_mode_name,
     aoc.reference                                            as area_of_concern_reference,
     facility_type.name                                       as faclity_type_name,
-    cl.name as checklist_name,
-    me.name as measurable_element_name,
-    me.reference as measurable_element_reference,
-    fa.facility_name as non_coded_facility_name,
-    fa.id as facility_assessment_id
+    cl.name                                                  as checklist_name,
+    me.name                                                  as measurable_element_name,
+    me.reference                                             as measurable_element_reference,
+    fa.facility_name                                         as non_coded_facility_name,
+    fa.id                                                    as facility_assessment_id
   FROM checkpoint_score cs
     INNER JOIN checkpoint c ON cs.checkpoint_id = c.id
     LEFT OUTER JOIN checklist cl ON cl.id = cs.checklist_id
@@ -64,7 +58,7 @@ CREATE OR REPLACE VIEW checkpoint_denormalised AS
     INNER JOIN assessment_tool ON checklist.assessment_tool_id = assessment_tool.id
     INNER JOIN assessment_tool_mode ON assessment_tool.assessment_tool_mode_id = assessment_tool_mode.id;
 
-
+DROP view if exists assessment_denormalised;
 CREATE VIEW assessment_denormalised AS
   SELECT
     facility_assessment.id                              facility_assessment_id,
@@ -88,6 +82,7 @@ CREATE VIEW assessment_denormalised AS
     INNER JOIN state ON district.state_id = state.id
     INNER JOIN facility_type ON facility.facility_type_id = facility_type.id;
 
+DROP VIEW if exists checklist_score_view;
 CREATE VIEW checklist_score_view AS
   SELECT
     cs.id                                                    AS id,
@@ -123,6 +118,7 @@ CREATE VIEW checklist_score_view AS
     INNER JOIN assessment_tool_mode ON assessment_tool_mode.id = assessment_tool.assessment_tool_mode_id
     INNER JOIN assessment_type ON assessment_type.id = fa.assessment_type_id;
 
+DROP VIEW if exists area_of_concern_score_view;
 CREATE VIEW area_of_concern_score_view AS
   SELECT
     aocs.id                                    as id,
@@ -147,6 +143,7 @@ CREATE VIEW area_of_concern_score_view AS
     INNER JOIN assessment_tool ON fa.assessment_tool_id = assessment_tool.id
     INNER JOIN assessment_tool_mode ON assessment_tool_mode.id = assessment_tool.assessment_tool_mode_id;
 
+DROP VIEW if exists standard_score_view;
 CREATE VIEW standard_score_view AS
   SELECT
     ss.id                               as id,
@@ -171,7 +168,7 @@ CREATE VIEW standard_score_view AS
     INNER JOIN assessment_tool ON fa.assessment_tool_id = assessment_tool.id
     INNER JOIN assessment_tool_mode ON assessment_tool_mode.id = assessment_tool.assessment_tool_mode_id;
 
-
+DROP VIEW if exists recent_facility_assessment_view;
 CREATE VIEW recent_facility_assessment_view AS
   select
     facility_assessment_id    recent_facility_assessment_id,
