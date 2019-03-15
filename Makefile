@@ -33,3 +33,8 @@ apply_latest_db_local_jss: db_backup_location
 
 apply_latest_db_local_nhsrc: db_backup_location
 	$(call _apply_latest_db_local,gunak-main,facilities_assessment_nhsrc)
+
+deploy_migrations_nhsrc_qa:
+	-ssh gunak-other "rm /home/app/qa-server/facilities-assessment-host/db/*.sql"
+	scp deployment-migrations/nhsrc/qa/*.sql gunak-other:/home/app/qa-server/facilities-assessment-host/db/
+	ssh gunak-other "cat /home/app/qa-server/facilities-assessment-host/db/*.sql | psql -h localhost -d facilities_assessment_qa nhsrc -1"
