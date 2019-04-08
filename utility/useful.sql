@@ -58,8 +58,3 @@ WHERE caoc.checklist_id = c.id AND aoc.id = caoc.area_of_concern_id AND s.area_o
       me.standard_id = s.id
       AND assessment_tool.name = 'Dakshata' and state.name = 'Chhattisgarh'
 ORDER BY Checklist, area_of_concern, Standard, me.reference;
-
-
-select checkpoint.id from checkpoint inner join measurable_element on checkpoint.measurable_element_id = measurable_element.id where measurable_element.reference = 'C1.5' and checkpoint.name = 'Availability of functional telephone and Intercom Services' and checkpoint.checklist_id = 93;
-
-select * from checkpoint order by last_modified_date desc;
