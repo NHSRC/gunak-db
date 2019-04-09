@@ -1,0 +1,1 @@
+insert into role_privilege (role_id, privilege_id) VALUES ((select id from role where name = 'ADMIN'), (select id from privilege where name = 'Users_Write'));
