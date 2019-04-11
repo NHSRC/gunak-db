@@ -22,11 +22,6 @@ define _apply_latest_db_local
 	$(call _restore_db,$2,temp/facilities_assessment_$(shell date +%a).sql)
 endef
 
-define _deploy_migrations
-	-ssh gunak-other "rm /home/app/$1/facilities-assessment-host/db/*.sql"
-	scp deployment-migrations/nhsrc/$2/*.sql gunak-other:/home/app/$1/facilities-assessment-host/db/
-	ssh gunak-other "cat /home/app/$1/facilities-assessment-host/db/*.sql | psql -h localhost -d $3 nhsrc -1"
-endef
 
 db_backup_location:
 	-mkdir temp
@@ -40,8 +35,26 @@ apply_latest_db_local_jss: db_backup_location
 apply_latest_db_local_nhsrc: db_backup_location
 	$(call _apply_latest_db_local,gunak-main,facilities_assessment_nhsrc)
 
+#############################
+define _deploy_migrations
+	-ssh $4 "rm /home/app/$1/facilities-assessment-host/db/*.sql"
+	scp deployment-migrations/$5/$2/*.sql $4:/home/app/$1/facilities-assessment-host/db/
+	ssh $4 "cat /home/app/$1/facilities-assessment-host/db/*.sql | psql -h localhost -d $3 nhsrc -1"
+endef
+
+define _deploy_migrations_local
+	cat deployment-migrations/$2/local/*.sql | psql -h localhost -d $1 nhsrc -1
+endef
+
 deploy_migrations_nhsrc_qa:
-	$(call _deploy_migrations,qa-server,qa,facilities_assessment_qa)
+	$(call _deploy_migrations,qa-server,qa,facilities_assessment_qa,gunak-other,nhsrc)
 
 deploy_migrations_nhsrc_prod:
-	$(call _deploy_migrations,,qa,facilities_assessment)
+	$(call _deploy_migrations,,qa,facilities_assessment,gunak-main,nhsrc)
+
+deploy_migrations_jss_local:
+	$(call _deploy_migrations_local,facilities_assessment_cg,jss)
+
+deploy_migrations_jss_prod:
+	$(call _deploy_migrations,,prod,facilities_assessment,igunatmac,jss)
+#############################
