@@ -14,11 +14,11 @@ define _reset_db
 endef
 
 define _download_db_backup
-	scp $1:/home/app/facilities-assessment-host/backup/facilities_assessment_$(shell date +%a).sql temp/
+	scp $1:/home/app/$2/facilities-assessment-host/backup/facilities_assessment_$(shell date +%a).sql temp/
 endef
 
 define _apply_latest_db_local
-	$(call _download_db_backup,$1)
+	$(call _download_db_backup,$1,$3)
 	$(call _restore_db,$2,temp/facilities_assessment_$(shell date +%a).sql)
 endef
 
@@ -32,8 +32,11 @@ init_db:
 apply_latest_db_local_jss: db_backup_location
 	$(call _apply_latest_db_local,igunatmac,facilities_assessment_cg)
 
-apply_latest_db_local_nhsrc: db_backup_location
+apply_latest_db_local_nhsrc_prod: db_backup_location
 	$(call _apply_latest_db_local,gunak-main,facilities_assessment_nhsrc)
+
+apply_latest_db_local_nhsrc_qa: db_backup_location
+	$(call _apply_latest_db_local,gunak-other,facilities_assessment_nhsrc,qa-server)
 
 #############################
 define _deploy_migrations
