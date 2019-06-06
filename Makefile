@@ -1,3 +1,14 @@
+help:
+	@IFS=$$'\n' ; \
+	help_lines=(`fgrep -h "##" $(MAKEFILE_LIST) | fgrep -v fgrep | sed -e 's/\\$$//'`); \
+	for help_line in $${help_lines[@]}; do \
+	    IFS=$$'#' ; \
+	    help_split=($$help_line) ; \
+	    help_command=`echo $${help_split[0]} | sed -e 's/^ *//' -e 's/ *$$//'` ; \
+	    help_info=`echo $${help_split[2]} | sed -e 's/^ *//' -e 's/ *$$//'` ; \
+	    printf "%-30s %s\n" $$help_command $$help_info ; \
+	done
+
 postgres_user := $(shell id -un)
 
 define _restore_db
@@ -29,7 +40,7 @@ db_backup_location:
 init_db:
 	-psql postgres -c "create user nhsrc with password 'password'";
 
-apply_latest_db_local_jss: db_backup_location
+apply_latest_db_local_jss: db_backup_location ## Downloads and applies the database dump
 	$(call _apply_latest_db_local,igunatmac,facilities_assessment_cg)
 
 apply_latest_db_local_nhsrc_prod: db_backup_location
