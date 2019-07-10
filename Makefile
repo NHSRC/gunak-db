@@ -46,6 +46,9 @@ apply_latest_db_local_jss: db_backup_location ## Downloads and applies the datab
 apply_latest_db_local_nhsrc_prod: db_backup_location
 	$(call _apply_latest_db_local,gunak-main,facilities_assessment_nhsrc)
 
+download_latest_db_nhsrc_prod: db_backup_location
+	$(call _download_db_backup,gunak-main)
+
 apply_latest_db_local_nhsrc_qa: db_backup_location
 	$(call _apply_latest_db_local,gunak-other,facilities_assessment_nhsrc,qa-server)
 
