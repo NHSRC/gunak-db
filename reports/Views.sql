@@ -20,7 +20,8 @@ SELECT to_number(fa.series_name, '9999')                        AS assessment_nu
        me.reference                                             as measurable_element_reference,
        fa.facility_name                                         as non_coded_facility_name,
        fa.id                                                    as facility_assessment_id,
-       assessment_type.name                                     as assessment_type_name
+       assessment_type.name                                     as assessment_type_name,
+       c.inactive                                               as checkpoint_inactive
 FROM checkpoint_score cs
          INNER JOIN checkpoint c ON cs.checkpoint_id = c.id
          LEFT OUTER JOIN checklist cl ON cl.id = cs.checklist_id
@@ -59,7 +60,8 @@ SELECT to_number(fa.series_name, '9999')                        AS assessment_nu
        me.reference                                             as measurable_element_reference,
        fa.facility_name                                         as non_coded_facility_name,
        fa.id                                                    as facility_assessment_id,
-       assessment_type.name                                     as assessment_type_name
+       assessment_type.name                                     as assessment_type_name,
+       c.inactive                                               as checkpoint_inactive
 FROM checkpoint c
          JOIN checklist cl ON cl.id = c.checklist_id
          JOIN department ON cl.department_id = department.id
