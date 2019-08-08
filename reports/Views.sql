@@ -37,6 +37,45 @@ FROM checkpoint_score cs
          LEFT OUTER JOIN assessment_tool_mode ON assessment_tool_mode.id = assessment_tool.assessment_tool_mode_id
          LEFT OUTER JOIN assessment_type on fa.assessment_type_id = assessment_type.id;
 
+DROP VIEW if exists checkpoint_scores_aoc_export;
+CREATE or replace VIEW checkpoint_scores_aoc_export AS
+SELECT to_number(fa.series_name, '9999')                        AS assessment_number,
+       format('%s (%s)', aoc.reference, aoc.name)               AS area_of_concern,
+       department.name                                          AS department_name,
+       format('[%s, %s] - %s', aoc.reference, s.name, c.name)   AS checkpoint_description,
+       c.name                                                   AS checkpoint,
+       cs.score                                                 AS score,
+       cs.remarks                                               AS remarks,
+       s.reference                                              AS standard,
+       s.name                                                   AS standard_name,
+       format('[%s, %s] - %s', aoc.reference, aoc.name, s.name) AS standard_description,
+       fa.end_date                                              AS assessment_date,
+       facility.name                                            AS facility_name,
+       assessment_tool_mode.name                                as assessment_tool_mode_name,
+       aoc.reference                                            as area_of_concern_reference,
+       facility_type.name                                       as faclity_type_name,
+       cl.name                                                  as checklist_name,
+       me.name                                                  as measurable_element_name,
+       me.reference                                             as measurable_element_reference,
+       fa.facility_name                                         as non_coded_facility_name,
+       fa.id                                                    as facility_assessment_id,
+       assessment_type.name                                     as assessment_type_name
+FROM checkpoint c
+         JOIN checklist cl ON cl.id = c.checklist_id
+         JOIN department ON cl.department_id = department.id
+         JOIN measurable_element me ON me.id = c.measurable_element_id
+         JOIN standard s ON s.id = me.standard_id
+         JOIN area_of_concern aoc ON aoc.id = s.area_of_concern_id
+         JOIN assessment_tool ON cl.assessment_tool_id = assessment_tool.id
+         JOIN assessment_tool_mode ON assessment_tool_mode.id = assessment_tool.assessment_tool_mode_id
+         JOIN facility_assessment fa ON fa.assessment_tool_id = assessment_tool.id
+         JOIN facility ON fa.facility_id = facility.id
+         JOIN facility_type ON facility.facility_type_id = facility_type.id
+         JOIN district ON facility.district_id = district.id
+         JOIN state ON district.state_id = state.id
+         JOIN assessment_type on fa.assessment_type_id = assessment_type.id
+         LEFT OUTER JOIN checkpoint_score cs ON cs.checkpoint_id = c.id and cs.facility_assessment_id = fa.id;
+
 drop VIEW IF EXISTS checkpoint_denormalised;
 CREATE OR REPLACE VIEW checkpoint_denormalised AS
 SELECT assessment_tool_mode.name    program_name,
