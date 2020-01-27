@@ -1,0 +1,9 @@
+\i ./1-1-update-me-kk.sql
+\i ./1-2-update-checkpoint-kk.sql
+\i ./2-update-methods-kk.sql
+\i ./3-1-1-kk-hwc-new.sql
+\i ./3-1-2-kk-phc.sql
+\i ./3-1-3-0-nqas-dh.sql
+\i ./3-1-3-1-nqas-dh.sql
+\i ./3-1-3-2-nqas-dh.sql
+\i ./3-1-3-3-nqas-dh.sql

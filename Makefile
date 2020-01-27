@@ -30,7 +30,11 @@ endef
 
 define _apply_latest_db_local
 	$(call _download_db_backup,$1,$3)
-	$(call _restore_db,$2,temp/facilities_assessment_$(shell date +%a).sql)
+	$(call _restore_latest_db_local,$2)
+endef
+
+define _restore_latest_db_local
+	$(call _restore_db,$1,temp/facilities_assessment_$(shell date +%a).sql)
 endef
 
 
@@ -52,6 +56,9 @@ download_latest_db_nhsrc_prod: db_backup_location
 apply_latest_db_local_nhsrc_qa: db_backup_location
 	$(call _apply_latest_db_local,gunak-other,facilities_assessment_nhsrc,qa-server)
 
+restore_latest_db_local:
+	$(call _restore_latest_db_local,facilities_assessment_nhsrc)
+
 #############################
 define _deploy_migrations
 	-ssh $4 "rm /home/app/$1/facilities-assessment-host/db/*.sql"
@@ -60,8 +67,11 @@ define _deploy_migrations
 endef
 
 define _deploy_migrations_local
-	cat deployment-migrations/$2/local/*.sql | psql -h localhost -d $1 nhsrc -1
+	cd deployment-migrations/$2/local && cat master.sql | psql -h localhost -d $1 nhsrc -1
 endef
+
+deploy_migrations_nhsrc_local:
+	$(call _deploy_migrations_local,facilities_assessment_nhsrc,nhsrc)
 
 deploy_migrations_nhsrc_qa:
 	$(call _deploy_migrations,qa-server,qa,facilities_assessment_qa,gunak-other,nhsrc)
