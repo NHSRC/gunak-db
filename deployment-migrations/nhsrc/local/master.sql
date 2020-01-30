@@ -7,3 +7,9 @@
 \i ./3-1-3-1-nqas-dh.sql
 \i ./3-1-3-2-nqas-dh.sql
 \i ./3-1-3-3-nqas-dh.sql
+\i ./3-1-4-nqas-phc.sql
+\i ./3-1-5-nqas-uphc.sql
+\i ./3-1-7-0-nqas-CHC.sql
+\i ./3-1-7-1-nqas-CHC.sql
+\i ./3-1-7-2-nqas-CHC.sql
+\i ./3-1-7-3-nqas-CHC.sql

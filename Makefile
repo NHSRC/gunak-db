@@ -56,8 +56,8 @@ download_latest_db_nhsrc_prod: db_backup_location
 apply_latest_db_local_nhsrc_qa: db_backup_location
 	$(call _apply_latest_db_local,gunak-other,facilities_assessment_nhsrc,qa-server)
 
-restore_latest_db_local:
-	$(call _restore_latest_db_local,facilities_assessment_nhsrc)
+restore_latest_db_local_nhsrc:
+	$(call _restore_db,facilities_assessment_nhsrc,temp/facilities_assessment_latest.sql)
 
 #############################
 define _deploy_migrations
