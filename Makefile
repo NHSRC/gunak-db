@@ -85,3 +85,6 @@ deploy_migrations_jss_local:
 deploy_migrations_jss_prod:
 	$(call _deploy_migrations,,prod,facilities_assessment,igunatmac,jss)
 #############################
+
+backup_db_nhsrc_to_latest:
+	pg_dump -Unhsrc -hlocalhost -d facilities_assessment_nhsrc > temp/facilities_assessment_latest.sql
