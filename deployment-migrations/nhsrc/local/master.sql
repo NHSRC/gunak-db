@@ -14,3 +14,5 @@
 \i ./3-1-7-2-nqas-CHC.sql
 \i ./3-1-7-3-nqas-CHC.sql
 \i ./4-1-1-kerala-nqas-phc.sql
+\i ./4-1-2-1-kerala-nqas-dh.sql
+\i ./4-1-2-2-kerala-nqas-dh-checkpoints.sql
