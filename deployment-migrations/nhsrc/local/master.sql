@@ -22,3 +22,5 @@
 \i ./4-1-4-2-kerala-nqas-taluka-checkpoint.sql
 -- \i ./4-2-1-up-nqas-chc.sql
 -- \i ./4-2-2-up-nqas-dhmale.sql
+
+-- Include state id and max in the queries for inserting assessment tool and asessment tool checklist
