@@ -1,1 +1,0 @@
-ALTER TABLE checkpoint_score alter score drop not null;

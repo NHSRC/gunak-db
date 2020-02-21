@@ -1,1 +1,0 @@
-ALTER TABLE checkpoint_score ADD COLUMN na boolean default false not null;

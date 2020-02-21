@@ -1,1 +1,0 @@
-INSERT INTO assessment_type (name) VALUES ('Peer');

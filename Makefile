@@ -38,25 +38,28 @@ define _restore_latest_db_local
 endef
 
 
-db_backup_location:
+db-backup-location:
 	-mkdir temp
 
-init_db:
+init-db:
 	-psql postgres -c "create user nhsrc with password 'password'";
 
-apply_latest_db_local_jss: db_backup_location ## Downloads and applies the database dump
+apply-latest-db-local-jss: db-backup-location ## Downloads and applies the database dump
 	$(call _apply_latest_db_local,igunatmac,facilities_assessment_cg)
 
-apply_latest_db_local_nhsrc_prod: db_backup_location
+apply-latest-db-local-nhsrc-prod: db-backup-location
 	$(call _apply_latest_db_local,gunak-main,facilities_assessment_nhsrc)
 
-download_latest_db_nhsrc_prod: db_backup_location
+download-latest-db-nhsrc-prod: db-backup-location
 	$(call _download_db_backup,gunak-main)
 
-apply_latest_db_local_nhsrc_qa: db_backup_location
+download-latest-db-jss-prod: db-backup-location
+	$(call _download_db_backup,igunatmac)
+
+apply-latest-db-local-nhsrc-qa: db-backup-location
 	$(call _apply_latest_db_local,gunak-other,facilities_assessment_nhsrc,qa-server)
 
-restore_latest_db_local_nhsrc:
+restore-latest-db-local-nhsrc:
 	$(call _restore_db,facilities_assessment_nhsrc,temp/facilities_assessment_latest.sql)
 
 #############################
@@ -70,21 +73,21 @@ define _deploy_migrations_local
 	cd deployment-migrations/$2/local && cat master.sql | psql -h localhost -d $1 nhsrc -1
 endef
 
-deploy_migrations_nhsrc_local:
+deploy-migrations-nhsrc-local:
 	$(call _deploy_migrations_local,facilities_assessment_nhsrc,nhsrc)
 
-deploy_migrations_nhsrc_qa:
+deploy-migrations-nhsrc-qa:
 	$(call _deploy_migrations,qa-server,qa,facilities_assessment_qa,gunak-other,nhsrc)
 
-deploy_migrations_nhsrc_prod:
+deploy-migrations-nhsrc-prod:
 	$(call _deploy_migrations,,qa,facilities_assessment,gunak-main,nhsrc)
 
-deploy_migrations_jss_local:
+deploy-migrations-jss-local:
 	$(call _deploy_migrations_local,facilities_assessment_cg,jss)
 
-deploy_migrations_jss_prod:
+deploy-migrations-jss-prod:
 	$(call _deploy_migrations,,prod,facilities_assessment,igunatmac,jss)
 #############################
 
-backup_db_nhsrc_to_latest:
+backup-db-nhsrc-to-latest:
 	pg_dump -Unhsrc -hlocalhost -d facilities_assessment_nhsrc > temp/facilities_assessment_latest.sql

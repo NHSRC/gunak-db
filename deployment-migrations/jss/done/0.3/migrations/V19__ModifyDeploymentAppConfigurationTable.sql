@@ -1,4 +1,0 @@
-ALTER TABLE deployment_app_configuration DROP COLUMN settings_enabled;
-ALTER TABLE deployment_app_configuration DROP COLUMN seed_data_packaged;
-ALTER TABLE deployment_app_configuration ADD COLUMN recording_mode BOOLEAN NULL;
-ALTER TABLE deployment_app_configuration RENAME TO deployment_configuration;
