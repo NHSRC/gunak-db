@@ -813,3 +813,6 @@ insert into checkpoint (name, means_of_verification, measurable_element_id, chec
 3. respiration 
 4.Pulse 
 5. Bleeding', (select max(id) from measurable_element where reference = 'C3.1'), (select id from checklist where name = 'Delivery'));
+
+
+update checkpoint set score_levels = 2 where checklist_id = (select max(id) from checklist where name = 'Delivery');
