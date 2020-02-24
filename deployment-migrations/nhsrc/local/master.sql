@@ -23,7 +23,10 @@
 -- \i ./4-2-1-up-nqas-chc.sql
 -- \i ./4-2-2-up-nqas-dhmale.sql
 -- \i ./4-2-3-up-nqas-dhfemale.sql
--- \i ./5-1-1-tn-nqas-phc.sql
--- \i ./5-1-2-tn-nqas-dh.sql
--- \i ./5-1-3-tn-nqas-chc.sql
--- \i ./5-1-4-tn-nqas-sdh.sql
+-- \i ./4-3-1-tn-nqas-phc.sql
+-- \i ./4-3-2-tn-nqas-dh.sql
+-- \i ./4-3-3-tn-nqas-chc.sql
+-- \i ./4-3-4-tn-nqas-sdh.sql
+-- \i ./4-4-1-meghalaya-nqas-chc.sql
+
+-- Change server to provide AOC, Standard, ME which are state specific or generic and not excluded
