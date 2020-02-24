@@ -7,3 +7,5 @@ DROP VIEW if exists area_of_concern_score_view;
 DROP VIEW if exists standard_score_view;
 DROP VIEW if exists recent_facility_assessment_view;
 DROP VIEW if exists checkpoint_score_denormalised;
+DROP VIEW if exists checkpoint_scores;
+DROP VIEW if exists checkpoint_scores_aoc_with_sector;
