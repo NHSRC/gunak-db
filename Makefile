@@ -13,7 +13,7 @@ postgres_user := $(shell id -un)
 
 define _restore_db
 	$(call _reset_db,$1)
-	sudo -u $(postgres_user) psql $1 < $2
+	sudo -u $(postgres_user) psql $1 -f $2 >/dev/null
 endef
 
 define _reset_db

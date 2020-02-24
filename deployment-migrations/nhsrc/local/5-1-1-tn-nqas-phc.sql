@@ -1,13 +1,13 @@
-insert into excluded_assessment_tool_state (state_id, assessment_tool_id) VALUES ((select id from state where name = 'Tamil Nadu'), (select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'Primary Health Center (CHC)'));	insert into assessment_tool (name, state_id, assessment_tool_mode_id) VALUES ('Primary Health Center (CHC)', (select id from state where name = 'Tamil Nadu'), (select id from assessment_tool_mode where name = 'nqas'));
+insert into excluded_assessment_tool_state (state_id, assessment_tool_id) VALUES ((select id from state where name = 'Tamil Nadu'), (select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'Primary Health Center (PHC)'));	insert into assessment_tool (name, state_id, assessment_tool_mode_id) VALUES ('Primary Health Center (PHC)', (select id from state where name = 'Tamil Nadu'), (select id from assessment_tool_mode where name = 'nqas'));
 
 
 
-insert into department (name) values ('OPD') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('OPD', (select id from department where name = 'OPD'), (select id from state where name = 'Tamil Nadu'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'Primary Health Center (CHC)'), (select max(id) from checklist where name = 'OPD'));
-insert into department (name) values ('Labour room') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('Labour room', (select id from department where name = 'Labour room'), (select id from state where name = 'Tamil Nadu'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'Primary Health Center (CHC)'), (select max(id) from checklist where name = 'Labour room'));
-insert into department (name) values ('Indoor') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('Indoor', (select id from department where name = 'Indoor'), (select id from state where name = 'Tamil Nadu'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'Primary Health Center (CHC)'), (select max(id) from checklist where name = 'Indoor'));
-insert into department (name) values ('Laboratory') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('Laboratory', (select id from department where name = 'Laboratory'), (select id from state where name = 'Tamil Nadu'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'Primary Health Center (CHC)'), (select max(id) from checklist where name = 'Laboratory'));
-insert into department (name) values ('NHP') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('NHP', (select id from department where name = 'NHP'), (select id from state where name = 'Tamil Nadu'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'Primary Health Center (CHC)'), (select max(id) from checklist where name = 'NHP'));
-insert into department (name) values ('General') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('General', (select id from department where name = 'General'), (select id from state where name = 'Tamil Nadu'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'Primary Health Center (CHC)'), (select max(id) from checklist where name = 'General'));
+insert into department (name) values ('OPD') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('OPD', (select id from department where name = 'OPD'), (select id from state where name = 'Tamil Nadu'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select max(assessment_tool.id) from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'Primary Health Center (PHC)'), (select max(id) from checklist where name = 'OPD'));
+insert into department (name) values ('Labour room') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('Labour room', (select id from department where name = 'Labour room'), (select id from state where name = 'Tamil Nadu'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select max(assessment_tool.id) from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'Primary Health Center (PHC)'), (select max(id) from checklist where name = 'Labour room'));
+insert into department (name) values ('Indoor') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('Indoor', (select id from department where name = 'Indoor'), (select id from state where name = 'Tamil Nadu'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select max(assessment_tool.id) from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'Primary Health Center (PHC)'), (select max(id) from checklist where name = 'Indoor'));
+insert into department (name) values ('Laboratory') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('Laboratory', (select id from department where name = 'Laboratory'), (select id from state where name = 'Tamil Nadu'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select max(assessment_tool.id) from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'Primary Health Center (PHC)'), (select max(id) from checklist where name = 'Laboratory'));
+insert into department (name) values ('NHP') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('NHP', (select id from department where name = 'NHP'), (select id from state where name = 'Tamil Nadu'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select max(assessment_tool.id) from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'Primary Health Center (PHC)'), (select max(id) from checklist where name = 'NHP'));
+insert into department (name) values ('General') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('General', (select id from department where name = 'General'), (select id from state where name = 'Tamil Nadu'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select max(assessment_tool.id) from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'Primary Health Center (PHC)'), (select max(id) from checklist where name = 'General'));
 
 
 
@@ -17,42 +17,42 @@ insert into area_of_concern (name, reference) values ('Service Provivision', 'A'
 select checklist.id, (select max(id) from area_of_concern where reference = 'A') from checklist
 join assessment_tool_checklist on checklist.id = assessment_tool_checklist.checklist_id
        join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id
-join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where m2.name = 'nqas' and a.name = 'Primary Health Center (CHC)';
+join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where m2.name = 'nqas' and a.name = 'Primary Health Center (PHC)';
 insert into area_of_concern (name, reference) values ('Patient Rights', 'B');	insert into checklist_area_of_concern (checklist_id, area_of_concern_id)
 select checklist.id, (select max(id) from area_of_concern where reference = 'B') from checklist
 join assessment_tool_checklist on checklist.id = assessment_tool_checklist.checklist_id
        join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id
-join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where m2.name = 'nqas' and a.name = 'Primary Health Center (CHC)';
+join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where m2.name = 'nqas' and a.name = 'Primary Health Center (PHC)';
 insert into area_of_concern (name, reference) values ('Inputs', 'C');	insert into checklist_area_of_concern (checklist_id, area_of_concern_id)
 select checklist.id, (select max(id) from area_of_concern where reference = 'C') from checklist
 join assessment_tool_checklist on checklist.id = assessment_tool_checklist.checklist_id
        join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id
-join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where m2.name = 'nqas' and a.name = 'Primary Health Center (CHC)';
+join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where m2.name = 'nqas' and a.name = 'Primary Health Center (PHC)';
 insert into area_of_concern (name, reference) values ('Support Services', 'D');	insert into checklist_area_of_concern (checklist_id, area_of_concern_id)
 select checklist.id, (select max(id) from area_of_concern where reference = 'D') from checklist
 join assessment_tool_checklist on checklist.id = assessment_tool_checklist.checklist_id
        join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id
-join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where m2.name = 'nqas' and a.name = 'Primary Health Center (CHC)';
+join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where m2.name = 'nqas' and a.name = 'Primary Health Center (PHC)';
 insert into area_of_concern (name, reference) values ('Clinical Services', 'E');	insert into checklist_area_of_concern (checklist_id, area_of_concern_id)
 select checklist.id, (select max(id) from area_of_concern where reference = 'E') from checklist
 join assessment_tool_checklist on checklist.id = assessment_tool_checklist.checklist_id
        join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id
-join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where m2.name = 'nqas' and a.name = 'Primary Health Center (CHC)';
+join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where m2.name = 'nqas' and a.name = 'Primary Health Center (PHC)';
 insert into area_of_concern (name, reference) values ('Infection Control', 'F');	insert into checklist_area_of_concern (checklist_id, area_of_concern_id)
 select checklist.id, (select max(id) from area_of_concern where reference = 'F') from checklist
 join assessment_tool_checklist on checklist.id = assessment_tool_checklist.checklist_id
        join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id
-join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where m2.name = 'nqas' and a.name = 'Primary Health Center (CHC)';
+join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where m2.name = 'nqas' and a.name = 'Primary Health Center (PHC)';
 insert into area_of_concern (name, reference) values ('Quality Control', 'G');	insert into checklist_area_of_concern (checklist_id, area_of_concern_id)
 select checklist.id, (select max(id) from area_of_concern where reference = 'G') from checklist
 join assessment_tool_checklist on checklist.id = assessment_tool_checklist.checklist_id
        join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id
-join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where m2.name = 'nqas' and a.name = 'Primary Health Center (CHC)';
+join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where m2.name = 'nqas' and a.name = 'Primary Health Center (PHC)';
 insert into area_of_concern (name, reference) values ('Outcome', 'H');	insert into checklist_area_of_concern (checklist_id, area_of_concern_id)
 select checklist.id, (select max(id) from area_of_concern where reference = 'H') from checklist
 join assessment_tool_checklist on checklist.id = assessment_tool_checklist.checklist_id
        join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id
-join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where m2.name = 'nqas' and a.name = 'Primary Health Center (CHC)';
+join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where m2.name = 'nqas' and a.name = 'Primary Health Center (PHC)';
 
 
 

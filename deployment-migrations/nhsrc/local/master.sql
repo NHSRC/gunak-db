@@ -20,6 +20,9 @@
 -- \i ./4-1-3-2-kerala-nqas-chc-checkpoints.sql
 -- \i ./4-1-4-1-kerala-nqas-taluka.sql
 -- \i ./4-1-4-2-kerala-nqas-taluka-checkpoint.sql
-\i ./4-2-1-up-nqas-chc.sql
+-- \i ./4-2-1-up-nqas-chc.sql
 -- \i ./4-2-2-up-nqas-dhmale.sql
 -- \i ./4-2-3-up-nqas-dhfemale.sql
+-- \i ./5-1-1-tn-nqas-phc.sql
+-- \i ./5-1-2-tn-nqas-dh.sql
+\i ./5-1-3-tn-nqas-chc.sql
