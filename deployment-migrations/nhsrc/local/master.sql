@@ -25,4 +25,5 @@
 -- \i ./4-2-3-up-nqas-dhfemale.sql
 -- \i ./5-1-1-tn-nqas-phc.sql
 -- \i ./5-1-2-tn-nqas-dh.sql
-\i ./5-1-3-tn-nqas-chc.sql
+-- \i ./5-1-3-tn-nqas-chc.sql
+-- \i ./5-1-4-tn-nqas-sdh.sql
