@@ -88,7 +88,7 @@ deploy-migrations-nhsrc-local:
 	$(call _deploy_migrations_local,facilities_assessment_nhsrc,nhsrc)
 
 deploy-migrations-nhsrc-qa-via-local:
-	$(call _deploy_migrations_local,facilities_assessment,nhsrc)
+	$(call _deploy_migrations_local,facilities_assessment_qa,nhsrc)
 
 deploy-migrations-nhsrc-qa:
 	$(call _deploy_migrations,qa-server,qa,facilities_assessment_qa,gunak-other,nhsrc)
