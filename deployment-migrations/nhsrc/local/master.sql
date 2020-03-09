@@ -1,3 +1,4 @@
+\i ./0.sql
 \i ./1-1-update-me-kk.sql
 \i ./1-2-update-checkpoint-kk.sql
 \i ./2-update-methods-kk.sql
@@ -28,6 +29,7 @@
 \i ./4-3-3-tn-nqas-chc.sql
 \i ./4-3-4-tn-nqas-sdh.sql
 
+update assessment_tool_mode set name = 'NQAS' where name = 'nqas';
 
 -- Change server code to provide AOC, Standard, ME which are state specific or generic and not excluded
 

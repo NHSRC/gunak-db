@@ -1,0 +1,1 @@
+update assessment_tool_mode set name = 'nqas' where name = 'NQAS';
