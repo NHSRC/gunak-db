@@ -59,6 +59,17 @@ download-latest-db-jss-prod: db-backup-location
 apply-latest-db-local-nhsrc-qa: db-backup-location
 	$(call _apply_latest_db_local,gunak-other,facilities_assessment_nhsrc,qa-server)
 
+apply-latest-db-to-qa-from-nhsrc-prod:
+	@echo "NOTE: Not downloading file from prod"
+#	scp gunak-main:/home/app/$2/facilities-assessment-host/backup/facilities_assessment_$(shell date +%a).sql temp/
+	@echo "NOTE: Not uploading file to QA server"
+#	scp temp/facilities_assessment_$(shell date +%a).sql gunak-other:/home/app/qa-server/facilities-assessment-host/backup/
+	ssh gunak-other "sudo -u postgres psql postgres -c \"SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = 'facilities_assessment_qa' AND pid <> pg_backend_pid()\""
+	-ssh gunak-other "sudo -u postgres psql postgres -c 'drop database facilities_assessment_qa'"
+	ssh gunak-other "sudo -u postgres psql postgres -c 'create database facilities_assessment_qa with owner nhsrc'"
+	ssh gunak-other "sudo -u postgres psql facilities_assessment_qa -c 'create extension if not exists \"uuid-ossp\"'"
+	ssh gunak-other "sudo -u postgres psql facilities_assessment_qa -f /home/app/qa-server/facilities-assessment-host/backup/facilities_assessment_$(shell date +%a).sql > /dev/null"
+
 restore-latest-db-local-nhsrc:
 	$(call _restore_db,facilities_assessment_nhsrc,temp/facilities_assessment_latest.sql)
 
@@ -75,6 +86,9 @@ endef
 
 deploy-migrations-nhsrc-local:
 	$(call _deploy_migrations_local,facilities_assessment_nhsrc,nhsrc)
+
+deploy-migrations-nhsrc-qa-via-local:
+	$(call _deploy_migrations_local,facilities_assessment,nhsrc)
 
 deploy-migrations-nhsrc-qa:
 	$(call _deploy_migrations,qa-server,qa,facilities_assessment_qa,gunak-other,nhsrc)
