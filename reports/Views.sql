@@ -32,7 +32,7 @@ CREATE or replace VIEW checkpoint_scores_aoc AS
          assessment_type.name                                     as assessment_type_name,
          c.inactive                                               as checkpoint_inactive,
          c.id                                                     as checkpoint_id,
-         format('%s - %s - %s', aoc.name, s.name, me.name)        as measurable_element_full_name
+         format('%s - %s - %s - %s', aoc.reference, aoc.name, s.name, me.name)        as measurable_element_full_name
   FROM checkpoint_score cs
          INNER JOIN checkpoint c ON cs.checkpoint_id = c.id
          LEFT OUTER JOIN checklist cl ON cl.id = cs.checklist_id
