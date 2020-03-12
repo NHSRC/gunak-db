@@ -31,9 +31,6 @@
 
 update assessment_tool_mode set name = 'NQAS' where name = 'nqas';
 
--- Change server code to provide AOC, Standard, ME which are state specific or generic and not excluded
-
-
 
 
 

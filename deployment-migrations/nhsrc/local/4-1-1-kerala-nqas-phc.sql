@@ -6,46 +6,56 @@ insert into checklist (name, department_id, state_id) values ('NHP', (select id 
 insert into checklist (name, department_id, state_id) values ('General', (select id from department where name = 'General'), (select id from state where name = 'Kerala'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select max(assessment_tool.id) from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'Primary Health Center (PHC)'), (select max(id) from checklist where name = 'General'));
 
 
+
+
 insert into area_of_concern (name, reference) values ('Service Provision', 'A');	insert into checklist_area_of_concern (checklist_id, area_of_concern_id)
 select checklist.id, (select max(id) from area_of_concern where reference = 'A') from checklist
 join assessment_tool_checklist on checklist.id = assessment_tool_checklist.checklist_id
-       join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id
-join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where m2.name = 'nqas' and a.name = 'Primary Health Center (PHC)';
+       join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id 
+join state on a.state_id = state.id
+join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where state.name = 'Kerala' and m2.name = 'nqas' and a.name = 'Primary Health Center (PHC)';
 insert into area_of_concern (name, reference) values ('Patient Rights', 'B');	insert into checklist_area_of_concern (checklist_id, area_of_concern_id)
 select checklist.id, (select max(id) from area_of_concern where reference = 'B') from checklist
 join assessment_tool_checklist on checklist.id = assessment_tool_checklist.checklist_id
-       join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id
-join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where m2.name = 'nqas' and a.name = 'Primary Health Center (PHC)';
+       join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id 
+join state on a.state_id = state.id
+join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where state.name = 'Kerala' and m2.name = 'nqas' and a.name = 'Primary Health Center (PHC)';
 insert into area_of_concern (name, reference) values ('Inputs', 'C');	insert into checklist_area_of_concern (checklist_id, area_of_concern_id)
 select checklist.id, (select max(id) from area_of_concern where reference = 'C') from checklist
 join assessment_tool_checklist on checklist.id = assessment_tool_checklist.checklist_id
-       join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id
-join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where m2.name = 'nqas' and a.name = 'Primary Health Center (PHC)';
+       join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id 
+join state on a.state_id = state.id
+join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where state.name = 'Kerala' and m2.name = 'nqas' and a.name = 'Primary Health Center (PHC)';
 insert into area_of_concern (name, reference) values ('Support Services', 'D');	insert into checklist_area_of_concern (checklist_id, area_of_concern_id)
 select checklist.id, (select max(id) from area_of_concern where reference = 'D') from checklist
 join assessment_tool_checklist on checklist.id = assessment_tool_checklist.checklist_id
-       join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id
-join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where m2.name = 'nqas' and a.name = 'Primary Health Center (PHC)';
+       join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id 
+join state on a.state_id = state.id
+join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where state.name = 'Kerala' and m2.name = 'nqas' and a.name = 'Primary Health Center (PHC)';
 insert into area_of_concern (name, reference) values ('Clinical Services', 'E');	insert into checklist_area_of_concern (checklist_id, area_of_concern_id)
 select checklist.id, (select max(id) from area_of_concern where reference = 'E') from checklist
 join assessment_tool_checklist on checklist.id = assessment_tool_checklist.checklist_id
-       join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id
-join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where m2.name = 'nqas' and a.name = 'Primary Health Center (PHC)';
+       join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id 
+join state on a.state_id = state.id
+join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where state.name = 'Kerala' and m2.name = 'nqas' and a.name = 'Primary Health Center (PHC)';
 insert into area_of_concern (name, reference) values ('Infection Control', 'F');	insert into checklist_area_of_concern (checklist_id, area_of_concern_id)
 select checklist.id, (select max(id) from area_of_concern where reference = 'F') from checklist
 join assessment_tool_checklist on checklist.id = assessment_tool_checklist.checklist_id
-       join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id
-join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where m2.name = 'nqas' and a.name = 'Primary Health Center (PHC)';
+       join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id 
+join state on a.state_id = state.id
+join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where state.name = 'Kerala' and m2.name = 'nqas' and a.name = 'Primary Health Center (PHC)';
 insert into area_of_concern (name, reference) values ('Quality Control', 'G');	insert into checklist_area_of_concern (checklist_id, area_of_concern_id)
 select checklist.id, (select max(id) from area_of_concern where reference = 'G') from checklist
 join assessment_tool_checklist on checklist.id = assessment_tool_checklist.checklist_id
-       join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id
-join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where m2.name = 'nqas' and a.name = 'Primary Health Center (PHC)';
+       join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id 
+join state on a.state_id = state.id
+join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where state.name = 'Kerala' and m2.name = 'nqas' and a.name = 'Primary Health Center (PHC)';
 insert into area_of_concern (name, reference) values ('Outcome', 'H');	insert into checklist_area_of_concern (checklist_id, area_of_concern_id)
 select checklist.id, (select max(id) from area_of_concern where reference = 'H') from checklist
 join assessment_tool_checklist on checklist.id = assessment_tool_checklist.checklist_id
-       join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id
-join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where m2.name = 'nqas' and a.name = 'Primary Health Center (PHC)';
+       join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id 
+join state on a.state_id = state.id
+join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where state.name = 'Kerala' and m2.name = 'nqas' and a.name = 'Primary Health Center (PHC)';
 
 
 
