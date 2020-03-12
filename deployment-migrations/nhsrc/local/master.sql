@@ -28,6 +28,8 @@
 \i ./4-3-2-tn-nqas-dh.sql
 \i ./4-3-3-tn-nqas-chc.sql
 \i ./4-3-4-tn-nqas-sdh.sql
+\i ./4-4-1-megh-nqas-chc.sql
+\i ./4-4-2-megh-nqas-mch.sql
 
 update assessment_tool_mode set name = 'NQAS' where name = 'nqas';
 
