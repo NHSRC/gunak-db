@@ -2,5 +2,6 @@
 2. Ensure to remove ' from the file itself
 3. For copying sql - Sheet1, All sql except cp from checkpoints sheet, AOC, Stand, ME, CP
 4. Remove "insert with insert and ;" with ;
+5. change AT name by prefixing state for clarity
 
 2 - MP NQAS DH Customized for REGEX TO FIX STANDARD IN ME SHEET

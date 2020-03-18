@@ -2427,3 +2427,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Monthly blood examination rate (MBER)', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'H3.1'), (select max(id) from checklist where name = 'National Health Program'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Multidrug treatment completion rate under NLCP', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'H3.1'), (select max(id) from checklist where name = 'National Health Program'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('No. of babies followed up after delivery at 6 week, 6 month, 12 month & 18 months under NACP', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'H3.1'), (select max(id) from checklist where name = 'National Health Program'));
+
+
+update assessment_tool set name = 'Kerala CHC' where
+    name = 'Community Health Center (CHC)' and state_id = (select id from state where name = 'Kerala');
