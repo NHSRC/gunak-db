@@ -16,11 +16,9 @@
 -- \i ./3-1-7-2-nqas-CHC.sql
 -- \i ./3-1-7-3-nqas-CHC.sql
 -- \i ./4-1-1-kerala-nqas-phc.sql
-\i ./4-1-2-kerala-nqas-dwch.sql
--- \i ./4-1-3-1-kerala-nqas-chc.sql
--- \i ./4-1-3-2-kerala-nqas-chc-checkpoints.sql
--- \i ./4-1-4-1-kerala-nqas-taluka.sql
--- \i ./4-1-4-2-kerala-nqas-taluka-checkpoint.sql
+-- \i ./4-1-2-kerala-nqas-dwch.sql
+-- \i ./4-1-3-kerala-nqas-chc.sql
+\i ./4-1-4-kerala-nqas-taluka.sql
 -- \i ./4-2-1-up-nqas-chc.sql
 -- \i ./4-2-2-up-nqas-dhmale.sql
 -- \i ./4-2-3-up-nqas-dhfemale.sql
