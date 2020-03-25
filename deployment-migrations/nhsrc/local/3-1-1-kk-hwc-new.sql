@@ -391,4 +391,4 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Regular repairs and maintained of roads', 'Check current condition of the road', TRUE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'G4.5'), (select max(id) from checklist));
 
 
-update assessment_tool set name = 'Health and Wellness Centre' where name = 'HWC';
+update assessment_tool set last_modified_date = current_timestamp, name = 'Health and Wellness Centre' where name = 'HWC';
