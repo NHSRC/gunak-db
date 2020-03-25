@@ -1,4 +1,4 @@
-insert into assessment_tool (name, assessment_tool_mode_id) values ('HWC', (select id from assessment_tool_mode where name = 'Kayakalp'));
+insert into assessment_tool (name, assessment_tool_mode_id, sort_order) values ('HWC', (select id from assessment_tool_mode where name = 'Kayakalp'), 40);
 insert into checklist (name, department_id) values ('HWC', (select id from department where name = 'Kayakalp'));
 insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select max(id) from assessment_tool), (select max(id) from checklist));
 
@@ -389,3 +389,6 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Innovations in managing waste', 'Check, if certain innovative practices have been introduced for managing general waste e.g. Vermicomposting, Re-cycling of papers, Waste to energy, Compost Activators, etc.', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'G4.3'), (select max(id) from checklist));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Surrounding areas are well maintained', 'Check that there is no over grown shrubs, weeds, grass, potholes, bumps etc. in surrounding areas', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'G4.4'), (select max(id) from checklist));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Regular repairs and maintained of roads', 'Check current condition of the road', TRUE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'G4.5'), (select max(id) from checklist));
+
+
+update assessment_tool set name = 'Health and Wellness Centre' where name = 'HWC';

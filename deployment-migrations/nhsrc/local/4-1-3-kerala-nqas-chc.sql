@@ -1,4 +1,4 @@
-insert into excluded_assessment_tool_state (state_id, assessment_tool_id) VALUES ((select id from state where name = 'Kerala'), (select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'Community Health Center (CHC)'));	insert into assessment_tool (name, state_id, assessment_tool_mode_id) VALUES ('Community Health Center (Kerala)', (select id from state where name = 'Kerala'), (select id from assessment_tool_mode where name = 'nqas'));
+insert into excluded_assessment_tool_state (state_id, assessment_tool_id) VALUES ((select id from state where name = 'Kerala'), (select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'Community Health Center (CHC)'));	insert into assessment_tool (name, state_id, assessment_tool_mode_id, sort_order) VALUES ('Community Health Center (Kerala)', (select id from state where name = 'Kerala'), (select id from assessment_tool_mode where name = 'nqas'), 22);
 
 
 
