@@ -1,27 +1,24 @@
-insert into excluded_assessment_tool_state (state_id, assessment_tool_id) VALUES ((select id from state where name = 'Madhya Pradesh'), (select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'District Hospital (DH)' and assessment_tool.state_id is null));	insert into assessment_tool (name, state_id, assessment_tool_mode_id) VALUES ('MP District Hospital (DH)', (select id from state where name = 'Madhya Pradesh'), (select id from assessment_tool_mode where name = 'nqas'));
+insert into excluded_assessment_tool_state (state_id, assessment_tool_id) VALUES ((select id from state where name = 'Madhya Pradesh'), (select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'District Hospital (DH)'));	insert into assessment_tool (name, state_id, assessment_tool_mode_id) VALUES ('District Hospital (MP)', (select id from state where name = 'Madhya Pradesh'), (select id from assessment_tool_mode where name = 'nqas'));
 
 
-
-insert into department (name) values ('Emergency') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('Emergency', (select id from department where name = 'Emergency'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id join state on state.id = assessment_tool.state_id where state.name = 'Madhya Pradesh' and a.name = 'nqas' and assessment_tool.name = 'MP District Hospital (DH)'), (select max(id) from checklist where name = 'Emergency'));
-insert into department (name) values ('OPD') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('OPD', (select id from department where name = 'OPD'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id join state on state.id = assessment_tool.state_id where state.name = 'Madhya Pradesh' and a.name = 'nqas' and assessment_tool.name = 'MP District Hospital (DH)'), (select max(id) from checklist where name = 'OPD'));
-insert into department (name) values ('LR (LaQshay)') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('LR (LaQshay)', (select id from department where name = 'LR (LaQshay)'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id join state on state.id = assessment_tool.state_id where state.name = 'Madhya Pradesh' and a.name = 'nqas' and assessment_tool.name = 'MP District Hospital (DH)'), (select max(id) from checklist where name = 'LR (LaQshay)'));
-insert into department (name) values ('Maternity Ward') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('Maternity Ward', (select id from department where name = 'Maternity Ward'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id join state on state.id = assessment_tool.state_id where state.name = 'Madhya Pradesh' and a.name = 'nqas' and assessment_tool.name = 'MP District Hospital (DH)'), (select max(id) from checklist where name = 'Maternity Ward'));
-insert into department (name) values ('Ped Ward') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('Ped Ward', (select id from department where name = 'Ped Ward'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id join state on state.id = assessment_tool.state_id where state.name = 'Madhya Pradesh' and a.name = 'nqas' and assessment_tool.name = 'MP District Hospital (DH)'), (select max(id) from checklist where name = 'Ped Ward'));
-insert into department (name) values ('SNCU') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('SNCU', (select id from department where name = 'SNCU'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id join state on state.id = assessment_tool.state_id where state.name = 'Madhya Pradesh' and a.name = 'nqas' and assessment_tool.name = 'MP District Hospital (DH)'), (select max(id) from checklist where name = 'SNCU'));
-insert into department (name) values ('NRC') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('NRC', (select id from department where name = 'NRC'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id join state on state.id = assessment_tool.state_id where state.name = 'Madhya Pradesh' and a.name = 'nqas' and assessment_tool.name = 'MP District Hospital (DH)'), (select max(id) from checklist where name = 'NRC'));
-insert into department (name) values ('M-OT (LaQshya)') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('M-OT (LaQshya)', (select id from department where name = 'M-OT (LaQshya)'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id join state on state.id = assessment_tool.state_id where state.name = 'Madhya Pradesh' and a.name = 'nqas' and assessment_tool.name = 'MP District Hospital (DH)'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
-insert into department (name) values ('PP Unit') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('PP Unit', (select id from department where name = 'PP Unit'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id join state on state.id = assessment_tool.state_id where state.name = 'Madhya Pradesh' and a.name = 'nqas' and assessment_tool.name = 'MP District Hospital (DH)'), (select max(id) from checklist where name = 'PP Unit'));
-insert into department (name) values ('ICU') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('ICU', (select id from department where name = 'ICU'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id join state on state.id = assessment_tool.state_id where state.name = 'Madhya Pradesh' and a.name = 'nqas' and assessment_tool.name = 'MP District Hospital (DH)'), (select max(id) from checklist where name = 'ICU'));
-insert into department (name) values ('IPD') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('IPD', (select id from department where name = 'IPD'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id join state on state.id = assessment_tool.state_id where state.name = 'Madhya Pradesh' and a.name = 'nqas' and assessment_tool.name = 'MP District Hospital (DH)'), (select max(id) from checklist where name = 'IPD'));
-insert into department (name) values ('Blood Bank') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('Blood Bank', (select id from department where name = 'Blood Bank'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id join state on state.id = assessment_tool.state_id where state.name = 'Madhya Pradesh' and a.name = 'nqas' and assessment_tool.name = 'MP District Hospital (DH)'), (select max(id) from checklist where name = 'Blood Bank'));
-insert into department (name) values ('Lab') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('Lab', (select id from department where name = 'Lab'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id join state on state.id = assessment_tool.state_id where state.name = 'Madhya Pradesh' and a.name = 'nqas' and assessment_tool.name = 'MP District Hospital (DH)'), (select max(id) from checklist where name = 'Lab'));
-insert into department (name) values ('Radiology') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('Radiology', (select id from department where name = 'Radiology'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id join state on state.id = assessment_tool.state_id where state.name = 'Madhya Pradesh' and a.name = 'nqas' and assessment_tool.name = 'MP District Hospital (DH)'), (select max(id) from checklist where name = 'Radiology'));
-insert into department (name) values ('Pharmacy') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('Pharmacy', (select id from department where name = 'Pharmacy'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id join state on state.id = assessment_tool.state_id where state.name = 'Madhya Pradesh' and a.name = 'nqas' and assessment_tool.name = 'MP District Hospital (DH)'), (select max(id) from checklist where name = 'Pharmacy'));
-insert into department (name) values ('Auxillary services') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('Auxillary services', (select id from department where name = 'Auxillary services'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id join state on state.id = assessment_tool.state_id where state.name = 'Madhya Pradesh' and a.name = 'nqas' and assessment_tool.name = 'MP District Hospital (DH)'), (select max(id) from checklist where name = 'Auxillary services'));
-insert into department (name) values ('Mortuary') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('Mortuary', (select id from department where name = 'Mortuary'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id join state on state.id = assessment_tool.state_id where state.name = 'Madhya Pradesh' and a.name = 'nqas' and assessment_tool.name = 'MP District Hospital (DH)'), (select max(id) from checklist where name = 'Mortuary'));
-insert into department (name) values ('Admin') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('Admin', (select id from department where name = 'Admin'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id join state on state.id = assessment_tool.state_id where state.name = 'Madhya Pradesh' and a.name = 'nqas' and assessment_tool.name = 'MP District Hospital (DH)'), (select max(id) from checklist where name = 'Admin'));
-
-
+insert into department (name) values ('Emergency') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('Emergency', (select id from department where name = 'Emergency'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'District Hospital (MP)'), (select max(id) from checklist where name = 'Emergency'));
+insert into department (name) values ('OPD') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('OPD', (select id from department where name = 'OPD'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'District Hospital (MP)'), (select max(id) from checklist where name = 'OPD'));
+insert into department (name) values ('LR (LaQshay)') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('LR (LaQshay)', (select id from department where name = 'LR (LaQshay)'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'District Hospital (MP)'), (select max(id) from checklist where name = 'LR (LaQshay)'));
+insert into department (name) values ('Maternity Ward') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('Maternity Ward', (select id from department where name = 'Maternity Ward'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'District Hospital (MP)'), (select max(id) from checklist where name = 'Maternity Ward'));
+insert into department (name) values ('Ped Ward') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('Ped Ward', (select id from department where name = 'Ped Ward'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'District Hospital (MP)'), (select max(id) from checklist where name = 'Ped Ward'));
+insert into department (name) values ('SNCU') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('SNCU', (select id from department where name = 'SNCU'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'District Hospital (MP)'), (select max(id) from checklist where name = 'SNCU'));
+insert into department (name) values ('NRC') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('NRC', (select id from department where name = 'NRC'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'District Hospital (MP)'), (select max(id) from checklist where name = 'NRC'));
+insert into department (name) values ('M-OT (LaQshya)') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('M-OT (LaQshya)', (select id from department where name = 'M-OT (LaQshya)'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'District Hospital (MP)'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
+insert into department (name) values ('PP Unit') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('PP Unit', (select id from department where name = 'PP Unit'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'District Hospital (MP)'), (select max(id) from checklist where name = 'PP Unit'));
+insert into department (name) values ('ICU') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('ICU', (select id from department where name = 'ICU'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'District Hospital (MP)'), (select max(id) from checklist where name = 'ICU'));
+insert into department (name) values ('IPD') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('IPD', (select id from department where name = 'IPD'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'District Hospital (MP)'), (select max(id) from checklist where name = 'IPD'));
+insert into department (name) values ('Blood Bank') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('Blood Bank', (select id from department where name = 'Blood Bank'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'District Hospital (MP)'), (select max(id) from checklist where name = 'Blood Bank'));
+insert into department (name) values ('Lab') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('Lab', (select id from department where name = 'Lab'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'District Hospital (MP)'), (select max(id) from checklist where name = 'Lab'));
+insert into department (name) values ('Radiology') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('Radiology', (select id from department where name = 'Radiology'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'District Hospital (MP)'), (select max(id) from checklist where name = 'Radiology'));
+insert into department (name) values ('Pharmacy') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('Pharmacy', (select id from department where name = 'Pharmacy'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'District Hospital (MP)'), (select max(id) from checklist where name = 'Pharmacy'));
+insert into department (name) values ('Auxillary services') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('Auxillary services', (select id from department where name = 'Auxillary services'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'District Hospital (MP)'), (select max(id) from checklist where name = 'Auxillary services'));
+insert into department (name) values ('Mortuary') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('Mortuary', (select id from department where name = 'Mortuary'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'District Hospital (MP)'), (select max(id) from checklist where name = 'Mortuary'));
+insert into department (name) values ('Admin') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('Admin', (select id from department where name = 'Admin'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'nqas' and assessment_tool.name = 'District Hospital (MP)'), (select max(id) from checklist where name = 'Admin'));
 
 
 
@@ -30,50 +27,49 @@ select checklist.id, (select max(id) from area_of_concern where reference = 'A')
 join assessment_tool_checklist on checklist.id = assessment_tool_checklist.checklist_id
        join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id
 join state on a.state_id = state.id
-join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where state.name = 'Madhya Pradesh' and m2.name = 'nqas' and a.name = 'MP District Hospital (DH)';
+join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where state.name = 'Madhya Pradesh' and m2.name = 'nqas' and a.name = 'District Hospital (MP)';
 insert into area_of_concern (name, reference) values ('Patient Rights', 'B');	insert into checklist_area_of_concern (checklist_id, area_of_concern_id)
 select checklist.id, (select max(id) from area_of_concern where reference = 'B') from checklist
 join assessment_tool_checklist on checklist.id = assessment_tool_checklist.checklist_id
        join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id
 join state on a.state_id = state.id
-join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where state.name = 'Madhya Pradesh' and m2.name = 'nqas' and a.name = 'MP District Hospital (DH)';
+join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where state.name = 'Madhya Pradesh' and m2.name = 'nqas' and a.name = 'District Hospital (MP)';
 insert into area_of_concern (name, reference) values ('Inputs', 'C');	insert into checklist_area_of_concern (checklist_id, area_of_concern_id)
 select checklist.id, (select max(id) from area_of_concern where reference = 'C') from checklist
 join assessment_tool_checklist on checklist.id = assessment_tool_checklist.checklist_id
        join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id
 join state on a.state_id = state.id
-join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where state.name = 'Madhya Pradesh' and m2.name = 'nqas' and a.name = 'MP District Hospital (DH)';
+join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where state.name = 'Madhya Pradesh' and m2.name = 'nqas' and a.name = 'District Hospital (MP)';
 insert into area_of_concern (name, reference) values ('Support Services', 'D');	insert into checklist_area_of_concern (checklist_id, area_of_concern_id)
 select checklist.id, (select max(id) from area_of_concern where reference = 'D') from checklist
 join assessment_tool_checklist on checklist.id = assessment_tool_checklist.checklist_id
        join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id
 join state on a.state_id = state.id
-join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where state.name = 'Madhya Pradesh' and m2.name = 'nqas' and a.name = 'MP District Hospital (DH)';
+join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where state.name = 'Madhya Pradesh' and m2.name = 'nqas' and a.name = 'District Hospital (MP)';
 insert into area_of_concern (name, reference) values ('Clinical Services', 'E');	insert into checklist_area_of_concern (checklist_id, area_of_concern_id)
 select checklist.id, (select max(id) from area_of_concern where reference = 'E') from checklist
 join assessment_tool_checklist on checklist.id = assessment_tool_checklist.checklist_id
        join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id
 join state on a.state_id = state.id
-join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where state.name = 'Madhya Pradesh' and m2.name = 'nqas' and a.name = 'MP District Hospital (DH)';
+join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where state.name = 'Madhya Pradesh' and m2.name = 'nqas' and a.name = 'District Hospital (MP)';
 insert into area_of_concern (name, reference) values ('Infection Control', 'F');	insert into checklist_area_of_concern (checklist_id, area_of_concern_id)
 select checklist.id, (select max(id) from area_of_concern where reference = 'F') from checklist
 join assessment_tool_checklist on checklist.id = assessment_tool_checklist.checklist_id
        join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id
 join state on a.state_id = state.id
-join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where state.name = 'Madhya Pradesh' and m2.name = 'nqas' and a.name = 'MP District Hospital (DH)';
+join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where state.name = 'Madhya Pradesh' and m2.name = 'nqas' and a.name = 'District Hospital (MP)';
 insert into area_of_concern (name, reference) values ('Quality Control', 'G');	insert into checklist_area_of_concern (checklist_id, area_of_concern_id)
 select checklist.id, (select max(id) from area_of_concern where reference = 'G') from checklist
 join assessment_tool_checklist on checklist.id = assessment_tool_checklist.checklist_id
        join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id
 join state on a.state_id = state.id
-join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where state.name = 'Madhya Pradesh' and m2.name = 'nqas' and a.name = 'MP District Hospital (DH)';
+join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where state.name = 'Madhya Pradesh' and m2.name = 'nqas' and a.name = 'District Hospital (MP)';
 insert into area_of_concern (name, reference) values ('Outcome', 'H');	insert into checklist_area_of_concern (checklist_id, area_of_concern_id)
 select checklist.id, (select max(id) from area_of_concern where reference = 'H') from checklist
 join assessment_tool_checklist on checklist.id = assessment_tool_checklist.checklist_id
        join assessment_tool a on assessment_tool_checklist.assessment_tool_id = a.id
 join state on a.state_id = state.id
-join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where state.name = 'Madhya Pradesh' and m2.name = 'nqas' and a.name = 'MP District Hospital (DH)';
-
+join assessment_tool_mode m2 on a.assessment_tool_mode_id = m2.id where state.name = 'Madhya Pradesh' and m2.name = 'nqas' and a.name = 'District Hospital (MP)';
 
 
 
@@ -154,369 +150,2887 @@ insert into standard (name, reference, area_of_concern_id) values ('The facility
 
 
 
+insert into measurable_element (name, reference, standard_id) values ('The facility provides General Medicine services', 'A1.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides General Surgery services', 'A1.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides Obstetrics & Gynaecology Services', 'A1.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides paediateric services', 'A1.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides Ophthalmology Services', 'A1.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides ENT Services', 'A1.6', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides Orthopaedics Services', 'A1.7', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides Psychiatry Services', 'A1.9', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides services for OPD procedures', 'A1.13', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Services are available for the time period as mandated', 'A1.14', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides Accident & Emergency Services', 'A1.16', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides Maternal health Services', 'A2.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides Child health Services', 'A2.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides Radiology Services', 'A3.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A3' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility Provides Laboratory Services', 'A3.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A3' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides other diagnostic services, as mandated', 'A3.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A3' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides security services', 'A5.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has services of medical record department', 'A5.7', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides curatives & preventive services for the health problems and diseases, prevalent locally.', 'A6.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has uniform and user-friendly signage system', 'B1.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility displays the services and entitlements available in its departments', 'B1.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Patients & visitors are sensitised and educated through appropriate IEC / BCC approaches', 'B1.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Information is available in local language and easy to understand', 'B1.6', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides information to patients and visitor through an exclusive set-up.', 'B1.7', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility ensures access to clinical records of patients to entitled personnel', 'B1.8', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Services are provided in manner that are sensitive to gender', 'B2.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Access to facility is provided without any physical barrier & and friendly to people with disabilities', 'B2.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Adequate visual privacy is provided at every point of care', 'B3.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B3' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Confidentiality of patients records and clinical information is maintained', 'B3.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B3' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility ensures the behaviours of staff is dignified and respectful, while delivering the services', 'B3.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B3' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility ensures privacy and confidentiality to every patient, especially of those conditions having social stigma, and also safeguards vulnerable groups', 'B3.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B3' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is established procedures for taking informed consent before treatment and procedures', 'B4.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Patient is informed about his/her rightsand responsibilities', 'B4.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Staff are aware of Patients rights responsibilities', 'B4.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Information about the treatment is shared with patients or attendants, regularly', 'B4.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has defined and established grievance redressal system in place', 'B4.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides cashless services to pregnant women, mothers and neonates as per prevalent government schemes', 'B5.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility ensures that drugs prescribed are available at Pharmacy and wards', 'B5.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('It is ensured that facilities for the prescribed investigations are available at the facility', 'B5.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provide free of cost treatment to Below poverty line patients without administrative hassles', 'B5.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is an established procedure for ‘end-of-life’ care', 'B6.6', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is an established procedure for patients who wish to leave hospital against medical advice or refuse to receive specific c treatment', 'B6.7', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Departments have adequate space as per patient or work load', 'C1.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Patient amenities are provide as per patient load', 'C1.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Departments have layout and demarcated areas as per functions', 'C1.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has adequate circulation area and open spaces according to need and local law', 'C1.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has infrastructure for intramural and extramural communication', 'C1.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Service counters are available as per patient load', 'C1.6', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility and departments are planned to ensure structure follows the function/processes (Structure commensurate with the function of the hospital)', 'C1.7', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility ensures the seismic safety of the infrastructure', 'C2.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility ensures safety of electrical establishment', 'C2.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Physical condition of buildings are safe for providing patient care', 'C2.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has plan for prevention of fire', 'C3.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C3' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has adequate fire fighting Equipment', 'C3.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C3' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has a system of periodic training of staff and conducts mock drills regularly for fire and other disaster situation', 'C3.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C3' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has adequate specialist doctors as per service provision', 'C4.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has adequate general duty doctors as per service provision and work load', 'C4.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has adequate nursing staff as per service provision and work load', 'C4.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has adequate technicians/paramedics as per requirement', 'C4.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has adequate support / general staff', 'C4.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The staff has been provided required training / skill sets', 'C4.6', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The Staff is skilled as per job description', 'C4.7', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The departments have availability of adequate drugs at point of use', 'C5.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The departments have adequate consumables at point of use', 'C5.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Emergency drug trays are maintained at every point of care, where ever it may be needed', 'C5.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Availability of equipment & instruments for examination & monitoring of patients', 'C6.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Availability of equipment & instruments for treatment procedures, being undertaken in the facility', 'C6.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Availability of equipment & instruments for diagnostic procedures being undertaken in the facility', 'C6.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Availability of equipment and instruments for resuscitation of patients and for providing intensive and critical care to patients', 'C6.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Availability of Equipment for Storage', 'C6.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Availability of functional equipment and instruments for support services', 'C6.6', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Departments have patient furniture and fixtures as per load and service provision', 'C6.7', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Criteria for Competence assessment are definedfor clinical and Para clinical staff', 'C7.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C7' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Competence assessment of Clinical and Para clinical staff is done on predefinedcriteria at least once in a year', 'C7.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C7' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The Staff is provided training as per defined core competencies and training plan', 'C7.9', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C7' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is established procedure for utilization of skills gained thought trainings by on -job supportive supervision', 'C7.10', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C7' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has established system for maintenance of critical Equipment', 'D1.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has established procedure for internal and external calibration of measuring Equipment', 'D1.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Operating and maintenance instructions are available with the users of equipment', 'D1.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is established procedure for forecasting and indenting drugs and consumables', 'D2.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility ensures proper storage of drugs and consumables', 'D2.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility ensures management of expiry and near expiry drugs', 'D2.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has established procedure for inventory management techniques', 'D2.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is a procedure for periodically replenishing the drugs in patient care areas', 'D2.6', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is process for storage of vaccines and other drugs, requiring controlled temperature', 'D2.7', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is a procedure for secure storage of narcotic and psychotropic drugs', 'D2.8', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides adequate illumination level at patient care areas', 'D3.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D3' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has provision of restriction of visitors in patient areas', 'D3.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D3' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility ensures safe and comfortable environment for patients and service providers', 'D3.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D3' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has security system in place at patient care areas', 'D3.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D3' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has established measure for safety and security of female staff', 'D3.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D3' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Exterior of thefacility building is maintained appropriately', 'D4.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Patient care areas are clean and hygienic', 'D4.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Hospital infrastructure is adequately maintained', 'D4.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has policy of removal of condemned junk material', 'D4.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has established procedures for pest, rodent and animal control', 'D4.6', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has adequate arrangement storage and supply for portable water in all functional areas', 'D5.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility ensures adequate power backup in all patient care areas as per load', 'D5.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Critical areas of the facility ensures availability of oxygen, medical gases and vacuum supply', 'D5.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has adequate sets of linen', 'D7.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D7' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has established procedures for changing of linen in patient care areas', 'D7.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D7' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has standard procedures for handling , collection, transportation and washingof linen', 'D7.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D7' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has requisite licences and certificates for operation of hospital and different activities', 'D10.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D10' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility ensure relevant processes are in compliance with statutory requirement', 'D10.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D10' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has established job description as per govt guidelines', 'D11.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D11' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has a established procedure for duty roster and deputation to different departments', 'D11.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D11' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility ensures the adherence to dress code as mandated by its administration / the health department', 'D11.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D11' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is established system for contract management for out sourced services', 'D12.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D12' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has established procedure for registration of patients', 'E1.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is established procedure for admission of patients', 'E1.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is established procedure for managing patients, in case beds are not available at the facility', 'E1.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is established procedure for initial assessment of patients', 'E2.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is established procedure for follow-up/ reassessment of Patients', 'E2.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility has established procedure for continuity of care during interdepartmental transfer', 'E3.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E3' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility provides appropriate referral linkages to the patients/Servicesfor transfer to other/higher facilities to assure their continuity of care.', 'E3.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E3' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('A person is identified for care during all steps of care', 'E3.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E3' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Procedure for identification of patients is established at the facility', 'E4.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Procedure for ensuring timely and accurate nursing care as per treatment plan is established at the facility', 'E4.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is established procedure of patient hand over, whenever staff duty change happens', 'E4.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Nursing records are maintained', 'E4.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is procedure for periodic monitoring of patients', 'E4.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility identifies vulnerable patients and ensure their safe care', 'E5.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility identifies high riskpatients and ensure their care, as per their need', 'E5.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility ensured that drugs are prescribed in generic name only', 'E6.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is procedure of rational use of drugs', 'E6.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is process for identifying and cautious administration of high alert drugs', 'E7.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E7' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Medication orders are written legibly and adequately', 'E7.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E7' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is a procedure to check drug before administration/ dispensing', 'E7.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E7' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is a system to ensure right medicine is given to right patient', 'E7.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E7' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Patient is counselled for self drug administration', 'E7.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E7' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('All the assessments, re-assessment and investigations are recorded and updated', 'E8.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E8' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('All treatment plan prescription/orders are recorded in the patient records.', 'E8.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E8' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Care provided to each patient is recorded in the patient records', 'E8.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E8' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Procedures performed are written on patients records', 'E8.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E8' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Adequate form and formats are available at point of use', 'E8.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E8' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Register/records are maintained as per guidelines', 'E8.6', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E8' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility ensures safe and adequate storage and retrievalof medical records', 'E8.7', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E8' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Discharge is done after assessing patient readiness', 'E9.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E9' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Case summary and follow-up instructions are provided at the discharge', 'E9.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E9' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Counselling services are provided as during discharges wherever required', 'E9.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E9' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has established procedure for patients leaving the facility against medical advice, absconding, etc', 'E9.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E9' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is procedure for Receiving and triage of patients', 'E11.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E11' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Emergency protocols are defined and implemented', 'E11.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E11' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has disaster management plan in place', 'E11.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E11' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility ensures adequate and timely availability of ambulances services and mobilisation of resources, as per requirement', 'E11.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E11' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is procedure for handling medico legal cases', 'E11.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E11' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There are establishedprocedures for Pre-testing Activities', 'E12.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E12' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There are establishedprocedures for Post-testing Activities', 'E12.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E12' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is established procedure for issuing blood', 'E13.8', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E13' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is established procedure for transfusion of blood', 'E13.9', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E13' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is a established procedure for monitoring and reporting Transfusion complication', 'E13.10', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E13' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility has established procedures OT Scheduling', 'E15.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E15' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Death of admitted patient is adequately recorded and communicated', 'E16.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E16' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has standard procedures for handling the death in the hospital', 'E16.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E16' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has standard operating procedure for end of life support', 'E16.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E16' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facilityhas provision for Passiveand active culture surveillance of critical & high risk areas', 'F1.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'F1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is Provision of Periodic Medical Checkups and immunization of staff', 'F1.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'F1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility has established procedures for regular monitoring of infection control practices', 'F1.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'F1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility has defined and established antibiotic policy', 'F1.6', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'F1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Hand washing facilities are provided at point of use', 'F2.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'F2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Staff is trained and adhere to standard hand washing practices', 'F2.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'F2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility ensures standard practices and materials for antisepsis', 'F2.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'F2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility ensures adequate personal protection equipments as per requirements', 'F3.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'F3' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Staff is adhere to standard personal protection practices', 'F3.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'F3' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility ensures standard practices and materials for decontamination and clean ing of instruments andprocedures areas', 'F4.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'F4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility ensures standard practices and materials for disinfection and sterilization of instruments and equipments', 'F4.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'F4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Layout of the department is conducive for the infection control practices', 'F5.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'F5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility ensures availability ofstandard materials for cleaning and disinfection of patient care areas', 'F5.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'F5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility ensures standard practices followed for cleaning and disinfection of patient care areas', 'F5.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'F5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility ensures segregation infectious patients', 'F5.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'F5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility Ensures segregation of Bio Medical Waste as per guidelines', 'F6.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'F6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility ensures management of sharps as per guidelines', 'F6.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'F6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility ensures transportation and disposal of waste as per guidelines', 'F6.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'F6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has a quality team in place', 'G1.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility has established internal quality assurance program at relevant departments', 'G3.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G3' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility has established external assurance programs at relevant departments', 'G3.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G3' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility has established system for use of check lists in different departments and services', 'G3.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G3' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Departmental standard operating procedures are available', 'G4.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Standard Operating Procedures adequately describes process and procedures', 'G4.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Staff is trained and aware of the standard procedures written in SOPs', 'G4.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Work instructions are displayed at Point of use', 'G4.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility maps its critical processes', 'G5.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility identifies non value adding activities / waste / redundant activities', 'G5.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility takes corrective action to improve the processes', 'G5.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility conducts periodic internal assessment', 'G6.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility conducts the periodic prescription/ medical/death audits', 'G6.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility ensures non compliances are enumerated and recorded adequately', 'G6.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Action plan is made on the gaps found in the assessment / audit process', 'G6.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Corrective and preventive actions are taken to address issues, observed in the assessment & audit', 'G6.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility has de defined quality objectives to achieve mission and quality policy', 'G7.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G7' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Mission, Values, Quality policy and objectives are effectively communicated to staff and users of services', 'G7.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G7' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility periodically reviews the progress of strategic plan towards mission, policy and objectives', 'G7.7', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G7' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility uses method for quality improvement in services', 'G8.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G8' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility uses tools for quality improvement in services', 'G8.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G8' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Periodic assessment for Medication and Patient care safety risks is done as per defined criteria.', 'G10.6', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G10' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility measures productivity Indicators on monthly basis', 'H1.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'H1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The Facility measures equity indicators periodically', 'H1.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'H1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility measures efficiency Indicators on monthly basis', 'H2.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'H2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility measures Clinical Care & Safety Indicators on monthly basis', 'H3.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'H3' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility measures Service Quality Indicators on monthly basis', 'H4.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'H4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides Skin & VD Services', 'A1.8', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides Dental Treatment Services', 'A1.10', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides AYUSH Services', 'A1.11', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides Physiotherapy Services', 'A1.12', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides services for Super specialties, as mandated', 'A1.15', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides Newborn healthServices', 'A2.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides Adolescent health Services', 'A2.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides services under National Vector Borne Disease Control Programme as per guidelines', 'A4.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides services under Revised National TB Control Programme as per guidelines', 'A4.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides services under National Leprosy Eradication Programme as per guidelines', 'A4.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides services under National AIDS Control Programme as per guidelines', 'A4.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides services under National Programme for prevention and control of Blindness as per guidelines', 'A4.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides services under Mental Health Programmeas per guidelines', 'A4.6', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides services under National Programme for the health care of the elderly as per guidelines', 'A4.7', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides services under National Programme for Prevention and control of Cancer, Diabetes, Cardiovascular diseases & Stroke (NPCDCS)as per guidelines', 'A4.8', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provide services under National health Programme for deafness', 'A4.10', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides services as per State specific health programmes', 'A4.11', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has established citizen charter, which is followed at all levels', 'B1.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('User charges are displayed and communicated to patients effectively', 'B1.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility ensures timely reimbursement of financial entitlements and reimbursement to the patients', 'B5.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has a established procedure for OPD consultation', 'E1.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is an established procedure for Registration and follow up of pregnant women.', 'E17.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E17' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is an established procedure for History taking, Physical examination, and counselling for each antenatal visit.', 'E17.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E17' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility ensures availability of diagnostic and drugs during antenatal care of pregnant women', 'E17.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E17' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is an established procedure for identification of High risk pregnancy and appropriate treatment/referral as per scope of services.', 'E17.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E17' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is an established procedure for identification and management of moderate and severe anaemia', 'E17.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E17' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Counselling of pregnant women is done as per standard protocol and gestational age', 'E17.6', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E17' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides immunization services as per guidelines', 'E20.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E20' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Triage, Assessment & Management of newborns having emergency signs are done as per guidelines', 'E20.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E20' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Management of children presentingwith fever, cough/ breathlessness is done as per guidelines', 'E20.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E20' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Management of children with severeAcute Malnutrition is done as perguidelines', 'E20.6', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E20' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Management of children presentingdiarrhoea is done perguidelines', 'E20.7', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E20' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility provides Promotive ARSH Services', 'E22.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E22' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility provides Preventive ARSH Services', 'E22.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E22' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility Provides Curative ARSH Services', 'E22.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E22' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility Provides Referral Services for ARSH', 'E22.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E22' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility provides service under National Vector Borne Disease Control Program as per guidelines', 'E23.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E23' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility provides service under Revised National TB Control Program as per guidelines', 'E23.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E23' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility provides service under National Leprosy Eradication Program as per guidelines', 'E23.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E23' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility provides service under National AIDS Control program as per guidelines', 'E23.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E23' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility provides service under Mental Health Programas per guidelines', 'E23.6', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E23' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility provides service under National programme for the health care of the elderly as per guidelines', 'E23.7', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E23' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility provides service under National Programme for Prevention and Control of cancer, diabetes, cardiovascular diseases & stroke (NPCDCS)as per guidelines', 'E23.8', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E23' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility provide service for Integrated disease surveillance program', 'E23.9', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E23' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility provide services under Nationalprogram for prevention and control ofdeafness', 'E23.10', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E23' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Patient Satisfaction surveys are conducted at periodic intervals', 'G2.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides Reproductive healthServices', 'A2.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is no discrimination on basis of social and economic status of the patients', 'B2.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility staff adheres to standard procedures for management of second stage of labour.', 'E18.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E18' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility staff adheres to standard procedure for active management of third stage of labour', 'E18.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E18' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility staff adheres to standard procedures for routine care of new-born immediately after birth', 'E18.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E18' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is an established procedure for assisted and C-section deliveries per scope of services.', 'E18.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E18' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility staff adheres to standard protocols for identification and management of Pre Eclampsia / Eclampsia', 'E18.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E18' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility staff adheres to standard protocols for identification and management of PPH.', 'E18.6', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E18' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility staff adheres to standard protocols for Management of HIV in Pregnant Woman & Newborn', 'E18.7', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E18' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility staff adheres to standard protocol for identification and management of preterm delivery.', 'E18.8', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E18' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Staff identifies and manages infection in pregnant woman', 'E18.9', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E18' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility ensures Physical and emotional support to the pregnant women means of birth companion of her choice', 'E18.11', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E18' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility staff adheres to protocol for assessment of condition of mother and baby and providing adequate postpartum care', 'E19.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E19' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility staff adheres to protocol for counselling on danger signs, post-partum family planning and exclusive breast feeding', 'E19.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E19' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility staff adheres to protocol forensuring care of newborns with small size at birth', 'E19.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E19' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has established procedures for stabilization/treatment/referral of post natal complications', 'E19.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E19' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility analyses the patient feed back, and root-cause analysis', 'G2.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility prepares the action plans for the areas, contributing to low satisfaction of patients', 'G2.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides Blood bank & transfusion services', 'A1.18', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has provision of nutritional assessment of the patients', 'D6.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides diets according to nutritional requirements of the patients', 'D6.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Hospital has standard procedures for preparation, handling, storage and distribution of diets, as per requirement of patients', 'D6.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has established procedures for Pre-anaesthetic Check up and maintenance of records', 'E14.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E14' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility ensure adequate stayof mother and new born in a safe environoment as per standard protocols', 'E19.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E19' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is established procedure for discharge and follow up of mother and newborn.', 'E19.6', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E19' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Management of Low birth weightnewborns is done as perguidelines', 'E20.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E20' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility measures hospital associated infection rates', 'F1.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'F1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provided services as per Rashtriya bal swasthya Karykram', 'A4.12', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Management of children with severeAcute Malnutrition is done as perguidelines', 'E20.8', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E20' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Management of children presentingdiarrhoea is done perguidelines', 'E20.9', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E20' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has explicit clinical criteria for providing intubation & extubation, and care of patients on ventilation and subsequently on its removal', 'E10.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E10' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Management of children with Jaundice is done as perguidelines', 'E20.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E20' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility ensures air quality of high risk area', 'F5.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'F5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides dietary services', 'A5.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility has established procedures for monitoring during anaesthesia', 'E14.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E14' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility has established procedures for Post Anaesthesia care', 'E14.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E14' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility has established procedures for Preoperative care', 'E15.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E15' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility has established procedures for Surgical Safety', 'E15.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E15' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility has established procedures for Post operative care', 'E15.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E15' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides Intensive care Services', 'A1.17', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Family planning counselling services provided as per guidelines', 'E21.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E21' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility provides spacing method of family planning as per guideline', 'E21.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E21' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility provides limiting method of family planning as per guideline', 'E21.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E21' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility provide counselling services for abortion as per guideline', 'E21.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E21' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility provide abortion services for 1st trimester as per guideline', 'E21.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E21' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility provide abortion services for 2nd trimester as per guideline', 'E21.6', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E21' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has established procedure for shifting the patient to step-down/wardbased on explicit assessment criteria', 'E10.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E10' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has defined and established procedure for intensive care', 'E10.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E10' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility ensure implementation of health insurance schemes as per National /state scheme', 'B5.6', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Blood bank has defined and implemented donor selection criteria', 'E13.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E13' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is established procedure for the collection of blood', 'E13.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E13' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is established procedure for the testing of blood', 'E13.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E13' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is established procedure for preparation of blood component', 'E13.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E13' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is establish procedure for labelling and identification of blood and its product', 'E13.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E13' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is established procedure for storage of blood', 'E13.6', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E13' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is established the compatibility testing', 'E13.7', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E13' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has a system of periodic training of staff and conducts mock drills regularly for fire and other disaster situation', 'C3.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C3' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There are establishedprocedures for testing Activities', 'E12.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E12' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Periodic assessment for Physical and Electrical risks is done as per defined criteria', 'G10.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G10' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides pharmacy services', 'A5.6', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has establish procedure for procurement of drugs', 'D2.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides mortuary services', 'A5.8', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Religious and cultural preferences of patients and attendants are taken into consideration while delivering services', 'B2.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has standard procedures for conducting post-mortem, its recording and meeting its obligation under the law', 'E16.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'E16' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility Provides services under Integrated Disease Surveillance Programme as per Guidelines', 'A4.9', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides laundry services', 'A5.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility provides housekeeping services', 'A5.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility ensures maintenance services', 'A5.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A5' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is process for consulting community/ or their representatives when planning or revising scope of services of the facility', 'A6.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'A6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is affirmative actions to ensure that vulnerable sections can access services', 'B2.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Ethical norms and code of conduct for medical and paramedical staff have been established.', 'B6.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The Facility staff is aware of code of conduct established', 'B6.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The Facility has an established procedure for entertaining representatives of drug companies and suppliers', 'B6.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The Facility has an established procedure for medical examination and treatment of individual under judicial or police detention as per prevalent law andgovernment directions', 'B6.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is an established procedure for sharing of hospital/patient data with individuals and external agencies including non governmental organization', 'B6.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is an established procedure for obtaining informed consent from the patients in case facility is participating in any clinical or public health research', 'B6.8', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is an established procedure to issue of medical certificatesand other certificates', 'B6.9', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is an established procedure to ensure medical services during strikes or any other mass protest leading to dysfunctional medical services', 'B6.10', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('An updated copy of code of ethics under Indian Medical council act is available with the facility', 'B6.11', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'B6' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility ensures safety of lifts and lifts have required certificate from the designated bodies/ board', 'C2.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C2' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Criteria for performance evaluation clinical and Para clinical staff are defined', 'C7.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C7' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Performance evaluation of clinical and para clinical staff is done on predefined criteria at least once in a year', 'C7.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C7' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Criteria for performance evaluation of support and administrative staff are defined', 'C7.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C7' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Performance evaluation of support and administration staff is done on predefined criteria at least once in a year', 'C7.6', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C7' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Competence assessment and performance assessment includes contractual, empanelled, and outsourced staff', 'C7.7', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C7' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Training needs are identified based on competence assessment and performance evaluation and facility prepares the training plan', 'C7.8', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C7' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Feedback is provided to the staff on their competence assessment and performance evaluation', 'C7.11', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'C7' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Hospital maintains the open area and landscaping of them', 'D4.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D4' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has established procedures for management of activities of Rogi Kalyan Samitis', 'D8.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D8' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility has established procedures for community based monitoring of its services', 'D8.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D8' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility ensures the proper utilization of fund provided to it', 'D9.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D9' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility ensures proper planning and requisition of resources based on its need', 'D9.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D9' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Updated copies of relevant laws, regulations and government orders are available at the facility', 'D10.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D10' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('There is a system of periodic review of quality of out sourced services', 'D12.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'D12' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility has functional infection control committee', 'F1.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'F1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility reviews quality of its services at periodic intervals', 'G1.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G1' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility has defined mission statement', 'G7.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G7' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility has defined core values of the organization', 'G7.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G7' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility has defined Quality policy, which is in congruency with the mission of facility', 'G7.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G7' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Facility prepares strategic plan to achieve mission, quality policy and objectives', 'G7.6', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G7' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Risk Management framework has been defined including context, scope, objectives and criteria', 'G9.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G9' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Risk Management framework defines the responsibilities for identifying and managing risk at each level of functions', 'G9.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G9' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Risk Management Framework includes process of reporting incidents and potential risk to all stakeholders', 'G9.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G9' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('A compressive list of current and potential risk including potential strategic, regulatory, operational,financial, environmental risks has been prepared', 'G9.4', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G9' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Modality for staff training on risk management is defined', 'G9.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G9' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Risk Management Framework is reviewed periodically', 'G9.6', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G9' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Risk management plan has been prepared and approved by the designated authority and there is a system of its updating at least once in a year', 'G10.1', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G10' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Risk Management Plan has been effectively communicated to all the staff, and as well as relevant external stakeholders', 'G10.2', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G10' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Risk assessment criteria and checklist for assessment have been defined and communicated to relevant stakeholders', 'G10.3', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G10' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Periodic assessment for potential disasters includingre is done as per de defined criteria', 'G10.5', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G10' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Periodic assessment for potential risk regarding safety and security of staff including violence against service providers is done as per defined criteria', 'G10.7', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G10' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Risks identified are analyzed evaluated and rated for severity', 'G10.8', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G10' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Identifed risks are treated based on severity and resources available', 'G10.9', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G10' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('A risk register is maintained and updated regularly to risk records identify ed risks, there severity and action to be taken', 'G10.10', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+join state on a2.state_id = state.id
+where standard.reference = 'G10' and a2.name = 'District Hospital (MP)')) on conflict do nothing;
 
-
-
-insert into measurable_element (name, reference, standard_id) values ('The facility provides General Medicine services', 'A1.1', (select max(id) from standard where reference = 'A1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides General Surgery services', 'A1.2', (select max(id) from standard where reference = 'A1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides Obstetrics & Gynaecology Services', 'A1.3', (select max(id) from standard where reference = 'A1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides paediateric services', 'A1.4', (select max(id) from standard where reference = 'A1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides Ophthalmology Services', 'A1.5', (select max(id) from standard where reference = 'A1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides ENT Services', 'A1.6', (select max(id) from standard where reference = 'A1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides Orthopaedics Services', 'A1.7', (select max(id) from standard where reference = 'A1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides Psychiatry Services', 'A1.9', (select max(id) from standard where reference = 'A1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides services for OPD procedures', 'A1.13', (select max(id) from standard where reference = 'A1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Services are available for the time period as mandated', 'A1.14', (select max(id) from standard where reference = 'A1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides Accident & Emergency Services', 'A1.16', (select max(id) from standard where reference = 'A1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides Maternal health Services', 'A2.2', (select max(id) from standard where reference = 'A2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides Child health Services', 'A2.4', (select max(id) from standard where reference = 'A2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides Radiology Services', 'A3.1', (select max(id) from standard where reference = 'A3')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility Provides Laboratory Services', 'A3.2', (select max(id) from standard where reference = 'A3')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides other diagnostic services, as mandated', 'A3.3', (select max(id) from standard where reference = 'A3')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides security services', 'A5.3', (select max(id) from standard where reference = 'A5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has services of medical record department', 'A5.7', (select max(id) from standard where reference = 'A5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides curatives & preventive services for the health problems and diseases, prevalent locally.', 'A6.1', (select max(id) from standard where reference = 'A6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has uniform and user-friendly signage system', 'B1.1', (select max(id) from standard where reference = 'B1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility displays the services and entitlements available in its departments', 'B1.2', (select max(id) from standard where reference = 'B1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Patients & visitors are sensitised and educated through appropriate IEC / BCC approaches', 'B1.5', (select max(id) from standard where reference = 'B1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Information is available in local language and easy to understand', 'B1.6', (select max(id) from standard where reference = 'B1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides information to patients and visitor through an exclusive set-up.', 'B1.7', (select max(id) from standard where reference = 'B1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility ensures access to clinical records of patients to entitled personnel', 'B1.8', (select max(id) from standard where reference = 'B1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Services are provided in manner that are sensitive to gender', 'B2.1', (select max(id) from standard where reference = 'B2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Access to facility is provided without any physical barrier & and friendly to people with disabilities', 'B2.3', (select max(id) from standard where reference = 'B2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Adequate visual privacy is provided at every point of care', 'B3.1', (select max(id) from standard where reference = 'B3')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Confidentiality of patients records and clinical information is maintained', 'B3.2', (select max(id) from standard where reference = 'B3')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility ensures the behaviours of staff is dignified and respectful, while delivering the services', 'B3.3', (select max(id) from standard where reference = 'B3')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility ensures privacy and confidentiality to every patient, especially of those conditions having social stigma, and also safeguards vulnerable groups', 'B3.4', (select max(id) from standard where reference = 'B3')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is established procedures for taking informed consent before treatment and procedures', 'B4.1', (select max(id) from standard where reference = 'B4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Patient is informed about his/her rightsand responsibilities', 'B4.2', (select max(id) from standard where reference = 'B4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Staff are aware of Patients rights responsibilities', 'B4.3', (select max(id) from standard where reference = 'B4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Information about the treatment is shared with patients or attendants, regularly', 'B4.4', (select max(id) from standard where reference = 'B4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has defined and established grievance redressal system in place', 'B4.5', (select max(id) from standard where reference = 'B4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides cashless services to pregnant women, mothers and neonates as per prevalent government schemes', 'B5.1', (select max(id) from standard where reference = 'B5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility ensures that drugs prescribed are available at Pharmacy and wards', 'B5.2', (select max(id) from standard where reference = 'B5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('It is ensured that facilities for the prescribed investigations are available at the facility', 'B5.3', (select max(id) from standard where reference = 'B5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provide free of cost treatment to Below poverty line patients without administrative hassles', 'B5.4', (select max(id) from standard where reference = 'B5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is an established procedure for ‘end-of-life’ care', 'B6.6', (select max(id) from standard where reference = 'B6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is an established procedure for patients who wish to leave hospital against medical advice or refuse to receive specific c treatment', 'B6.7', (select max(id) from standard where reference = 'B6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Departments have adequate space as per patient or work load', 'C1.1', (select max(id) from standard where reference = 'C1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Patient amenities are provide as per patient load', 'C1.2', (select max(id) from standard where reference = 'C1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Departments have layout and demarcated areas as per functions', 'C1.3', (select max(id) from standard where reference = 'C1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has adequate circulation area and open spaces according to need and local law', 'C1.4', (select max(id) from standard where reference = 'C1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has infrastructure for intramural and extramural communication', 'C1.5', (select max(id) from standard where reference = 'C1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Service counters are available as per patient load', 'C1.6', (select max(id) from standard where reference = 'C1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility and departments are planned to ensure structure follows the function/processes (Structure commensurate with the function of the hospital)', 'C1.7', (select max(id) from standard where reference = 'C1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility ensures the seismic safety of the infrastructure', 'C2.1', (select max(id) from standard where reference = 'C2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility ensures safety of electrical establishment', 'C2.3', (select max(id) from standard where reference = 'C2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Physical condition of buildings are safe for providing patient care', 'C2.4', (select max(id) from standard where reference = 'C2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has plan for prevention of fire', 'C3.1', (select max(id) from standard where reference = 'C3')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has adequate fire fighting Equipment', 'C3.2', (select max(id) from standard where reference = 'C3')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has a system of periodic training of staff and conducts mock drills regularly for fire and other disaster situation', 'C3.3', (select max(id) from standard where reference = 'C3')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has adequate specialist doctors as per service provision', 'C4.1', (select max(id) from standard where reference = 'C4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has adequate general duty doctors as per service provision and work load', 'C4.2', (select max(id) from standard where reference = 'C4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has adequate nursing staff as per service provision and work load', 'C4.3', (select max(id) from standard where reference = 'C4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has adequate technicians/paramedics as per requirement', 'C4.4', (select max(id) from standard where reference = 'C4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has adequate support / general staff', 'C4.5', (select max(id) from standard where reference = 'C4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The staff has been provided required training / skill sets', 'C4.6', (select max(id) from standard where reference = 'C4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The Staff is skilled as per job description', 'C4.7', (select max(id) from standard where reference = 'C4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The departments have availability of adequate drugs at point of use', 'C5.1', (select max(id) from standard where reference = 'C5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The departments have adequate consumables at point of use', 'C5.2', (select max(id) from standard where reference = 'C5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Emergency drug trays are maintained at every point of care, where ever it may be needed', 'C5.3', (select max(id) from standard where reference = 'C5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Availability of equipment & instruments for examination & monitoring of patients', 'C6.1', (select max(id) from standard where reference = 'C6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Availability of equipment & instruments for treatment procedures, being undertaken in the facility', 'C6.2', (select max(id) from standard where reference = 'C6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Availability of equipment & instruments for diagnostic procedures being undertaken in the facility', 'C6.3', (select max(id) from standard where reference = 'C6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Availability of equipment and instruments for resuscitation of patients and for providing intensive and critical care to patients', 'C6.4', (select max(id) from standard where reference = 'C6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Availability of Equipment for Storage', 'C6.5', (select max(id) from standard where reference = 'C6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Availability of functional equipment and instruments for support services', 'C6.6', (select max(id) from standard where reference = 'C6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Departments have patient furniture and fixtures as per load and service provision', 'C6.7', (select max(id) from standard where reference = 'C6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Criteria for Competence assessment are definedfor clinical and Para clinical staff', 'C7.1', (select max(id) from standard where reference = 'C7')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Competence assessment of Clinical and Para clinical staff is done on predefinedcriteria at least once in a year', 'C7.2', (select max(id) from standard where reference = 'C7')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The Staff is provided training as per defined core competencies and training plan', 'C7.9', (select max(id) from standard where reference = 'C7')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is established procedure for utilization of skills gained thought trainings by on -job supportive supervision', 'C7.10', (select max(id) from standard where reference = 'C7')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has established system for maintenance of critical Equipment', 'D1.1', (select max(id) from standard where reference = 'D1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has established procedure for internal and external calibration of measuring Equipment', 'D1.2', (select max(id) from standard where reference = 'D1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Operating and maintenance instructions are available with the users of equipment', 'D1.3', (select max(id) from standard where reference = 'D1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is established procedure for forecasting and indenting drugs and consumables', 'D2.1', (select max(id) from standard where reference = 'D2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility ensures proper storage of drugs and consumables', 'D2.3', (select max(id) from standard where reference = 'D2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility ensures management of expiry and near expiry drugs', 'D2.4', (select max(id) from standard where reference = 'D2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has established procedure for inventory management techniques', 'D2.5', (select max(id) from standard where reference = 'D2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is a procedure for periodically replenishing the drugs in patient care areas', 'D2.6', (select max(id) from standard where reference = 'D2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is process for storage of vaccines and other drugs, requiring controlled temperature', 'D2.7', (select max(id) from standard where reference = 'D2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is a procedure for secure storage of narcotic and psychotropic drugs', 'D2.8', (select max(id) from standard where reference = 'D2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides adequate illumination level at patient care areas', 'D3.1', (select max(id) from standard where reference = 'D3')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has provision of restriction of visitors in patient areas', 'D3.2', (select max(id) from standard where reference = 'D3')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility ensures safe and comfortable environment for patients and service providers', 'D3.3', (select max(id) from standard where reference = 'D3')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has security system in place at patient care areas', 'D3.4', (select max(id) from standard where reference = 'D3')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has established measure for safety and security of female staff', 'D3.5', (select max(id) from standard where reference = 'D3')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Exterior of thefacility building is maintained appropriately', 'D4.1', (select max(id) from standard where reference = 'D4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Patient care areas are clean and hygienic', 'D4.2', (select max(id) from standard where reference = 'D4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Hospital infrastructure is adequately maintained', 'D4.3', (select max(id) from standard where reference = 'D4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has policy of removal of condemned junk material', 'D4.5', (select max(id) from standard where reference = 'D4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has established procedures for pest, rodent and animal control', 'D4.6', (select max(id) from standard where reference = 'D4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has adequate arrangement storage and supply for portable water in all functional areas', 'D5.1', (select max(id) from standard where reference = 'D5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility ensures adequate power backup in all patient care areas as per load', 'D5.2', (select max(id) from standard where reference = 'D5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Critical areas of the facility ensures availability of oxygen, medical gases and vacuum supply', 'D5.3', (select max(id) from standard where reference = 'D5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has adequate sets of linen', 'D7.1', (select max(id) from standard where reference = 'D7')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has established procedures for changing of linen in patient care areas', 'D7.2', (select max(id) from standard where reference = 'D7')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has standard procedures for handling , collection, transportation and washingof linen', 'D7.3', (select max(id) from standard where reference = 'D7')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has requisite licences and certificates for operation of hospital and different activities', 'D10.1', (select max(id) from standard where reference = 'D10')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility ensure relevant processes are in compliance with statutory requirement', 'D10.3', (select max(id) from standard where reference = 'D10')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has established job description as per govt guidelines', 'D11.1', (select max(id) from standard where reference = 'D11')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has a established procedure for duty roster and deputation to different departments', 'D11.2', (select max(id) from standard where reference = 'D11')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility ensures the adherence to dress code as mandated by its administration / the health department', 'D11.3', (select max(id) from standard where reference = 'D11')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is established system for contract management for out sourced services', 'D12.1', (select max(id) from standard where reference = 'D12')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has established procedure for registration of patients', 'E1.1', (select max(id) from standard where reference = 'E1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is established procedure for admission of patients', 'E1.3', (select max(id) from standard where reference = 'E1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is established procedure for managing patients, in case beds are not available at the facility', 'E1.4', (select max(id) from standard where reference = 'E1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is established procedure for initial assessment of patients', 'E2.1', (select max(id) from standard where reference = 'E2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is established procedure for follow-up/ reassessment of Patients', 'E2.2', (select max(id) from standard where reference = 'E2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility has established procedure for continuity of care during interdepartmental transfer', 'E3.1', (select max(id) from standard where reference = 'E3')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility provides appropriate referral linkages to the patients/Servicesfor transfer to other/higher facilities to assure their continuity of care.', 'E3.2', (select max(id) from standard where reference = 'E3')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('A person is identified for care during all steps of care', 'E3.3', (select max(id) from standard where reference = 'E3')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Procedure for identification of patients is established at the facility', 'E4.1', (select max(id) from standard where reference = 'E4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Procedure for ensuring timely and accurate nursing care as per treatment plan is established at the facility', 'E4.2', (select max(id) from standard where reference = 'E4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is established procedure of patient hand over, whenever staff duty change happens', 'E4.3', (select max(id) from standard where reference = 'E4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Nursing records are maintained', 'E4.4', (select max(id) from standard where reference = 'E4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is procedure for periodic monitoring of patients', 'E4.5', (select max(id) from standard where reference = 'E4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility identifies vulnerable patients and ensure their safe care', 'E5.1', (select max(id) from standard where reference = 'E5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility identifies high riskpatients and ensure their care, as per their need', 'E5.2', (select max(id) from standard where reference = 'E5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility ensured that drugs are prescribed in generic name only', 'E6.1', (select max(id) from standard where reference = 'E6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is procedure of rational use of drugs', 'E6.2', (select max(id) from standard where reference = 'E6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is process for identifying and cautious administration of high alert drugs', 'E7.1', (select max(id) from standard where reference = 'E7')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Medication orders are written legibly and adequately', 'E7.2', (select max(id) from standard where reference = 'E7')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is a procedure to check drug before administration/ dispensing', 'E7.3', (select max(id) from standard where reference = 'E7')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is a system to ensure right medicine is given to right patient', 'E7.4', (select max(id) from standard where reference = 'E7')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Patient is counselled for self drug administration', 'E7.5', (select max(id) from standard where reference = 'E7')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('All the assessments, re-assessment and investigations are recorded and updated', 'E8.1', (select max(id) from standard where reference = 'E8')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('All treatment plan prescription/orders are recorded in the patient records.', 'E8.2', (select max(id) from standard where reference = 'E8')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Care provided to each patient is recorded in the patient records', 'E8.3', (select max(id) from standard where reference = 'E8')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Procedures performed are written on patients records', 'E8.4', (select max(id) from standard where reference = 'E8')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Adequate form and formats are available at point of use', 'E8.5', (select max(id) from standard where reference = 'E8')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Register/records are maintained as per guidelines', 'E8.6', (select max(id) from standard where reference = 'E8')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility ensures safe and adequate storage and retrievalof medical records', 'E8.7', (select max(id) from standard where reference = 'E8')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Discharge is done after assessing patient readiness', 'E9.1', (select max(id) from standard where reference = 'E9')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Case summary and follow-up instructions are provided at the discharge', 'E9.2', (select max(id) from standard where reference = 'E9')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Counselling services are provided as during discharges wherever required', 'E9.3', (select max(id) from standard where reference = 'E9')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has established procedure for patients leaving the facility against medical advice, absconding, etc', 'E9.4', (select max(id) from standard where reference = 'E9')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is procedure for Receiving and triage of patients', 'E11.1', (select max(id) from standard where reference = 'E11')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Emergency protocols are defined and implemented', 'E11.2', (select max(id) from standard where reference = 'E11')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has disaster management plan in place', 'E11.3', (select max(id) from standard where reference = 'E11')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility ensures adequate and timely availability of ambulances services and mobilisation of resources, as per requirement', 'E11.4', (select max(id) from standard where reference = 'E11')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is procedure for handling medico legal cases', 'E11.5', (select max(id) from standard where reference = 'E11')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There are establishedprocedures for Pre-testing Activities', 'E12.1', (select max(id) from standard where reference = 'E12')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There are establishedprocedures for Post-testing Activities', 'E12.3', (select max(id) from standard where reference = 'E12')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is established procedure for issuing blood', 'E13.8', (select max(id) from standard where reference = 'E13')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is established procedure for transfusion of blood', 'E13.9', (select max(id) from standard where reference = 'E13')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is a established procedure for monitoring and reporting Transfusion complication', 'E13.10', (select max(id) from standard where reference = 'E13')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility has established procedures OT Scheduling', 'E15.1', (select max(id) from standard where reference = 'E15')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Death of admitted patient is adequately recorded and communicated', 'E16.1', (select max(id) from standard where reference = 'E16')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has standard procedures for handling the death in the hospital', 'E16.2', (select max(id) from standard where reference = 'E16')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has standard operating procedure for end of life support', 'E16.3', (select max(id) from standard where reference = 'E16')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facilityhas provision for Passiveand active culture surveillance of critical & high risk areas', 'F1.2', (select max(id) from standard where reference = 'F1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is Provision of Periodic Medical Checkups and immunization of staff', 'F1.4', (select max(id) from standard where reference = 'F1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility has established procedures for regular monitoring of infection control practices', 'F1.5', (select max(id) from standard where reference = 'F1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility has defined and established antibiotic policy', 'F1.6', (select max(id) from standard where reference = 'F1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Hand washing facilities are provided at point of use', 'F2.1', (select max(id) from standard where reference = 'F2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Staff is trained and adhere to standard hand washing practices', 'F2.2', (select max(id) from standard where reference = 'F2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility ensures standard practices and materials for antisepsis', 'F2.3', (select max(id) from standard where reference = 'F2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility ensures adequate personal protection equipments as per requirements', 'F3.1', (select max(id) from standard where reference = 'F3')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Staff is adhere to standard personal protection practices', 'F3.2', (select max(id) from standard where reference = 'F3')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility ensures standard practices and materials for decontamination and clean ing of instruments andprocedures areas', 'F4.1', (select max(id) from standard where reference = 'F4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility ensures standard practices and materials for disinfection and sterilization of instruments and equipments', 'F4.2', (select max(id) from standard where reference = 'F4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Layout of the department is conducive for the infection control practices', 'F5.1', (select max(id) from standard where reference = 'F5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility ensures availability ofstandard materials for cleaning and disinfection of patient care areas', 'F5.2', (select max(id) from standard where reference = 'F5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility ensures standard practices followed for cleaning and disinfection of patient care areas', 'F5.3', (select max(id) from standard where reference = 'F5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility ensures segregation infectious patients', 'F5.4', (select max(id) from standard where reference = 'F5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility Ensures segregation of Bio Medical Waste as per guidelines', 'F6.1', (select max(id) from standard where reference = 'F6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility ensures management of sharps as per guidelines', 'F6.2', (select max(id) from standard where reference = 'F6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility ensures transportation and disposal of waste as per guidelines', 'F6.3', (select max(id) from standard where reference = 'F6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has a quality team in place', 'G1.1', (select max(id) from standard where reference = 'G1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility has established internal quality assurance program at relevant departments', 'G3.1', (select max(id) from standard where reference = 'G3')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility has established external assurance programs at relevant departments', 'G3.2', (select max(id) from standard where reference = 'G3')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility has established system for use of check lists in different departments and services', 'G3.3', (select max(id) from standard where reference = 'G3')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Departmental standard operating procedures are available', 'G4.1', (select max(id) from standard where reference = 'G4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Standard Operating Procedures adequately describes process and procedures', 'G4.2', (select max(id) from standard where reference = 'G4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Staff is trained and aware of the standard procedures written in SOPs', 'G4.3', (select max(id) from standard where reference = 'G4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Work instructions are displayed at Point of use', 'G4.4', (select max(id) from standard where reference = 'G4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility maps its critical processes', 'G5.1', (select max(id) from standard where reference = 'G5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility identifies non value adding activities / waste / redundant activities', 'G5.2', (select max(id) from standard where reference = 'G5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility takes corrective action to improve the processes', 'G5.3', (select max(id) from standard where reference = 'G5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility conducts periodic internal assessment', 'G6.1', (select max(id) from standard where reference = 'G6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility conducts the periodic prescription/ medical/death audits', 'G6.2', (select max(id) from standard where reference = 'G6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility ensures non compliances are enumerated and recorded adequately', 'G6.3', (select max(id) from standard where reference = 'G6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Action plan is made on the gaps found in the assessment / audit process', 'G6.4', (select max(id) from standard where reference = 'G6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Corrective and preventive actions are taken to address issues, observed in the assessment & audit', 'G6.5', (select max(id) from standard where reference = 'G6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility has de defined quality objectives to achieve mission and quality policy', 'G7.4', (select max(id) from standard where reference = 'G7')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Mission, Values, Quality policy and objectives are effectively communicated to staff and users of services', 'G7.5', (select max(id) from standard where reference = 'G7')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility periodically reviews the progress of strategic plan towards mission, policy and objectives', 'G7.7', (select max(id) from standard where reference = 'G7')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility uses method for quality improvement in services', 'G8.1', (select max(id) from standard where reference = 'G8')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility uses tools for quality improvement in services', 'G8.2', (select max(id) from standard where reference = 'G8')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Periodic assessment for Medication and Patient care safety risks is done as per defined criteria.', 'G10.6', (select max(id) from standard where reference = 'G10')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility measures productivity Indicators on monthly basis', 'H1.1', (select max(id) from standard where reference = 'H1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The Facility measures equity indicators periodically', 'H1.2', (select max(id) from standard where reference = 'H1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility measures efficiency Indicators on monthly basis', 'H2.1', (select max(id) from standard where reference = 'H2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility measures Clinical Care & Safety Indicators on monthly basis', 'H3.1', (select max(id) from standard where reference = 'H3')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility measures Service Quality Indicators on monthly basis', 'H4.1', (select max(id) from standard where reference = 'H4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides Skin & VD Services', 'A1.8', (select max(id) from standard where reference = 'A1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides Dental Treatment Services', 'A1.10', (select max(id) from standard where reference = 'A1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides AYUSH Services', 'A1.11', (select max(id) from standard where reference = 'A1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides Physiotherapy Services', 'A1.12', (select max(id) from standard where reference = 'A1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides services for Super specialties, as mandated', 'A1.15', (select max(id) from standard where reference = 'A1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides Newborn healthServices', 'A2.3', (select max(id) from standard where reference = 'A2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides Adolescent health Services', 'A2.5', (select max(id) from standard where reference = 'A2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides services under National Vector Borne Disease Control Programme as per guidelines', 'A4.1', (select max(id) from standard where reference = 'A4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides services under Revised National TB Control Programme as per guidelines', 'A4.2', (select max(id) from standard where reference = 'A4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides services under National Leprosy Eradication Programme as per guidelines', 'A4.3', (select max(id) from standard where reference = 'A4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides services under National AIDS Control Programme as per guidelines', 'A4.4', (select max(id) from standard where reference = 'A4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides services under National Programme for prevention and control of Blindness as per guidelines', 'A4.5', (select max(id) from standard where reference = 'A4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides services under Mental Health Programmeas per guidelines', 'A4.6', (select max(id) from standard where reference = 'A4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides services under National Programme for the health care of the elderly as per guidelines', 'A4.7', (select max(id) from standard where reference = 'A4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides services under National Programme for Prevention and control of Cancer, Diabetes, Cardiovascular diseases & Stroke (NPCDCS)as per guidelines', 'A4.8', (select max(id) from standard where reference = 'A4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provide services under National health Programme for deafness', 'A4.10', (select max(id) from standard where reference = 'A4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides services as per State specific health programmes', 'A4.11', (select max(id) from standard where reference = 'A4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has established citizen charter, which is followed at all levels', 'B1.3', (select max(id) from standard where reference = 'B1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('User charges are displayed and communicated to patients effectively', 'B1.4', (select max(id) from standard where reference = 'B1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility ensures timely reimbursement of financial entitlements and reimbursement to the patients', 'B5.5', (select max(id) from standard where reference = 'B5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has a established procedure for OPD consultation', 'E1.2', (select max(id) from standard where reference = 'E1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is an established procedure for Registration and follow up of pregnant women.', 'E17.1', (select max(id) from standard where reference = 'E17')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is an established procedure for History taking, Physical examination, and counselling for each antenatal visit.', 'E17.2', (select max(id) from standard where reference = 'E17')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility ensures availability of diagnostic and drugs during antenatal care of pregnant women', 'E17.3', (select max(id) from standard where reference = 'E17')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is an established procedure for identification of High risk pregnancy and appropriate treatment/referral as per scope of services.', 'E17.4', (select max(id) from standard where reference = 'E17')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is an established procedure for identification and management of moderate and severe anaemia', 'E17.5', (select max(id) from standard where reference = 'E17')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Counselling of pregnant women is done as per standard protocol and gestational age', 'E17.6', (select max(id) from standard where reference = 'E17')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides immunization services as per guidelines', 'E20.1', (select max(id) from standard where reference = 'E20')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Triage, Assessment & Management of newborns having emergency signs are done as per guidelines', 'E20.2', (select max(id) from standard where reference = 'E20')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Management of children presentingwith fever, cough/ breathlessness is done as per guidelines', 'E20.5', (select max(id) from standard where reference = 'E20')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Management of children with severeAcute Malnutrition is done as perguidelines', 'E20.6', (select max(id) from standard where reference = 'E20')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Management of children presentingdiarrhoea is done perguidelines', 'E20.7', (select max(id) from standard where reference = 'E20')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility provides Promotive ARSH Services', 'E22.1', (select max(id) from standard where reference = 'E22')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility provides Preventive ARSH Services', 'E22.2', (select max(id) from standard where reference = 'E22')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility Provides Curative ARSH Services', 'E22.3', (select max(id) from standard where reference = 'E22')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility Provides Referral Services for ARSH', 'E22.4', (select max(id) from standard where reference = 'E22')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility provides service under National Vector Borne Disease Control Program as per guidelines', 'E23.1', (select max(id) from standard where reference = 'E23')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility provides service under Revised National TB Control Program as per guidelines', 'E23.2', (select max(id) from standard where reference = 'E23')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility provides service under National Leprosy Eradication Program as per guidelines', 'E23.3', (select max(id) from standard where reference = 'E23')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility provides service under National AIDS Control program as per guidelines', 'E23.4', (select max(id) from standard where reference = 'E23')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility provides service under Mental Health Programas per guidelines', 'E23.6', (select max(id) from standard where reference = 'E23')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility provides service under National programme for the health care of the elderly as per guidelines', 'E23.7', (select max(id) from standard where reference = 'E23')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility provides service under National Programme for Prevention and Control of cancer, diabetes, cardiovascular diseases & stroke (NPCDCS)as per guidelines', 'E23.8', (select max(id) from standard where reference = 'E23')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility provide service for Integrated disease surveillance program', 'E23.9', (select max(id) from standard where reference = 'E23')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility provide services under Nationalprogram for prevention and control ofdeafness', 'E23.10', (select max(id) from standard where reference = 'E23')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Patient Satisfaction surveys are conducted at periodic intervals', 'G2.1', (select max(id) from standard where reference = 'G2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides Reproductive healthServices', 'A2.1', (select max(id) from standard where reference = 'A2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is no discrimination on basis of social and economic status of the patients', 'B2.4', (select max(id) from standard where reference = 'B2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility staff adheres to standard procedures for management of second stage of labour.', 'E18.1', (select max(id) from standard where reference = 'E18')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility staff adheres to standard procedure for active management of third stage of labour', 'E18.2', (select max(id) from standard where reference = 'E18')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility staff adheres to standard procedures for routine care of new-born immediately after birth', 'E18.3', (select max(id) from standard where reference = 'E18')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is an established procedure for assisted and C-section deliveries per scope of services.', 'E18.4', (select max(id) from standard where reference = 'E18')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility staff adheres to standard protocols for identification and management of Pre Eclampsia / Eclampsia', 'E18.5', (select max(id) from standard where reference = 'E18')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility staff adheres to standard protocols for identification and management of PPH.', 'E18.6', (select max(id) from standard where reference = 'E18')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility staff adheres to standard protocols for Management of HIV in Pregnant Woman & Newborn', 'E18.7', (select max(id) from standard where reference = 'E18')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility staff adheres to standard protocol for identification and management of preterm delivery.', 'E18.8', (select max(id) from standard where reference = 'E18')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Staff identifies and manages infection in pregnant woman', 'E18.9', (select max(id) from standard where reference = 'E18')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility ensures Physical and emotional support to the pregnant women means of birth companion of her choice', 'E18.11', (select max(id) from standard where reference = 'E18')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility staff adheres to protocol for assessment of condition of mother and baby and providing adequate postpartum care', 'E19.1', (select max(id) from standard where reference = 'E19')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility staff adheres to protocol for counselling on danger signs, post-partum family planning and exclusive breast feeding', 'E19.2', (select max(id) from standard where reference = 'E19')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility staff adheres to protocol forensuring care of newborns with small size at birth', 'E19.3', (select max(id) from standard where reference = 'E19')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has established procedures for stabilization/treatment/referral of post natal complications', 'E19.4', (select max(id) from standard where reference = 'E19')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility analyses the patient feed back, and root-cause analysis', 'G2.2', (select max(id) from standard where reference = 'G2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility prepares the action plans for the areas, contributing to low satisfaction of patients', 'G2.3', (select max(id) from standard where reference = 'G2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides Blood bank & transfusion services', 'A1.18', (select max(id) from standard where reference = 'A1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has provision of nutritional assessment of the patients', 'D6.1', (select max(id) from standard where reference = 'D6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides diets according to nutritional requirements of the patients', 'D6.2', (select max(id) from standard where reference = 'D6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Hospital has standard procedures for preparation, handling, storage and distribution of diets, as per requirement of patients', 'D6.3', (select max(id) from standard where reference = 'D6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has established procedures for Pre-anaesthetic Check up and maintenance of records', 'E14.1', (select max(id) from standard where reference = 'E14')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility ensure adequate stayof mother and new born in a safe environoment as per standard protocols', 'E19.5', (select max(id) from standard where reference = 'E19')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is established procedure for discharge and follow up of mother and newborn.', 'E19.6', (select max(id) from standard where reference = 'E19')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Management of Low birth weightnewborns is done as perguidelines', 'E20.3', (select max(id) from standard where reference = 'E20')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility measures hospital associated infection rates', 'F1.3', (select max(id) from standard where reference = 'F1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provided services as per Rashtriya bal swasthya Karykram', 'A4.12', (select max(id) from standard where reference = 'A4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Management of children with severeAcute Malnutrition is done as perguidelines', 'E20.8', (select max(id) from standard where reference = 'E20')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Management of children presentingdiarrhoea is done perguidelines', 'E20.9', (select max(id) from standard where reference = 'E20')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has explicit clinical criteria for providing intubation & extubation, and care of patients on ventilation and subsequently on its removal', 'E10.3', (select max(id) from standard where reference = 'E10')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Management of children with Jaundice is done as perguidelines', 'E20.4', (select max(id) from standard where reference = 'E20')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility ensures air quality of high risk area', 'F5.5', (select max(id) from standard where reference = 'F5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides dietary services', 'A5.1', (select max(id) from standard where reference = 'A5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility has established procedures for monitoring during anaesthesia', 'E14.2', (select max(id) from standard where reference = 'E14')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility has established procedures for Post Anaesthesia care', 'E14.3', (select max(id) from standard where reference = 'E14')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility has established procedures for Preoperative care', 'E15.2', (select max(id) from standard where reference = 'E15')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility has established procedures for Surgical Safety', 'E15.3', (select max(id) from standard where reference = 'E15')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility has established procedures for Post operative care', 'E15.4', (select max(id) from standard where reference = 'E15')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides Intensive care Services', 'A1.17', (select max(id) from standard where reference = 'A1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Family planning counselling services provided as per guidelines', 'E21.1', (select max(id) from standard where reference = 'E21')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility provides spacing method of family planning as per guideline', 'E21.2', (select max(id) from standard where reference = 'E21')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility provides limiting method of family planning as per guideline', 'E21.3', (select max(id) from standard where reference = 'E21')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility provide counselling services for abortion as per guideline', 'E21.4', (select max(id) from standard where reference = 'E21')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility provide abortion services for 1st trimester as per guideline', 'E21.5', (select max(id) from standard where reference = 'E21')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility provide abortion services for 2nd trimester as per guideline', 'E21.6', (select max(id) from standard where reference = 'E21')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has established procedure for shifting the patient to step-down/wardbased on explicit assessment criteria', 'E10.1', (select max(id) from standard where reference = 'E10')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has defined and established procedure for intensive care', 'E10.2', (select max(id) from standard where reference = 'E10')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility ensure implementation of health insurance schemes as per National /state scheme', 'B5.6', (select max(id) from standard where reference = 'B5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Blood bank has defined and implemented donor selection criteria', 'E13.1', (select max(id) from standard where reference = 'E13')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is established procedure for the collection of blood', 'E13.2', (select max(id) from standard where reference = 'E13')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is established procedure for the testing of blood', 'E13.3', (select max(id) from standard where reference = 'E13')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is established procedure for preparation of blood component', 'E13.4', (select max(id) from standard where reference = 'E13')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is establish procedure for labelling and identification of blood and its product', 'E13.5', (select max(id) from standard where reference = 'E13')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is established procedure for storage of blood', 'E13.6', (select max(id) from standard where reference = 'E13')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is established the compatibility testing', 'E13.7', (select max(id) from standard where reference = 'E13')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has a system of periodic training of staff and conducts mock drills regularly for fire and other disaster situation', 'C3.4', (select max(id) from standard where reference = 'C3')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There are establishedprocedures for testing Activities', 'E12.2', (select max(id) from standard where reference = 'E12')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Periodic assessment for Physical and Electrical risks is done as per defined criteria', 'G10.4', (select max(id) from standard where reference = 'G10')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides pharmacy services', 'A5.6', (select max(id) from standard where reference = 'A5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has establish procedure for procurement of drugs', 'D2.2', (select max(id) from standard where reference = 'D2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides mortuary services', 'A5.8', (select max(id) from standard where reference = 'A5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Religious and cultural preferences of patients and attendants are taken into consideration while delivering services', 'B2.2', (select max(id) from standard where reference = 'B2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has standard procedures for conducting post-mortem, its recording and meeting its obligation under the law', 'E16.4', (select max(id) from standard where reference = 'E16')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility Provides services under Integrated Disease Surveillance Programme as per Guidelines', 'A4.9', (select max(id) from standard where reference = 'A4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides laundry services', 'A5.2', (select max(id) from standard where reference = 'A5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility provides housekeeping services', 'A5.4', (select max(id) from standard where reference = 'A5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility ensures maintenance services', 'A5.5', (select max(id) from standard where reference = 'A5')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is process for consulting community/ or their representatives when planning or revising scope of services of the facility', 'A6.2', (select max(id) from standard where reference = 'A6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is affirmative actions to ensure that vulnerable sections can access services', 'B2.5', (select max(id) from standard where reference = 'B2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Ethical norms and code of conduct for medical and paramedical staff have been established.', 'B6.1', (select max(id) from standard where reference = 'B6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The Facility staff is aware of code of conduct established', 'B6.2', (select max(id) from standard where reference = 'B6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The Facility has an established procedure for entertaining representatives of drug companies and suppliers', 'B6.3', (select max(id) from standard where reference = 'B6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The Facility has an established procedure for medical examination and treatment of individual under judicial or police detention as per prevalent law andgovernment directions', 'B6.4', (select max(id) from standard where reference = 'B6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is an established procedure for sharing of hospital/patient data with individuals and external agencies including non governmental organization', 'B6.5', (select max(id) from standard where reference = 'B6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is an established procedure for obtaining informed consent from the patients in case facility is participating in any clinical or public health research', 'B6.8', (select max(id) from standard where reference = 'B6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is an established procedure to issue of medical certificatesand other certificates', 'B6.9', (select max(id) from standard where reference = 'B6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is an established procedure to ensure medical services during strikes or any other mass protest leading to dysfunctional medical services', 'B6.10', (select max(id) from standard where reference = 'B6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('An updated copy of code of ethics under Indian Medical council act is available with the facility', 'B6.11', (select max(id) from standard where reference = 'B6')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility ensures safety of lifts and lifts have required certificate from the designated bodies/ board', 'C2.2', (select max(id) from standard where reference = 'C2')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Criteria for performance evaluation clinical and Para clinical staff are defined', 'C7.3', (select max(id) from standard where reference = 'C7')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Performance evaluation of clinical and para clinical staff is done on predefined criteria at least once in a year', 'C7.4', (select max(id) from standard where reference = 'C7')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Criteria for performance evaluation of support and administrative staff are defined', 'C7.5', (select max(id) from standard where reference = 'C7')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Performance evaluation of support and administration staff is done on predefined criteria at least once in a year', 'C7.6', (select max(id) from standard where reference = 'C7')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Competence assessment and performance assessment includes contractual, empanelled, and outsourced staff', 'C7.7', (select max(id) from standard where reference = 'C7')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Training needs are identified based on competence assessment and performance evaluation and facility prepares the training plan', 'C7.8', (select max(id) from standard where reference = 'C7')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Feedback is provided to the staff on their competence assessment and performance evaluation', 'C7.11', (select max(id) from standard where reference = 'C7')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Hospital maintains the open area and landscaping of them', 'D4.4', (select max(id) from standard where reference = 'D4')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has established procedures for management of activities of Rogi Kalyan Samitis', 'D8.1', (select max(id) from standard where reference = 'D8')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility has established procedures for community based monitoring of its services', 'D8.2', (select max(id) from standard where reference = 'D8')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility ensures the proper utilization of fund provided to it', 'D9.1', (select max(id) from standard where reference = 'D9')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility ensures proper planning and requisition of resources based on its need', 'D9.2', (select max(id) from standard where reference = 'D9')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Updated copies of relevant laws, regulations and government orders are available at the facility', 'D10.2', (select max(id) from standard where reference = 'D10')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('There is a system of periodic review of quality of out sourced services', 'D12.2', (select max(id) from standard where reference = 'D12')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility has functional infection control committee', 'F1.1', (select max(id) from standard where reference = 'F1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('The facility reviews quality of its services at periodic intervals', 'G1.2', (select max(id) from standard where reference = 'G1')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility has defined mission statement', 'G7.1', (select max(id) from standard where reference = 'G7')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility has defined core values of the organization', 'G7.2', (select max(id) from standard where reference = 'G7')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility has defined Quality policy, which is in congruency with the mission of facility', 'G7.3', (select max(id) from standard where reference = 'G7')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Facility prepares strategic plan to achieve mission, quality policy and objectives', 'G7.6', (select max(id) from standard where reference = 'G7')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Risk Management framework has been defined including context, scope, objectives and criteria', 'G9.1', (select max(id) from standard where reference = 'G9')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Risk Management framework defines the responsibilities for identifying and managing risk at each level of functions', 'G9.2', (select max(id) from standard where reference = 'G9')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Risk Management Framework includes process of reporting incidents and potential risk to all stakeholders', 'G9.3', (select max(id) from standard where reference = 'G9')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('A compressive list of current and potential risk including potential strategic, regulatory, operational,financial, environmental risks has been prepared', 'G9.4', (select max(id) from standard where reference = 'G9')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Modality for staff training on risk management is defined', 'G9.5', (select max(id) from standard where reference = 'G9')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Risk Management Framework is reviewed periodically', 'G9.6', (select max(id) from standard where reference = 'G9')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Risk management plan has been prepared and approved by the designated authority and there is a system of its updating at least once in a year', 'G10.1', (select max(id) from standard where reference = 'G10')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Risk Management Plan has been effectively communicated to all the staff, and as well as relevant external stakeholders', 'G10.2', (select max(id) from standard where reference = 'G10')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Risk assessment criteria and checklist for assessment have been defined and communicated to relevant stakeholders', 'G10.3', (select max(id) from standard where reference = 'G10')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Periodic assessment for potential disasters includingre is done as per de defined criteria', 'G10.5', (select max(id) from standard where reference = 'G10')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Periodic assessment for potential risk regarding safety and security of staff including violence against service providers is done as per defined criteria', 'G10.7', (select max(id) from standard where reference = 'G10')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Risks identified are analyzed evaluated and rated for severity', 'G10.8', (select max(id) from standard where reference = 'G10')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('Identifed risks are treated based on severity and resources available', 'G10.9', (select max(id) from standard where reference = 'G10')) on conflict do nothing;
-insert into measurable_element (name, reference, standard_id) values ('A risk register is maintained and updated regularly to risk records identify ed risks, there severity and action to be taken', 'G10.10', (select max(id) from standard where reference = 'G10')) on conflict do nothing;
 
 
 
@@ -541,14 +3055,14 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Police post', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A5.3'), (select max(id) from checklist where name = 'Emergency'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Medico-legal record services', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A5.7'), (select max(id) from checklist where name = 'Emergency'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of specific procedures for local prevalent emergencies', 'Ask for the specific local health frequent emergencies. See if emergency is ready for it or not.', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A6.1'), (select max(id) from checklist where name = 'Emergency'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability departmental signage''s .', 'Emergency department board is prominently displayed with facility of illumination in night.', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'Emergency'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Directional Signage''s.', 'Direction is displayed from main gate to direct.', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'Emergency'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability departmental signage''''s .', 'Emergency department board is prominently displayed with facility of illumination in night.', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'Emergency'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Directional Signage''''s.', 'Direction is displayed from main gate to direct.', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'Emergency'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('List of services including emergencies that are managed at the facility', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'Emergency'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Names of doctor and nursing staff on duty are displayed and updated', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'Emergency'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('List of drugs available are displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'Emergency'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Important numbers including ambulance, blood bank , police and referral centres displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'Emergency'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('IEC Material is displayed', '', FALSE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.5'), (select max(id) from checklist where name = 'Emergency'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'Emergency'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'Emergency'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Enquiry services are available 24X7.', 'Enquiry services may be provided by registration clerk/Nurse in a small set up. For large and busy emergency departments there should be dedicated enquiry counter', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.7'), (select max(id) from checklist where name = 'Emergency'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Treatment note/discharge note is given to patient', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'B1.8'), (select max(id) from checklist where name = 'Emergency'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Separate room for examination of rape victims', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B2.1'), (select max(id) from checklist where name = 'Emergency'));
@@ -685,7 +3199,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 Requisition are timely placed', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.1'), (select max(id) from checklist where name = 'Emergency'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Drugs are stored in containers/tray/crash cart and are labelled', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'D2.3'), (select max(id) from checklist where name = 'Emergency'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Empty and filled cylinders are labelled', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'D2.3'), (select max(id) from checklist where name = 'Emergency'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Expiry dates'' are maintained at emergency drug tray', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'Emergency'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Expiry dates'''' are maintained at emergency drug tray', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'Emergency'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('No expiry drug found', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'Emergency'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Records for expiry and near expiry drugs are maintained for drug stored at department', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'Emergency'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('There is practice of calculating and maintaining buffer stock in Emergency', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.5'), (select max(id) from checklist where name = 'Emergency'));
@@ -832,7 +3346,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Nursing station is provided with the critical value of different tests', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E12.3'), (select max(id) from checklist where name = 'Emergency'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('There is a procedure for issuing the blood promptly for life saving measures', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.8'), (select max(id) from checklist where name = 'Emergency'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Consent is taken before transfusion', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'Emergency'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Patient''s identification is verified before transfusion', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'Emergency'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Patient''''s identification is verified before transfusion', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'Emergency'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Blood is kept on optimum temperature before transfusion', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'Emergency'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Blood transfusion is monitored and regulated by qualified person', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'Emergency'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Blood transfusion note is written in patient record', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'Emergency'));
@@ -1006,7 +3520,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Management of case referred from PHC/CHC directly reported to Hospital', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'A4.10'), (select max(id) from checklist where name = 'OPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of OPD services as per State Health Programs', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'A4.11'), (select max(id) from checklist where name = 'OPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Special Clinics are available for local prevalent endemics', 'Ask for the specific local health problems/ diseases .i.e.. Kala azar, Swine Flue, arsenic poisoning etc.', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A6.1'), (select max(id) from checklist where name = 'OPD'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability departmental signage''s', '(Numbering, main department and internal sectional signage', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'OPD'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability departmental signage''''s', '(Numbering, main department and internal sectional signage', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'OPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Display of layout/floor directory', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'OPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('List of OPD Clinics are available', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'OPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Names of doctor on duty is displayed and updated', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'OPD'));
@@ -1017,7 +3531,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('User charges for services are displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.4'), (select max(id) from checklist where name = 'OPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('IEC Material is displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.5'), (select max(id) from checklist where name = 'OPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Education material for counselling are available in Counselling room', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.5'), (select max(id) from checklist where name = 'OPD'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'OPD'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'OPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Enquiry Desk with dedicated staff', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.7'), (select max(id) from checklist where name = 'OPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('OPD slip is given to the patient', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'B1.8'), (select max(id) from checklist where name = 'OPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Separate Female general OPD', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B2.1'), (select max(id) from checklist where name = 'OPD'));
@@ -1268,12 +3782,12 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Counselling and provision of emergency contraceptive pills', 'Check for the availability of Emergency Contraceptive pills (Levonorgesterol)', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E22.1'), (select max(id) from checklist where name = 'OPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Counselling and provision of reversible Contraceptives', 'Check for the availability of Oral Contraceptive Pills, Condoms and IUD', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E22.1'), (select max(id) from checklist where name = 'OPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability and Display of IEC material', 'Poster Displayed, Reading Material handouts etc.', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E22.1'), (select max(id) from checklist where name = 'OPD'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Information and advice ob sexual and reproductive health related issues', 'Advice on topic related to Growth and development,puberty,sexuality cancers, myths & misconception, pregnancy, safe sex, contraception, unsafe abortion, menstrual disorders,anemia, sexual abuse ,RTI/STI''s etc.', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E22.1'), (select max(id) from checklist where name = 'OPD'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Information and advice ob sexual and reproductive health related issues', 'Advice on topic related to Growth and development,puberty,sexuality cancers, myths & misconception, pregnancy, safe sex, contraception, unsafe abortion, menstrual disorders,anemia, sexual abuse ,RTI/STI''''s etc.', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E22.1'), (select max(id) from checklist where name = 'OPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Services for Tetanus immunization', 'TT at 10 and 16 year', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E22.2'), (select max(id) from checklist where name = 'OPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Services for Prophylaxis against Nutritional Anaemia', 'Haemoglobin estimation, weekly IFA tablet, and treatment for worm infestation', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E22.2'), (select max(id) from checklist where name = 'OPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Nutrition Counselling', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E22.2'), (select max(id) from checklist where name = 'OPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Services for early and safe termination of pregnancy and management of post abortion complication', 'MVA procedure for pregnancy up to 8 week Post abortion counselling', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E22.2'), (select max(id) from checklist where name = 'OPD'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Treatment of Common RTI/STI''s', 'Privacy and Confidentiality, treatment Compliance, Partner Management, Follow up visit and referral', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E22.3'), (select max(id) from checklist where name = 'OPD'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Treatment of Common RTI/STI''''s', 'Privacy and Confidentiality, treatment Compliance, Partner Management, Follow up visit and referral', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E22.3'), (select max(id) from checklist where name = 'OPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Treatment and counselling for Menstrual disorders', 'Symptomatic treatment , counselling', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E22.3'), (select max(id) from checklist where name = 'OPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Treatment and counselling for sexual concern for male and female adolescents', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E22.3'), (select max(id) from checklist where name = 'OPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Management of sexual abuse amongst Girls', 'ECP, Prophylaxis against STI, PEP for hIV and Counselling', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E22.3'), (select max(id) from checklist where name = 'OPD'));
@@ -1499,12 +4013,12 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Septic Delivery & Delivery of HIV positive Pregnant Women', 'Check if infected delivery cases are managed at labour room and not referred to higher centres unnecessarily', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'A2.2'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Management of PIH/Eclampsia/ Pre eclampsia', 'Check services for management of PIH/ Eclampsia are being proved at labour room', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'A2.2'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of New born resuscitation', 'Check if labour room has a functional New born resuscitation services available in labour room', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A2.3'), (select max(id) from checklist where name = 'LR (LaQshay)'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Essential new born care', 'Check essential newborn care provisions such as Keeping baby on mother''s abdomen, immediate drying of baby, Skin to skin contact, delayed chord clamp, initiation of breast feeding, recording of vitals and Vit. K are provided', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A2.3'), (select max(id) from checklist where name = 'LR (LaQshay)'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Essential new born care', 'Check essential newborn care provisions such as Keeping baby on mother''''s abdomen, immediate drying of baby, Skin to skin contact, delayed chord clamp, initiation of breast feeding, recording of vitals and Vit. K are provided', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A2.3'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('24 *7 Availability of point of care diagnostic tests', 'HIV, Hb% , Random blood sugar , Protein Urea Test', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A3.2'), (select max(id) from checklist where name = 'LR (LaQshay)'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of departmental signage''s', 'Numbering, main department and internal sectional signage, Restricted area signage displayed. Directional signages are given from the entry of the facility', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'LR (LaQshay)'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of departmental signage''''s', 'Numbering, main department and internal sectional signage, Restricted area signage displayed. Directional signages are given from the entry of the facility', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Necessary Information regarding services provided is displayed', 'Name of doctor and Nurse on duty are displayed and updated. Contact details of referral transport / ambulance displayed', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('IEC Material is displayed', 'Breast feeding, kangaroo care, family planning etc (Pictorial and chart ) in circulation & waiting area', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.5'), (select max(id) from checklist where name = 'LR (LaQshay)'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''s and information are available in local language', 'Check all information for patients/ visitors are available in local language', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'LR (LaQshay)'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''''s and information are available in local language', 'Check all information for patients/ visitors are available in local language', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Only on duty staff is allowed in the labour room when it is occupied', 'Pregnant woman, her birth companion, doctor, nurse/ANM on duty, and other support staff only, is allowed in the labour room', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B2.1'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Wheel chair or stretcher for easy Access to the labour room', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B2.3'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of ramps and railing & Labour room is located at ground floor', 'If not located on the ground floor availability of the ramp / lift with person for shifting', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B2.3'), (select max(id) from checklist where name = 'LR (LaQshay)'));
@@ -1519,7 +4033,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Pregnant women is explicitly informed before examination and procedures', 'Check if care providers verbally inform the pregnant women before touching, examination or starting procedure.', TRUE, FALSE, TRUE, FALSE, (select max(id) from measurable_element where reference = 'B3.3'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('HIV status of patient is not disclosed except to staff that is directly involved in care', 'Check if HIV status of pregnant women is not explicitly written on case sheets and avoiding any means by which they can be identified in public such as labelling or allocating specific beds.', FALSE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B3.4'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Consent is taken before delivery and or shifting', 'Check the labour room case sheet for consent has been taken', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'B4.1'), (select max(id) from checklist where name = 'LR (LaQshay)'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Labour room has system in place to involve patient''s relative in decision making about pregnant women treatment', 'Check if pregnant women and her family members have been informed and consulted before shifting the patient for C-Section or referral to higher center', FALSE, FALSE, TRUE, FALSE, (select max(id) from measurable_element where reference = 'B4.4'), (select max(id) from checklist where name = 'LR (LaQshay)'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Labour room has system in place to involve patient''''s relative in decision making about pregnant women treatment', 'Check if pregnant women and her family members have been informed and consulted before shifting the patient for C-Section or referral to higher center', FALSE, FALSE, TRUE, FALSE, (select max(id) from measurable_element where reference = 'B4.4'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Check all services including drugs, consumables, diagnostics and blood are free of cost in labour room', 'Check if there are no user charges of any services in labour room .
 Ask Pregnant women and their attendants if they have not paid for any services or any informal fees to service providers', FALSE, TRUE, TRUE, FALSE, (select max(id) from measurable_element where reference = 'B5.1'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Adequate space as per delivery load', 'Labour tables should be placed in a way that there is a distance of at least 3 feet from the sidewall, at least 2 feet from head end wall, and at least 6’ from the second table', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.1'), (select max(id) from checklist where name = 'LR (LaQshay)'));
@@ -1534,7 +4048,7 @@ Dedicated Nursing station for Each unit if LDR concept is followed', TRUE, FALSE
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Storage Area', 'A dedicated sub store with cabinets and storage racks for storing supplies
 Separate Clean room & Dirty Utility room for Storing Sterile and Used goods respectively', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Newborn Care area', 'One Dedicated Newborn care area for each four tables. Incase of LDR dedicated NBCA for each unit.There should be no obstruction between labour table and Newborn corner for swift shifting of newborn requiring resuscitation Radiant Warmer Should have free space from three sides', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'LR (LaQshay)'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Staff Room & Doctor''s Duty Room', 'Dedicated rooms for Nursing staff and Doctors provided with beds, storage furniture and attached toilets', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'LR (LaQshay)'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Staff Room & Doctor''''s Duty Room', 'Dedicated rooms for Nursing staff and Doctors provided with beds, storage furniture and attached toilets', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Corridors connecting labour room are broad enough to manage stretcher and trolleys', 'Corridor should be wide enough that 2 stretcher can pass simultaneously without any hassle', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.4'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of functional telephone and Intercom Services', 'Check availability of functional telephone and intercom connections', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.5'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of labour tables as per delivery load', 'Less than 20 Deliveries/ Month -1
@@ -1612,7 +4126,7 @@ Requisition are timely placed well before reaching the stock out level.
 Check with stock and indent registers.', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.1'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Drugs are stored in containers/tray/crash cart and are labelled', 'Check drugs and consumables are kept at allocated space in Crash cart/ Drug trolleys and are labelled. Look alike and sound alike drugs are kept seprately', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'D2.3'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Empty and filled cylinders are labelled and updated', 'Empty and filled cylinders are kept separately and labelled, flow meter is working and pressure/ flow rate is updated in the checklist', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'D2.3'), (select max(id) from checklist where name = 'LR (LaQshay)'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Expiry dates'' are maintained at emergency drug tray / Crash cart', 'Expiry dates against drugs are mentioned crash cart/ emergency drug tray
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Expiry dates'''' are maintained at emergency drug tray / Crash cart', 'Expiry dates against drugs are mentioned crash cart/ emergency drug tray
 No expiry drug found', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('There is practice of calculating and maintaining buffer stock', 'At least one week of minimum buffer stock is maintained all the time in the labour room. Minimum stock and reorder level are calculated based on consumption in a week accordingly', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.5'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Department maintained stock and expenditure register of drugs and consumables', 'Check stock and expenditure register is adequately maintained', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.5'), (select max(id) from checklist where name = 'LR (LaQshay)'));
@@ -1657,7 +4171,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 Referral Pathway
 Names, Contact details and duty schedules for responsible persons higher referral centers
 Name , Contact details, duty schedule of Ambulance services', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E3.2'), (select max(id) from checklist where name = 'LR (LaQshay)'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Advance communication regarding the patient''s condition is shared with the higher center', 'The information regarding the case, expected time of arrival and special facilities such as specialist, blood, intensive care may be required is communicated to the higher center', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E3.2'), (select max(id) from checklist where name = 'LR (LaQshay)'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Advance communication regarding the patient''''s condition is shared with the higher center', 'The information regarding the case, expected time of arrival and special facilities such as specialist, blood, intensive care may be required is communicated to the higher center', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E3.2'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Patient referred with referral slip', 'A referral slip/ Discharge card is provided to patient when referred to another health care facility. Referral slip includes demographic details, History of woman, examination findings, management done , drugs administered, any procedure done, reason for referral, detail of referral center including whom to contact and signature of approving medical officer', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E3.2'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Referral vehicle is being arranged', 'Check labour room staff facilitates arrangement of ambulance for transferring the patient to higher center . Patient attendant are not asked to arrange vehicle by their own
 Check if labour room staff checks ambulance preparedness in terms of necessary equipments, drugs, accompanying staff in terms of care that may be required in transit', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E3.2'), (select max(id) from checklist where name = 'LR (LaQshay)'));
@@ -1692,10 +4206,10 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Protocol of blood transfusion is monitored & regulated', 'blood is kept on room temperature (28 degree C) before transfusion. Blood transfusion is monitored and regulated by qualified person', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Death note is written as per mother & neonatal death review guidelines', 'Maternal and neonatal death are recorded as per MDR guideline. Death note including efforts done for resuscitation is noted in patient record. Death summary is given to patient attendant quoting the immediate cause and underlying cause if possible', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E16.2'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('There is established criteria for distinguishing between new-born death and still birth', 'Every still birth is examined, classified by paediatrician before declaration & record is maintained', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E16.2'), (select max(id) from checklist where name = 'LR (LaQshay)'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Ensures ''six cleans'' are followed during delivery', 'Ensures ''six cleans'' are followed during delivery
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Ensures ''''six cleans'''' are followed during delivery', 'Ensures ''''six cleans'''' are followed during delivery
 Clean hands, Clean Surface, clean blade, clean cord tie, clean towel & clean cloth to wrap mother', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E18.1'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Allows spontaneous delivery of head', 'By flexing the head and giving perineal support', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E18.1'), (select max(id) from checklist where name = 'LR (LaQshay)'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Delivery of shoulders and Neck', 'Manages cord round the neck; assists delivery of shoulders and body; delivers baby on mother''s abdomen', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E18.1'), (select max(id) from checklist where name = 'LR (LaQshay)'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Delivery of shoulders and Neck', 'Manages cord round the neck; assists delivery of shoulders and body; delivers baby on mother''''s abdomen', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E18.1'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Check no unneccessary episiotomy performed', 'Check with records and interview with staff if they are still practicing routine episiotomy.', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E18.1'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Unnecessary augmentation and induction of labour is not done using uterotonics', 'Check uterotonics such as oxytocin and mesoperstol is not used for routine induction normal labour unless clear medical indication and the expected
 benefits outweigh the potential harms
@@ -1729,11 +4243,11 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 Magnesium sulphate given to preterm labour < 32 weeks', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E18.8'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('identifies conditions that may lead to preterm birth', '(severe PE/E, APH, PPROM);', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E18.8'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('administers antenatal corticosteroids in pre term labour and conditions leading to pre term delivery (24-34 weeks);', 'Review case records', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E18.8'), (select max(id) from checklist where name = 'LR (LaQshay)'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Records mother'' s temperature at admission and assesses need for antibiotics', 'Review case records', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E18.9'), (select max(id) from checklist where name = 'LR (LaQshay)'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Records mother'''' s temperature at admission and assesses need for antibiotics', 'Review case records', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E18.9'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Administers appropriate antibiotics to mother', 'Review case records', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E18.9'), (select max(id) from checklist where name = 'LR (LaQshay)'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Facility staff adheres to standard protocol for resuscitating the newborn within 30 seconds.', 'Performs initial steps of resuscitation within 30 seconds: immediate cord cutting and PSSR at radiant warmer.', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E18.10'), (select max(id) from checklist where name = 'LR (LaQshay)'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Facility staff adheres to standard protocol for preforming bag and mask ventilation for 30 seconds if baby is still not breathing.', 'Initiates bag and mask ventilation using room air with 5 ventilator breaths and continues ventilation for next 30 seconds if baby still does not breathe.', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E18.10'), (select max(id) from checklist where name = 'LR (LaQshay)'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Facility staff adheres to standard protocol for taking appropriate actions if baby does not respond to bag and mask ventilation after golden minute.', 'If baby still not breathing/ breathing well, continues ventilation with oxygen, calls or arranges for advanced help or referral.', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E18.10'), (select max(id) from checklist where name = 'LR (LaQshay)'));
+
+
+
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Women are encouraged and counselled for allowing birth companion of their choice', '', FALSE, TRUE, TRUE, FALSE, (select max(id) from measurable_element where reference = 'E18.11'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Orientation session and information is available for Birth companion', '', FALSE, TRUE, TRUE, FALSE, (select max(id) from measurable_element where reference = 'E18.11'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Performs detailed examination of mother', 'Check for records of Uterine contraction, bleeding, temperature, B.P, pulse, Breast examination, (Nipple care, milk initiation), Check for perineal washes performed', FALSE, TRUE, TRUE, TRUE, (select max(id) from measurable_element where reference = 'E19.1'), (select max(id) from checklist where name = 'LR (LaQshay)'));
@@ -1814,7 +4328,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Check Staff is aware of relevant part of SOPs', 'Interview labour room staff for their awareness about content of SOPs', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'G4.3'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('clinical protocols for Intrapartum care and Management of obstetric emergency are Displayed', 'Clinical Protocols on AMSTL, Preparing Partograph, , PPH, Eclampsia, Infection control, Referral, Infection Control', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'G4.4'), (select max(id) from checklist where name = 'LR (LaQshay)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Clinical protocols on Newborn Care are displayed', 'Clinical Protocols on Essential Newborn Care, New born resuscitation', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'G4.4'), (select max(id) from checklist where name = 'LR (LaQshay)'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Don''ts/ Harmful Activities are Displayed at labour Room', '1. No routine enema
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Don''''ts/ Harmful Activities are Displayed at labour Room', '1. No routine enema
 2. No routine shaving
 3. No routine induction/augmentation of labour
 4. No place for routine suctioning of the baby
@@ -1877,7 +4391,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability / linkage with laboratory', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A3.2'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Treatment of Malaria in pregnancy', 'check the records for management of cases in last one year', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A4.1'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Referral of of child born of High Risk pregnancy showing features suggestive of hearing empairment', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A4.10'), (select max(id) from checklist where name = 'Maternity Ward'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability departmental signage''s', '(Numbering, main department and internal sectional signage', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'Maternity Ward'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability departmental signage''''s', '(Numbering, main department and internal sectional signage', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Visiting hours and visitor policy are displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Entitlements under JSSK Displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Entitlement under JSY displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'Maternity Ward'));
@@ -1885,7 +4399,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Contact details of referral transport / ambulance displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('IEC Material is displayed', 'Breast feeding and care of breast, kangaroo care, family planning, Danger signs, PN advice, Information material about PCPNDT etc', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.5'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Counselling aids like flip chart etc are available for post partum counselling', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.5'), (select max(id) from checklist where name = 'Maternity Ward'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'Maternity Ward'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Enquiry Desk with dedicated staff', 'Enquiry desk serving both maternity ward and labour', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.7'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Discharge summery is given to the patient', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'B1.8'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('No Male attendant allowed to stay in female wards at night', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B2.1'), (select max(id) from checklist where name = 'Maternity Ward'));
@@ -1927,7 +4441,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Dedicated nursing station', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Examination room', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Treatment room', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'Maternity Ward'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Doctor''s Duty room', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'Maternity Ward'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Doctor''''s Duty room', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Nurse Duty room', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Store', 'Drug &Linen store', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Dirty room', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'Maternity Ward'));
@@ -1966,7 +4480,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of drugs for newborn', 'Inj Vit K 10mg, Vaccine OPV, Hep B, BCG, paracetamol syrup/drops, Syp Calcium with Vit D, Multivitamin drops, colicaid drops, Nevirapine drops (for HIV + ve mother born children), gentian Violet (0.50%)', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'C5.1'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Tocollytics drugs', 'Isoxsuprine', FALSE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C5.1'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of dressings and Sanitary pads', 'gauze piece and cotton swabs, sanitary pads,Cannula', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'C5.2'), (select max(id) from checklist where name = 'Maternity Ward'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of syringes and IV Sets /tubes', 'Paediatric iv sets, urinary catheter with bag, Foyle''s catheter Nasogastric tube, Syringe A/D', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'C5.2'), (select max(id) from checklist where name = 'Maternity Ward'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of syringes and IV Sets /tubes', 'Paediatric iv sets, urinary catheter with bag, Foyle''''s catheter Nasogastric tube, Syringe A/D', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'C5.2'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Antiseptic Solutions', 'Betadine', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'C5.2'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of consumables for new born care', 'gastric tube and cord clamp, dressing pad', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'C5.2'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of emergency drug tray in Maternity ward', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'C5.3'), (select max(id) from checklist where name = 'Maternity Ward'));
@@ -1997,7 +4511,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 Requisition are timely placed', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.1'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Drugs are stored in containers/tray/crash cart and are labelled', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'D2.3'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Empty and filled cylinders are labelled', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'D2.3'), (select max(id) from checklist where name = 'Maternity Ward'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Expiry dates'' are maintained at emergency drug tray', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'Maternity Ward'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Expiry dates'''' are maintained at emergency drug tray', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('No expiry drug found', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Records for expiry and near expiry drugs are maintained for drug stored at department', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('There is practice of calculating and maintaining buffer stock', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.5'), (select max(id) from checklist where name = 'Maternity Ward'));
@@ -2119,7 +4633,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Container is labelled properly after the sample collection', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E12.1'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Nursing station is provided with the critical value of different tests', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E12.3'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Consent is taken before transfusion', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'Maternity Ward'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Patient''s identification is verified before transfusion', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'Maternity Ward'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Patient''''s identification is verified before transfusion', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('blood is kept on optimum temperature before transfusion', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Blood transfusion is monitored and regulated by qualified person', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'Maternity Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Blood transfusion note is written in patient recorded', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'Maternity Ward'));
@@ -2280,12 +4794,12 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Management of paediateric Tuberculosis', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'A4.2'), (select max(id) from checklist where name = 'Ped Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Referral of child born of High Risk pregnancy showing features suggestive of hearing impairment', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'A4.10'), (select max(id) from checklist where name = 'Ped Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of services under RBSK', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'A4.12'), (select max(id) from checklist where name = 'Ped Ward'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability departmental signage''s', '(Numbering, main department and internal sectional signage', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'Ped Ward'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability departmental signage''''s', '(Numbering, main department and internal sectional signage', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'Ped Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Visiting hours and visitor policy are displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'Ped Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Contact details of referral transport / ambulance displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'Ped Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Entitlement under RBSY are displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'Ped Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('IEC Material is displayed', 'Breast feeding, immunization schedule and Zn, ORS, nutrition and hand washing etc.', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.5'), (select max(id) from checklist where name = 'Ped Ward'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'Ped Ward'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'Ped Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Discharge summery is given to the patient', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'B1.8'), (select max(id) from checklist where name = 'Ped Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Cots in paediatric ward are large enough for stay of mother with child', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B2.1'), (select max(id) from checklist where name = 'Ped Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Wheel chair or stretcher for easy Access to the ward', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B2.3'), (select max(id) from checklist where name = 'Ped Ward'));
@@ -2319,7 +4833,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Dedicated nursing station', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'Ped Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Examination room', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'Ped Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Treatment room', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'Ped Ward'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Doctor''s Duty room', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'Ped Ward'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Doctor''''s Duty room', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'Ped Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Nurse Duty room', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'Ped Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Store', 'Drug &Linen store', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'Ped Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Dirty room', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'Ped Ward'));
@@ -2409,7 +4923,7 @@ Requisition are timely placed', FALSE, TRUE, FALSE, TRUE, (select max(id) from m
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Drugs are intended in Paediatric dosages only', '', TRUE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.1'), (select max(id) from checklist where name = 'Ped Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Drugs are stored in containers/tray/crash cart and are labeled', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'D2.3'), (select max(id) from checklist where name = 'Ped Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Empty and filled cylinders are labeled', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'D2.3'), (select max(id) from checklist where name = 'Ped Ward'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Expiry dates'' are maintained at emergency drug tray', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'Ped Ward'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Expiry dates'''' are maintained at emergency drug tray', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'Ped Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('No expiry drug found', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'Ped Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Records for expiry and near expiry drugs are maintained for drug stored at department', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'Ped Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('There is practice of calculating and maintaining buffer stock in paediatric ward', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.5'), (select max(id) from checklist where name = 'Ped Ward'));
@@ -2531,7 +5045,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Nursing station is provided with the critical value of different tests', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E12.3'), (select max(id) from checklist where name = 'Ped Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Paediatric bags for blood available', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.8'), (select max(id) from checklist where name = 'Ped Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Consent is taken before transfusion', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'Ped Ward'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Patient''s identification is verified before transfusion', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'Ped Ward'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Patient''''s identification is verified before transfusion', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'Ped Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('blood is kept on optimum temperature before transfusion', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'Ped Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Blood transfusion is monitored and regulated by qualified person', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'Ped Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Blood transfusion note is written in patient recorded', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'Ped Ward'));
@@ -2545,7 +5059,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Assessment Protocols are available', 'Airway, Breathing, Circulation, Coma, Convulsion, and Dehydration', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E20.2'), (select max(id) from checklist where name = 'Ped Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Triage Protocols are available', 'Emergency, priority and can wait', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E20.2'), (select max(id) from checklist where name = 'Ped Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Staff aware and practice ETAT protocols', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E20.2'), (select max(id) from checklist where name = 'Ped Ward'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Staff is skilled for basic life support for young infants and children''s', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E20.2'), (select max(id) from checklist where name = 'Ped Ward'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Staff is skilled for basic life support for young infants and children''''s', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E20.2'), (select max(id) from checklist where name = 'Ped Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('ETAT checklist is available and practiced', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E20.2'), (select max(id) from checklist where name = 'Ped Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Differential diagnosis algorithm are available', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E20.7'), (select max(id) from checklist where name = 'Ped Ward'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Food/ fluid intake is chart is maintained', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E20.8'), (select max(id) from checklist where name = 'Ped Ward'));
@@ -2676,7 +5190,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Screening of New born for Birth Defects', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'A2.4'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability for USG and portable X ray services', 'In house, Parent hospital and Outsourced', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A3.1'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('SNCU has facility /Linkage for laboratory investigation.', 'Availability of side laboratory: Serum billirubin, Plasma glucose, Serum creatnine, Blood count, Platelet, C reactive protein, Prothrobin time, Blood gas analysis with PH measurement analysis. If linkage with outside lab than give partial compliance', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A3.2'), (select max(id) from checklist where name = 'SNCU'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability departmental signage''s', '(Numbering, main department and internal sectional signage', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'SNCU'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability departmental signage''''s', '(Numbering, main department and internal sectional signage', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Directional signage for department is displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Restricted area signage displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Services available in SNCU are displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'SNCU'));
@@ -2685,7 +5199,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Contact information in respect of SNCU referral services are displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Display of information for education of mother /relatives', 'Display of pictorial information/ chart regarding expression of milk/ techniques for assistive feeding , KMC, complimentary feeding etc.', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.5'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Counselling aids are available for education of mother', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.5'), (select max(id) from checklist where name = 'SNCU'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'SNCU'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Discharge summery is given to the patient', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.8'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Privacy is maintained in breast feeding room', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B3.1'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Patient Records are kept at secure place beyond access to general staff/visitors', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B3.2'), (select max(id) from checklist where name = 'SNCU'));
@@ -2716,14 +5230,14 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('SNCU has separate Inborn unit', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('SNCU has separate Out born unit', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('SNCU has separate designed washing area', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'SNCU'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values (' The rooms has been separated by transparent observation windows from the nurses'' working place in between', 'Patient care area has 2 interconnected rooms', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'SNCU'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values (' The rooms has been separated by transparent observation windows from the nurses'''' working place in between', 'Patient care area has 2 interconnected rooms', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of nursing station', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Hand washing and gowning area', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Receiving room with examination area', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Clean area for mixing intravenous fluids and Medications/ fluid preparation area', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Doctors duty room,', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Dirty utility area', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'SNCU'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Mother''s area for expression of breast milk/ Breast feeding', 'SNCU has system in place to call mother''s of baby for feeding', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'SNCU'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Mother''''s area for expression of breast milk/ Breast feeding', 'SNCU has system in place to call mother''''s of baby for feeding', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Unit stores', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Side lab. Nurses change room, autoclaving room, Counselling room', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Step down area in close proximity', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'SNCU'));
@@ -2815,7 +5329,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Drugs are stored in containers/tray/crash cart and are labelled', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'D2.3'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Empty and filled cylinders are labelled', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'D2.3'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Expressed milk is stored at recommended temperature', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.3'), (select max(id) from checklist where name = 'SNCU'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Expiry dates'' are maintained at emergency drug tray', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'SNCU'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Expiry dates'''' are maintained at emergency drug tray', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('No expiry drug found', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Records for expiry and near expiry drugs are maintained for drug stored at department', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('There is practice of calculating and maintaining buffer stock in SNCU', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.5'), (select max(id) from checklist where name = 'SNCU'));
@@ -2949,13 +5463,13 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('SNCU has critical values of various lab test', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E12.3'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Paediatric blood bags are available', 'if not available than how facility cope with it', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.8'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Consent is taken before transfusion', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'SNCU'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Patient''s identification is verified before transfusion', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'SNCU'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Patient''''s identification is verified before transfusion', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Blood is kept on optimum temperature before transfusion', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Blood transfusion is monitored and regulated by qualified person', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Blood transfusion note is written in patient recorded', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Any major or minor transfusion reaction is recorded and reported to responsible person', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.10'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Facility has a standard procedure to decent communicate death to relatives', '', FALSE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E16.1'), (select max(id) from checklist where name = 'SNCU'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('SNCU has system for conducting grievance counselling of parents in case of newborns'' mortality', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E16.1'), (select max(id) from checklist where name = 'SNCU'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('SNCU has system for conducting grievance counselling of parents in case of newborns'''' mortality', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E16.1'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Death note is written on patient record', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E16.1'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Death note including efforts done for resuscitation is noted in patient record', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E16.2'), (select max(id) from checklist where name = 'SNCU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Procedure to declare death for brought in dead cases', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E16.2'), (select max(id) from checklist where name = 'SNCU'));
@@ -3132,7 +5646,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Demonstration and practice- by -doing on preparation of energy dense child food using locally available item', '', TRUE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'A2.4'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('NRC has facility /Linkage for laboratory investigation', 'Availability of Side lab. Blood glucose, Haemoglobin, Serum electrolyte, TLC, DLC, urine routine, urine culture,Mantoux test, HIV (after counselling) and any specific test based on local and geographic needs like coeliac disease and malaria.', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A3.2'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of functional nutritional services', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A5.1'), (select max(id) from checklist where name = 'NRC'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability departmental signage''s', 'main department and internal sectional signage', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'NRC'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability departmental signage''''s', 'main department and internal sectional signage', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Visiting hours and visitor policy are displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Service available at NRC are displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Financial entitlements of care givers and beneficiary are displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'NRC'));
@@ -3141,7 +5655,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Display of due list of SAM child with Assessment', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Display of information for education of mother /care taker', 'Display of pictorial information/ chart regarding expression of milk, management of sick children with SAM etc.,Counseling', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.5'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Counselling aids are available for education of the mother/care taker', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.5'), (select max(id) from checklist where name = 'NRC'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'NRC'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Discharge summery is given to the patient', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'B1.8'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Cots in NRC are large enough for stay of mother with child', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B2.1'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Privacy is maintained at breast feeding area', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B3.1'), (select max(id) from checklist where name = 'NRC'));
@@ -3204,7 +5718,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 Inj. Cefotaxime
 Inj. Gentamicin,', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'C5.1'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of analgesics and antipyretics', 'Paracetamol', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'C5.1'), (select max(id) from checklist where name = 'NRC'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of IV Fluids', 'Ringer''s lactate solution with 5% glucose,0.45%(half normal) saline with 5% glucose,0.9%saline(for soaking eye pads)', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'C5.1'), (select max(id) from checklist where name = 'NRC'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of IV Fluids', 'Ringer''''s lactate solution with 5% glucose,0.45%(half normal) saline with 5% glucose,0.9%saline(for soaking eye pads)', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'C5.1'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of other drugs', 'Metronidazole, Tetracycline or Chloramphenicol eye drops, Atropine eye drops', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'C5.1'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Electrolyte and minerals', 'ORS, Potassium chloride, Magnesium chloride/sulphate, Iron syrup, multivitamin, folic acid, Vitamin A syrup, Zinc sulphate or dispersible Zinc tablets, Glucose(or sucrose),multivitamin without iron', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'C5.1'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of drugs for management of SAM in HIV exposed', 'Antiretroviral drugs, cotrimoxazole prophylaxis as per NACO guidelines', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'C5.1'), (select max(id) from checklist where name = 'NRC'));
@@ -3212,7 +5726,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of dressings material', 'Gauze piece and cotton swabs.', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'C5.2'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of syringes and IV Sets /tubes', 'Cannulas, IV sets, paediatric nasogastric tubes', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'C5.2'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Antiseptic Solutions', 'Antiseptic lotion', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'C5.2'), (select max(id) from checklist where name = 'NRC'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Avaialbility of temporary methods of contraception', 'OCP''s, IUCD,Condoms,Emergency Contraceptive Pills', FALSE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C5.2'), (select max(id) from checklist where name = 'NRC'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Avaialbility of temporary methods of contraception', 'OCP''''s, IUCD,Condoms,Emergency Contraceptive Pills', FALSE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C5.2'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Emergency Drug Tray is maintained', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'C5.3'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of functional Equipment &Instruments for examination & Monitoring', 'Thermometers, Weighing scales(digital),Infantometer,Stadiometer,Room Thermometers,low reading thermometers ( 39-49degree Celcius),MUAC tape', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C6.1'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Point of care diagnostic instruments', 'Glucometer', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C6.3'), (select max(id) from checklist where name = 'NRC'));
@@ -3245,7 +5759,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Drugs are stored in containers/tray/crash cart and are labelled', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'D2.3'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Empty and filled cylinders are labelled', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'D2.3'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Food items are stored at recommended temperature', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.3'), (select max(id) from checklist where name = 'NRC'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Expiry dates'' are maintained at emergency drug tray', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'NRC'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Expiry dates'''' are maintained at emergency drug tray', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('No expiry drug found', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Records for expiry and near expiry drugs are maintained for drug stored at department', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('There is practice of calculating and maintaining buffer stock', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.5'), (select max(id) from checklist where name = 'NRC'));
@@ -3283,7 +5797,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of power back up in patient care areas', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'D5.2'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Emergency light', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'D5.2'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('NRC has system in place to assess appetite of child based on their nutritional needs', 'Check appetite test for SAM childis done as per standard guideline', FALSE, TRUE, TRUE, TRUE, (select max(id) from measurable_element where reference = 'D6.1'), (select max(id) from checklist where name = 'NRC'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('NRC has system to assess feeding problems of child and provide individual counselling to mother', 'Counselling is done by nutrition counsellor/feeding demonstrator and ANM''s', FALSE, TRUE, TRUE, TRUE, (select max(id) from measurable_element where reference = 'D6.1'), (select max(id) from checklist where name = 'NRC'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('NRC has system to assess feeding problems of child and provide individual counselling to mother', 'Counselling is done by nutrition counsellor/feeding demonstrator and ANM''''s', FALSE, TRUE, TRUE, TRUE, (select max(id) from measurable_element where reference = 'D6.1'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('NRC has system to access requirement and dose of micronutrient of SAM children as per their age', 'As per standards guideline', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D6.1'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('NRC has system to provides diet to children based on their clinical condition/ Medical complication', 'Management of SAM are based on 3 phases: Stabilization Phase, Transition Phase and rehabilitation phase', TRUE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D6.2'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Starter diet (F-75) is given to child just after admission.', 'Feeding should begin as soon as possible after admission with ‘Starter diet’ until the child is stabilized', TRUE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D6.2'), (select max(id) from checklist where name = 'NRC'));
@@ -3387,7 +5901,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('NRC has critical values of various lab test', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E12.3'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Paediatric blood bags are available', 'if not available than how facility cope with it', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.8'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Consent is taken before transfusion', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'NRC'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Patient''s identification is verified before transfusion', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'NRC'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Patient''''s identification is verified before transfusion', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Blood transfusion of SAM child is done as per standard Guideline', 'Blood transfusion is required (1) Hb is less than 4 g/dl (2) or if there is respiratory distress and Hb is between 4 and 6 g/dl.', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Blood is kept on optimum temperature before transfusion', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Blood transfusion is monitored and regulated by qualified person', 'Give (1) whole blood 10 ml/kg body weight slowly over 3 hours (2) furosemide 1 mg/kg IV at the start of the transfusion', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'NRC'));
@@ -3542,12 +6056,12 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of point of care diagnostic test', 'Blood gas analyser& USG', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A3.2'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Reconstructive Surgery', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A4.3'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Amputation Surgery', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A4.3'), (select max(id) from checklist where name = 'NRC'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of departmental signage''s', '(Numbering, main department and internal sectional signage', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'NRC'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of departmental signage''''s', '(Numbering, main department and internal sectional signage', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage for restricted area are displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Zones of OT are marked', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Display doctor/ Nurse on duty and updated', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('OT schedule displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'NRC'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'NRC'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of female staff if a male doctor examination/ conduct surgery of a female patients', 'Availability of female staff in pre and post operative room', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B2.1'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Wheel chair or stretcher for easy Access to the OT', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B2.3'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of ramps with railing', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B2.3'), (select max(id) from checklist where name = 'NRC'));
@@ -3670,7 +6184,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 Requisition are timely placed', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.1'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Drugs are stored in containers/tray/crash cart and are labelled', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'D2.3'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Empty and filled cylinders are labelled', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'D2.3'), (select max(id) from checklist where name = 'NRC'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Expiry dates'' are maintained at emergency drug tray', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'NRC'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Expiry dates'''' are maintained at emergency drug tray', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('No expiry drug found', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Records for expiry and near expiry drugs are maintained for drug stored at department', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('There is practice of calculating and maintaining buffer stock', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.5'), (select max(id) from checklist where name = 'NRC'));
@@ -3754,7 +6268,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('OT is provided with the critical value of different test', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E12.3'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of blood units in case of emergency with out replacement', 'The blood is ordered for the patient according to the MSBOS (Maximum Surgical Blood Order Schedule)', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.8'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Consent is taken before transfusion', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'NRC'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Patient''s identification is verified before transfusion', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'NRC'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Patient''''s identification is verified before transfusion', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('blood is kept on optimum temperature before transfusion', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Blood transfusion is monitored and regulated by qualified person', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'NRC'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Blood transfusion note is written in patient recorded', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'NRC'));
@@ -3930,7 +6444,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Management of MTP', 'Surgical management', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A2.2'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of New born resuscitation& essential new born care', 'Dedicated Functional New born Care services in Operation theatre', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A2.3'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of point of care diagnostic test', 'Glucometer, RDK , Blood grouping', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A3.2'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of departmental signage''s', 'Numbering, main department and internal sectional signage, Restricted area signage displayed. Directional signages are given from the entry of the facility', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of departmental signage''''s', 'Numbering, main department and internal sectional signage, Restricted area signage displayed. Directional signages are given from the entry of the facility', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Information regarding services are displayed', 'Display doctor/ Nurse on duty and updated OT schedule displayed', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('OT is easily accessible', 'Availability of Wheel chair or stretcher for easy Access. Door is wide enough for passage of trolley and staff.', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B2.3'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Patients are properly draped/covered before and after procedure', 'Look patients are covered while transferred from ward to OT and vice-versa.', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B3.1'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
@@ -3943,7 +6457,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('All surgical procedure are free of cost for JSSK beneficiaries', 'free drugs, consumables , blood, referral etc.', FALSE, TRUE, TRUE, FALSE, (select max(id) from measurable_element where reference = 'B5.1'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Adequate space for accommodating surgical load', 'OT around 40 Square meter. Two OT tables are not kept in one OT', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.1'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Demarcated Protective Zone', 'Reception, waiting area, stretcher/Trolley bay, Pre and post operative rooms,', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Demarcated Clean Zone', 'Doctor''s and Nurse''s room, Anesthesia room, equipment room, emergency exit.', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Demarcated Clean Zone', 'Doctor''''s and Nurse''''s room, Anesthesia room, equipment room, emergency exit.', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Demarcated sterile Zone', 'Operating room, Scrub station, Anesthesia station,', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Demarcated disposal Zone', 'Disposal corridor, janitor closet', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Changing Rooms', 'Separate for male and females', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
@@ -4004,12 +6518,12 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('There is system of timely corrective break down maintenance of the equipment', 'Back up for critical equipment. Label Defective/Out of order equipment and stored appropriately until it has been repaired', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D1.1'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Staff is skilled for cleaning, inspection & trouble shooting in case equipment malfunction', 'E.g. when to change water of batteries, when to oil, change fuse, replace filters etc.', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D1.1'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('All the measuring equipment/ instrument are calibrated', 'Boyels apparatus, cautery, BP apparatus, autoclave etc. There is system to label/ code the equipment to indicate status of calibration/ verification when recalibration is due', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D1.2'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Up to date instructions for operation and maintenance of equipment are readily available with staff.', 'If operator doesn''t understand English, then instructions should be in local language.', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'D1.3'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Up to date instructions for operation and maintenance of equipment are readily available with staff.', 'If operator doesn''''t understand English, then instructions should be in local language.', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'D1.3'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('There is established system of timely indenting of consumables and drugs', 'Stock level are daily updated
 Requisition are timely placed', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.1'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Drugs are stored in containers/tray/crash cart are labelled', 'Away from direct sunlight and temperature is maintained as per instructions of manufacturer.', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'D2.3'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Empty and filled cylinders are labelled & kept separately', 'Each cylinder is provided with a checklist & flow meter and key for opening the cylinder', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'D2.3'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Expiry dates'' are maintained at emergency drug tray', 'Records for expiry and near expiry drugs are maintained for drug stored at department. No expirred drugs found', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Expiry dates'''' are maintained at emergency drug tray', 'Records for expiry and near expiry drugs are maintained for drug stored at department. No expirred drugs found', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('There is practice of calculating and maintaining buffer stock', 'At least one week of minimum buffer stock is maintained all the time in the labour room. Minimum stock and reorder level are calculated based on consumption in a week accordingly', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.5'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Department maintained stock and expenditure register of drugs and consumables', 'Check that records are regularly updated', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.5'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('There is procedure for replenishing drug tray /crash cart', 'There is no stock out of drugs', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.6'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
@@ -4066,7 +6580,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('OT is provided with the critical value of different test', 'Critical values are displayed.', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E12.3'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of blood units in case of emergency with out replacement', 'The blood is ordered for the patient according to the MSBOS (Maximum Surgical Blood Order Schedule)', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.8'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Consent is taken before transfusion', 'Duly signed by patient/next of kin', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Patient''s identification is verified before transfusion', 'At least two identifiers are used.', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Patient''''s identification is verified before transfusion', 'At least two identifiers are used.', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Protocol of blood transfusion is monitored & regulated', 'blood is kept on optimum temperature before transfusion. Blood transfusion is monitored and regulated by qualified person', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Any major or minor transfusion reaction is recorded and reported to responsible person', 'After transfusion, Reaction form is returned back to blood bank, even when there is no reaction.', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.10'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('There is procedure to ensure that PAC has been done before surgery', 'There is procedure to review findings of PAC', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E14.1'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
@@ -4120,7 +6634,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Ruptured Uterus', 'Put patient in left lateral position, maintain Airway, breathing and circulation, IV Fluid, antibiotics, urgent laparotomy and hysterectomy.', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E18.6'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Provides ART for seropositive mothers/ links with ART center', 'Check case records and Interview of staff', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E18.7'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Provides syrup Nevirapine to newborns of HIV seropositive mothers', 'Check case records and Interview of staff', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E18.7'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('New born Resuscitation', 'Ask Nursing staff to demonstrate Resuscitation Technique', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E18.10'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
+
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Prevention of Hypothermia', 'Skin contact, Kangaroo mother care, radiant warmer, warm clothes.', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E19.1'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Initiation of Breastfeeding with in 1 Hour', 'Shall be initiated as early as possible and exclusive breast feeding', FALSE, TRUE, TRUE, FALSE, (select max(id) from measurable_element where reference = 'E19.2'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('There is established criteria for shifting new born to SNCU', 'only the new born requiring intensive care should be transferred to SNCU', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E19.5'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
@@ -4157,7 +6671,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Proper handling of Soiled and infected linen', 'No sorting ,Rinsing or sluicing at Point of use/ sterile area', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'F4.1'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Staff know how to make disinfectant solution', 'Carbolic acid, chlorine solution, glutaraldehyde or any other disinfectant used', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'F4.1'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Equipment and instruments are sterilized after each use as per requirement', 'Autoclaving/Chemical Sterilization', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'F4.2'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Chemical sterilization of instruments/equipment''s is done as per protocols', 'Ask staff about method, concentration and contact time required for chemical sterilization.', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'F4.2'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Chemical sterilization of instruments/equipment''''s is done as per protocols', 'Ask staff about method, concentration and contact time required for chemical sterilization.', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'F4.2'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Glutaraldehyde solution is changed as per manufacturer instructions', 'Date of preparation & due date of change of solution is mentioned on container and staff is aware of When to change the chemical.', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'F4.2'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Autoclaved linen and Dressing are used for procedure', 'Gowns, draw sheets , Cotton, Gauze, bandages.etc.', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'F4.2'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Instruments are packed as per standard protocol', 'Check for Window of autoclave drum is closed, drum is not filled more than 3/4th, instruments are not hinged,', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'F4.2'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
@@ -4175,7 +6689,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Mercury Spill management Kit is available', 'Hospital should aspire to be mercury free. If used than Hg spill management kit should be available with gloves, cap, mask, goggles, polybag, Plastic container & torch.', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'F5.3'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Cleaning of patient care area with detergent solution', 'Washing of floor with luke warm water and detergent.', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'F5.3'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Standard practice of mopping and scrubbing are followed', 'Use of three bucket system for mopping', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'F5.3'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Cleaning equipment''s like broom are not used in patient care areas', 'Look in janitors closet', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'F5.3'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Cleaning equipment''''s like broom are not used in patient care areas', 'Look in janitors closet', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'F5.3'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Fumigation as per schedule', 'check that Formalin is not used. safer commercially available disinfectants such as Bacillicidal are used for fumigation', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'F5.3'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('External footwears are restricted', 'adequate numbers are available at the entrance', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'F5.3'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Entry to sterile zone is permitted only after hand washing, change of clothes, gowning & PPE', 'only persons really required are allowed to enter the sterile zone', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'F5.3'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
@@ -4205,7 +6719,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Department has documented procedure for quality management & improvement', 'Check SOP for adequacy', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'G4.2'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Department has documented procedure for data collection, analysis & use for improvement', 'Check SOP for adequacy', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'G4.2'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Check staff is a aware of relevant part of SOPs', 'Ask staff how they carry out a specific activity.', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'G4.3'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Work instruction/clinical protocols are displayed', 'processing and sterilization of equipment''s,', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'G4.4'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Work instruction/clinical protocols are displayed', 'processing and sterilization of equipment''''s,', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'G4.4'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Process mapping of critical processes done', 'Critical process are the ones where is some problem-delays, errors, cost, time, etc. and improvement will make our process effective and efficient.', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'G5.1'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Non value adding activities are identified', 'Non value adding activities are wastes. In these steps resources are expended, delays occur, and no value is added to the service.', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'G5.2'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Processes are improved & implemented', 'Look for the improvements made in the critical process.', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'G5.3'), (select max(id) from checklist where name = 'M-OT (LaQshya)'));
@@ -4246,7 +6760,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Contraception services', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A2.5'), (select max(id) from checklist where name = 'PP Unit'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of point of care diagnostic test', 'For sterilization surgeries, availability of haemoglobin, urine analysis for sugar
 and albumin', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A3.2'), (select max(id) from checklist where name = 'PP Unit'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability departmental signage''s', '(Numbering, main department and internal sectional signage', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'PP Unit'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability departmental signage''''s', '(Numbering, main department and internal sectional signage', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'PP Unit'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Restricted area signage are displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'PP Unit'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('List of Family Planning Services available', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'PP Unit'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Compensation for family planning indemnity scheme', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'PP Unit'));
@@ -4256,7 +6770,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 available at the site and displayed', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.5'), (select max(id) from checklist where name = 'PP Unit'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Education material for counselling are available in Counselling room', 'Flip charts, models, specimens, and samples of
 contraceptives available', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.5'), (select max(id) from checklist where name = 'PP Unit'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'PP Unit'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'PP Unit'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of female staff if a male doctor examine a female patients', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B2.1'), (select max(id) from checklist where name = 'PP Unit'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('There is no over emphasis on one method', 'Ask Staff/client whether they were convinced for one method or given informed choice', FALSE, TRUE, TRUE, FALSE, (select max(id) from measurable_element where reference = 'B2.1'), (select max(id) from checklist where name = 'PP Unit'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Wheel chair or stretcher for easy Access to the OT', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B2.3'), (select max(id) from checklist where name = 'PP Unit'));
@@ -4381,7 +6895,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 Requisition are timely placed', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.1'), (select max(id) from checklist where name = 'PP Unit'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Contraceptives are stored away from water and sources of heat,
 direct sunlight etc.', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.3'), (select max(id) from checklist where name = 'PP Unit'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Expiry dates'' are maintained at emergency drug tray', 'Are expired contraceptives destroyed to prevent resale
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Expiry dates'''' are maintained at emergency drug tray', 'Are expired contraceptives destroyed to prevent resale
 or other inappropriate use', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'PP Unit'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('No expiry drug found', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'PP Unit'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Records for expiry and near expiry drugs are maintained for drug stored at department', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'PP Unit'));
@@ -4527,7 +7041,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Client is informed about the adverse effect that can happen and their remedy', 'Cramping, vaginal discharge, heavier menstruation, checking of IUD', FALSE, TRUE, TRUE, FALSE, (select max(id) from measurable_element where reference = 'E21.2'), (select max(id) from checklist where name = 'PP Unit'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Follow up services are provided as per protocols', 'Removal of IUD, Instructions for when to return', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E21.2'), (select max(id) from checklist where name = 'PP Unit'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('IUD insertion is done as per standard protocol', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E21.2'), (select max(id) from checklist where name = 'PP Unit'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('PPIUD insertion is done as per standard protocol', 'Grasp IUCD with PPIUCD forcep using no touch technique, apply traction on anterior lip of cervix with ring (sponge holding) forcep and insert IUCD in to lower utrine wall, remove the ring forcep and move other hand upward to women''s abdomen, move PPIUCD insertion forcep upward toward fundus, feel the resitance & thrust of instrument by hand kept on abdomen, open PPIUCD forcep and realease IUCD, instument is slowly withdrawn by keeping side way to avoid dislodging of IUCD. Ensure IUCD is not visible if yes remove & reinsert', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E21.2'), (select max(id) from checklist where name = 'PP Unit'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('PPIUD insertion is done as per standard protocol', 'Grasp IUCD with PPIUCD forcep using no touch technique, apply traction on anterior lip of cervix with ring (sponge holding) forcep and insert IUCD in to lower utrine wall, remove the ring forcep and move other hand upward to women''''s abdomen, move PPIUCD insertion forcep upward toward fundus, feel the resitance & thrust of instrument by hand kept on abdomen, open PPIUCD forcep and realease IUCD, instument is slowly withdrawn by keeping side way to avoid dislodging of IUCD. Ensure IUCD is not visible if yes remove & reinsert', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E21.2'), (select max(id) from checklist where name = 'PP Unit'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Staff is aware of case selection criteria for family planning', '22-49 year age
 Married
 at least having one year old
@@ -4706,8 +7220,8 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Functional side laboratory services are available', 'ABG & Electrolyte', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A3.2'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Functional ECG Services are available', '12 lead ECG', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A3.3'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of cardiac care unit', '5 bedded ICU (Either dedicated or corelated to the main ICU)', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A4.8'), (select max(id) from checklist where name = 'ICU'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability departmental signage''s', '(Numbering, main department and internal sectional signage', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'ICU'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Directional Signage''s', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'ICU'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability departmental signage''''s', '(Numbering, main department and internal sectional signage', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'ICU'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Directional Signage''''s', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage for restricted area', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Services provision in ICU are displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Services not available in ICU are displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'ICU'));
@@ -4715,7 +7229,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Important numbers including ambulance, blood bank and referral centres displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('User charges in r/o lCU services are displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.4'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('IEC material displayed in waiting area', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.5'), (select max(id) from checklist where name = 'ICU'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'ICU'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Discharge summery is given to the patient', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.8'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of female staff if a male doctor examination a female patients', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B2.1'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Wheel chair or stretcher for easy Access to the ICU', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B2.3'), (select max(id) from checklist where name = 'ICU'));
@@ -4827,7 +7341,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 Requisition are timely placed', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.1'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Drugs are stored in containers/tray/crash cart and are labelled', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'D2.3'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Empty and filled cylinders are labelled', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'D2.3'), (select max(id) from checklist where name = 'ICU'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Expiry dates'' are maintained at emergency drug tray', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'ICU'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Expiry dates'''' are maintained at emergency drug tray', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('No expiry drug found', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Records for expiry and near expiry drugs are maintained for drug stored in ICU', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('There is practice of calculating and maintaining buffer stock', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.5'), (select max(id) from checklist where name = 'ICU'));
@@ -4844,7 +7358,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Temperature is maintained in ICU and record of same is kept', '20-25OC, ICU has functional room thermometer and temperature is regularly maintained', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D3.3'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Humidity is maintained in ICU and record of same is maintained', '50-60%', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D3.3'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('ICU has system to maintain its ventilation and its environment is dust free', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D3.3'), (select max(id) from checklist where name = 'ICU'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('ICU has system to control the sound producing activities and gadgets'' (like telephone sounds, staff area and equipments)', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D3.3'), (select max(id) from checklist where name = 'ICU'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('ICU has system to control the sound producing activities and gadgets'''' (like telephone sounds, staff area and equipments)', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D3.3'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Security arrangement at ICU', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'D3.4'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Ask female staff weather they feel secure at work place', '', FALSE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'D3.5'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Building is painted/whitewashed in uniform color', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'D4.1'), (select max(id) from checklist where name = 'ICU'));
@@ -4965,14 +7479,14 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('ICU has critical values of various lab test', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E12.3'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('There is a procedure for issuing the blood promptly for life saving measures', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.8'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Consent is taken before transfusion', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'ICU'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Patient''s identification is verified before transfusion', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'ICU'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Patient''''s identification is verified before transfusion', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Blood is kept on optimum temperature before transfusion', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Blood transfusion is monitored and regulated by qualified person', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Blood transfusion note is written in patient recorded', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Any major or minor transfusion reaction is recorded and reported to responsible person', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.10'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Pre anaesthesia check up is conducted for elective / Planned surgeries', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E14.1'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('ICU has procedure to inform patient relatives about poor prognostic status of inpatient', '', FALSE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E16.1'), (select max(id) from checklist where name = 'ICU'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('ICU has system for conducting grievance counselling of patient''s relative in case of mortality and at initiation of End of life care', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E16.1'), (select max(id) from checklist where name = 'ICU'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('ICU has system for conducting grievance counselling of patient''''s relative in case of mortality and at initiation of End of life care', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E16.1'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Death note is written on patient record', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E16.1'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Death note including efforts done for resuscitation is noted in patient record', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E16.2'), (select max(id) from checklist where name = 'ICU'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Death summary is given to patient attendant quoting the immediate cause and underlying cause if possible', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E16.2'), (select max(id) from checklist where name = 'ICU'));
@@ -5127,7 +7641,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availabily of Opthalmic ward', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A4.5'), (select max(id) from checklist where name = 'IPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availbilty of Geriatic ward', 'Demarcated beds for Geriatric patient may be provided in Medical Ward if a dedicated geriatric ward is not available.', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A4.7'), (select max(id) from checklist where name = 'IPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of indoor Services as per local prevalent disease', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'A6.1'), (select max(id) from checklist where name = 'IPD'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability departmental signage''s', '(Numbering, main department and internal sectional signage', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'IPD'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability departmental signage''''s', '(Numbering, main department and internal sectional signage', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'IPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Display of layout/floor directory', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'IPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Visiting hours and visitor policy are displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'IPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('List of services available are displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'IPD'));
@@ -5136,7 +7650,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Contact details of referral transport / ambulance displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'IPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('User charges if any displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.4'), (select max(id) from checklist where name = 'IPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Relevant IEC material displayed at wards', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.5'), (select max(id) from checklist where name = 'IPD'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'IPD'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'IPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Discharge summery is given to the patient', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'B1.8'), (select max(id) from checklist where name = 'IPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Separate male & female wards', 'Where ever male and female are kept in same wards male and female area are demarcated', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B2.1'), (select max(id) from checklist where name = 'IPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Male and female toilets are demarcated', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B2.1'), (select max(id) from checklist where name = 'IPD'));
@@ -5178,7 +7692,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Dedicated nursing station', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'IPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Patient Examination is done at the bed side', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'IPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Treatment room', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'IPD'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Doctor''s Duty room', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'IPD'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Doctor''''s Duty room', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'IPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Nurse Duty room', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'IPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Store', 'Drug &Linen store', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'IPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Dirty room', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C1.3'), (select max(id) from checklist where name = 'IPD'));
@@ -5241,7 +7755,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 Requisition are timely placed', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.1'), (select max(id) from checklist where name = 'IPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Drugs are stored in containers/tray/crash cart and are labelled', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'D2.3'), (select max(id) from checklist where name = 'IPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Empty and filled cylinders are labelled', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'D2.3'), (select max(id) from checklist where name = 'IPD'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Expiry dates'' are maintained at emergency drug tray', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'IPD'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Expiry dates'''' are maintained at emergency drug tray', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'IPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('No expiry drug found', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'IPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Records for expiry and near expiry drugs are maintained for drug stored at department', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'IPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('There is practice of calculating and maintaining buffer stock', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.5'), (select max(id) from checklist where name = 'IPD'));
@@ -5358,7 +7872,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Container is labelled properly after the sample collection', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E12.1'), (select max(id) from checklist where name = 'IPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Nursing station is provided with the critical value of different tests', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E12.3'), (select max(id) from checklist where name = 'IPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Consent is taken before transfusion', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'IPD'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Patient''s identification is verified before transfusion', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'IPD'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Patient''''s identification is verified before transfusion', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'IPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('blood is kept on optimum temperature before transfusion', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'IPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Blood transfusion is monitored and regulated by qualified person', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'IPD'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Blood transfusion note is written in patient recorded', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E13.9'), (select max(id) from checklist where name = 'IPD'));
@@ -5484,7 +7998,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Blood bank has displayed information regarding number of blood units available', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'Blood Bank'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('User services charges in r/o blood are displayed at entrance', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.4'), (select max(id) from checklist where name = 'Blood Bank'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('IEC material is available in blood bank to provide information and to promote blood donation', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.5'), (select max(id) from checklist where name = 'Blood Bank'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'Blood Bank'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'Blood Bank'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of ramp or alternate for easy access to the blood bank', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B2.3'), (select max(id) from checklist where name = 'Blood Bank'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Privacy at blood donation and counselling room', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B3.1'), (select max(id) from checklist where name = 'Blood Bank'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Blood Bank has system to ensure the confidentiality of results of screening test done', 'Blood bank staff do not discuss the lab result outside. reports are kept in secure place', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B3.2'), (select max(id) from checklist where name = 'Blood Bank'));
@@ -5534,7 +8048,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability Laboratory materials', 'Evacuated Blood collection tubes, Swabs, Syringes, Glass slides, Glass marker/paper stickers', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'C5.1'), (select max(id) from checklist where name = 'Blood Bank'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Reagents /Kits for lab', 'Standard Grouping Sera Anti A, Anti B & Anti D ,VDRL/RPR Kit for Syphillis,RDK/ ELISA for Malarial Antigen, ELISA kit for Hep B &C, ELISA kit for HIV1 & 2, malarial parasite stains', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'C5.2'), (select max(id) from checklist where name = 'Blood Bank'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of functional Equipment &Instruments for examination & Monitoring', 'Adult Weighing machine, BP apparatus , clinical thermometer', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C6.1'), (select max(id) from checklist where name = 'Blood Bank'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of laboratory equipment & instruments for laboratory', 'Microscope with water bath, ELISA reader with washer, RH viewer, Sahli''s Haemoglobino meter/Others', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C6.3'), (select max(id) from checklist where name = 'Blood Bank'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of laboratory equipment & instruments for laboratory', 'Microscope with water bath, ELISA reader with washer, RH viewer, Sahli''''s Haemoglobino meter/Others', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C6.3'), (select max(id) from checklist where name = 'Blood Bank'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of functional Instruments for Resuscitation.', 'Adult bag and mask and Oxygen', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C6.4'), (select max(id) from checklist where name = 'Blood Bank'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Check for availability of storage equipments for blood products', 'Blood bags refrigerator with thermo graph and alarm device, Insulated carrier boxes with ice packs, Blood bag weighting machine, deep freezer, Platelets agitators', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C6.5'), (select max(id) from checklist where name = 'Blood Bank'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of equipments for cleaning', 'Buckets for mopping, mops, duster, waste trolley, Deck brush', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C6.6'), (select max(id) from checklist where name = 'Blood Bank'));
@@ -5564,7 +8078,7 @@ Requisition are timely placed', FALSE, TRUE, FALSE, TRUE, (select max(id) from m
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Reagents and consumables are kept away from water and sources of heat,
 direct sunlight', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.3'), (select max(id) from checklist where name = 'Blood Bank'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Reagents are labelled appropriately', 'Reagents label contain name, concentration, date of preparation/opening, date of expiry, storage conditions and warning', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.3'), (select max(id) from checklist where name = 'Blood Bank'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Expiry dates'' of the blood bags are maintained', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'Blood Bank'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Expiry dates'''' of the blood bags are maintained', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'Blood Bank'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('No expired blood is found in storage', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'Blood Bank'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Records for expiry and near expiry blood are maintained', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.4'), (select max(id) from checklist where name = 'Blood Bank'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('There is practice of calculating and maintaining buffer stock of reagents', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'D2.5'), (select max(id) from checklist where name = 'Blood Bank'));
@@ -5783,12 +8297,12 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Skin Smear Examination', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A4.3'), (select max(id) from checklist where name = 'Lab'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Haemogram, PT CT, Fasting/PP Sugar, Lipid Profile, Blood Urea , LFT Kidney Function Test', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'A4.8'), (select max(id) from checklist where name = 'Lab'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Laboratory provides specific test for local health problems/ diseases e.g.. Dengue, swine flu etc.', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'A6.1'), (select max(id) from checklist where name = 'Lab'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability departmental signage''s', '(Numbering, main department and internal sectional signage', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'Lab'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability departmental signage''''s', '(Numbering, main department and internal sectional signage', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'Lab'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Restricted area signage are displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'Lab'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('List of services available are displayed at the entrance', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'Lab'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Timing for collection of sample and delivery of reports are displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'Lab'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('User charges in r/o laboratory services are displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.4'), (select max(id) from checklist where name = 'Lab'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.5'), (select max(id) from checklist where name = 'Lab'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.5'), (select max(id) from checklist where name = 'Lab'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Lab Reports are provided to Patient in proper printed format', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.8'), (select max(id) from checklist where name = 'Lab'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Separate queue for females at lab', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B2.1'), (select max(id) from checklist where name = 'Lab'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Check the availability of ramp in lab building area /sample collection area', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B2.3'), (select max(id) from checklist where name = 'Lab'));
@@ -5855,7 +8369,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of equipments for cleaning', 'Buckets for mopping, mops, duster, waste trolley, Deck brush', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C6.6'), (select max(id) from checklist where name = 'Lab'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of equipment for sterilization and disinfection', 'Autoclave', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C6.6'), (select max(id) from checklist where name = 'Lab'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of fixtures at lab', 'Illumination at work stations, Electrical fixture for lab equipments and storage equipments', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C6.7'), (select max(id) from checklist where name = 'Lab'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of furniture', 'Lab stools, Work bench''s, rack and cupboard for storage of reagent ,Patient stool, Chair table', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C6.7'), (select max(id) from checklist where name = 'Lab'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of furniture', 'Lab stools, Work bench''''s, rack and cupboard for storage of reagent ,Patient stool, Chair table', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'C6.7'), (select max(id) from checklist where name = 'Lab'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Check parameters for assessing skills and proficiency of clinical staff has been defined', 'Check objective checklist has been prepared for assessing competence of doctors, nurses and paramedical staff based on job description defined for each cadre of staff. Dakshta checklist issued by MoHFW can be used for this purpose.', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'C7.1'), (select max(id) from checklist where name = 'Lab'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Check for competence assessment is done at least once in a year', 'Check for records of competence assessment including filled checklist, scoring and grading . Verify with staff for actual competence assessment done', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'C7.2'), (select max(id) from checklist where name = 'Lab'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Training on automated Diagnostic Equipments like auto analyzer', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'C7.9'), (select max(id) from checklist where name = 'Lab'));
@@ -6083,14 +8597,14 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of special radio graphy services', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A3.1'), (select max(id) from checklist where name = 'Radiology'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Dental X ray Services', 'Dental X-ray. OPG services', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A3.1'), (select max(id) from checklist where name = 'Radiology'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of ultrasound services', 'Pre natal diagnostic procedure: Ultrasonography', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A3.1'), (select max(id) from checklist where name = 'Radiology'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability departmental signage''s', '(Numbering, main department and internal sectional signage', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'Radiology'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability departmental signage''''s', '(Numbering, main department and internal sectional signage', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'Radiology'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Display of PNDT Notice at USG', 'Notice in local language is displayed at entrance of USG department that All persons including the employer,
 employee or any other person associated with department shall not conduct or associate with or help in carrying out detection or disclosure of sex of foetus in any manner', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'Radiology'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Display of cautionary signage outside the X ray department', 'Radiation hazard sign and caution for pregnant women and children', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'Radiology'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('List of services available are displayed at the entrance', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'Radiology'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Timing for taking X ray and collection of reports are displayed outside the X ray department', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'Radiology'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('User charges in r/o X ray services are displayed at entrance', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.4'), (select max(id) from checklist where name = 'Radiology'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'Radiology'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'Radiology'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Reports are provided to Patient in proper printed format', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.8'), (select max(id) from checklist where name = 'Radiology'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Female attendant should accompany female patients during radiological procedures', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B2.1'), (select max(id) from checklist where name = 'Radiology'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Check the availability of ramp in OPD/ X ray room', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B2.3'), (select max(id) from checklist where name = 'Radiology'));
@@ -6340,13 +8854,13 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Generic Drug Store', 'Functional jan ayushdhalya in premises or equivalent', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A5.6'), (select max(id) from checklist where name = 'Pharmacy'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Storage of drugs', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A5.6'), (select max(id) from checklist where name = 'Pharmacy'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Cold chain management services', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A5.6'), (select max(id) from checklist where name = 'Pharmacy'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability departmental signage''s', '(Numbering, main department and internal sectional signage', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'Pharmacy'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Directional signage''s are displayed in hospital for easy access to Pharmacy/Generic drug store', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'Pharmacy'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability departmental signage''''s', '(Numbering, main department and internal sectional signage', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'Pharmacy'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Directional signage''''s are displayed in hospital for easy access to Pharmacy/Generic drug store', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'Pharmacy'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('List of Drugs available displayed at Pharmacy', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'Pharmacy'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Status of availability of drugs is updated daily', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'Pharmacy'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Timing for dispensing counter of pharmacy are displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'Pharmacy'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('User charges in r/o services are displayed at entrance of generic drug store', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.4'), (select max(id) from checklist where name = 'Pharmacy'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'Pharmacy'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'Pharmacy'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of separate Queue for Male and female at dispensing counter', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B2.1'), (select max(id) from checklist where name = 'Pharmacy'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Pharmacy has easy access for moment of goods', 'Check for availability of ramp and goods trolley/ cart', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B2.3'), (select max(id) from checklist where name = 'Pharmacy'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Behaviour of staff is empathetic and courteous', '', FALSE, FALSE, TRUE, FALSE, (select max(id) from measurable_element where reference = 'B3.3'), (select max(id) from checklist where name = 'Pharmacy'));
@@ -6564,7 +9078,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of maintenance services 24X7', 'Includes Physical infrastructure maintenance and equipment maintenance', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A5.1'), (select max(id) from checklist where name = 'Auxillary services'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Medical record department', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'A5.7'), (select max(id) from checklist where name = 'Auxillary services'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of departmental signage for support service department', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'Auxillary services'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'Auxillary services'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'Auxillary services'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Medical records are provided to patient/ Next to kin on request', '', TRUE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'B1.8'), (select max(id) from checklist where name = 'Auxillary services'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('MRD has system to maintain Confidentiality of patient records', 'Patient records are not shared except the patient until it is authorized by law', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'B3.2'), (select max(id) from checklist where name = 'Auxillary services'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Behaviour of staff is empathetic and courteous', '', FALSE, FALSE, TRUE, FALSE, (select max(id) from measurable_element where reference = 'B3.3'), (select max(id) from checklist where name = 'Auxillary services'));
@@ -6676,7 +9190,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('All register/records are identified and numbered', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E8.6'), (select max(id) from checklist where name = 'Auxillary services'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Diet Registers are maintained at Kitchen', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E8.6'), (select max(id) from checklist where name = 'Auxillary services'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Laundry registers are maintained at laundry', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E8.6'), (select max(id) from checklist where name = 'Auxillary services'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Hospital has procedure for collection, Compilation and maintenance of patient''s records after discharge', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E8.7'), (select max(id) from checklist where name = 'Auxillary services'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Hospital has procedure for collection, Compilation and maintenance of patient''''s records after discharge', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E8.7'), (select max(id) from checklist where name = 'Auxillary services'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Medical record department has system to check for completion of records', 'Checking the records as per checklist for completion', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E8.7'), (select max(id) from checklist where name = 'Auxillary services'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Medical record department has system for ICD coding /indexing the records', 'As per ICD coding / indexing name, disease, diagnosis, physician and surgical procedure carried out', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E8.7'), (select max(id) from checklist where name = 'Auxillary services'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Medical record department has system to generate statistics for clinical use', 'Submitting the reports to required health authorities (Birth death notification, notification of communicable diseases etc)', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'E8.7'), (select max(id) from checklist where name = 'Auxillary services'));
@@ -6810,7 +9324,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Services for Embalming the dead body', '', FALSE, TRUE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'A5.8'), (select max(id) from checklist where name = 'Mortuary'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of departmental signage', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'Mortuary'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Restricted area signage are displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'Mortuary'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''s are available in local language and pictorial', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'Mortuary'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''''s are available in local language and pictorial', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'Mortuary'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Post mortem records of deceased are issued to police/next kin of deceased as per state guideline', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.8'), (select max(id) from checklist where name = 'Mortuary'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Religious and cultural preferences of deceased and relatives are taken in to consideration while handling over the body', '', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B2.2'), (select max(id) from checklist where name = 'Mortuary'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of ramp/level ground for easy access of stretcher to mortuary/ post mortem room', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B2.3'), (select max(id) from checklist where name = 'Mortuary'));
@@ -7032,7 +9546,7 @@ departments are displayed at the entrance.', '', TRUE, FALSE, FALSE, FALSE, (sel
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Hospital has established directional signage', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'Admin'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('List of departments are displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'Admin'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('All signage are in uniform colour scheme', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'Admin'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''s are user friendly and pictorial', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'Admin'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''''s are user friendly and pictorial', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.1'), (select max(id) from checklist where name = 'Admin'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Services not available are displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'Admin'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of administrative services like handicap certificate, death certificate services are displayed.', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'Admin'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Processing time for issuing documents and Medical records are displayed', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.2'), (select max(id) from checklist where name = 'Admin'));
@@ -7049,7 +9563,7 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Citizen Charter Includes about person and place avail Information and assistance', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.3'), (select max(id) from checklist where name = 'Admin'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Citizen Charter Includes the Cycle time for Critical Processes', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.3'), (select max(id) from checklist where name = 'Admin'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Facility prepares a comprehensive list of user charges and display at strategic point in the hospital', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.4'), (select max(id) from checklist where name = 'Admin'));
-insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'Admin'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Signage''''s and information are available in local language', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.6'), (select max(id) from checklist where name = 'Admin'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('A dedicated facilitation counter/rogi sahayata kendra available', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.7'), (select max(id) from checklist where name = 'Admin'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Information regarding services available at the counter', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.7'), (select max(id) from checklist where name = 'Admin'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Important contact no. are available at the counter', '', TRUE, FALSE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'B1.7'), (select max(id) from checklist where name = 'Admin'));
@@ -7585,7 +10099,3 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Patient satisfaction Score IPD', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'H4.1'), (select max(id) from checklist where name = 'Admin'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Staff Satisfaction Score', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'H4.1'), (select max(id) from checklist where name = 'Admin'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Turn over rate of contractual staff', '', FALSE, FALSE, FALSE, TRUE, (select max(id) from measurable_element where reference = 'H4.1'), (select max(id) from checklist where name = 'Admin'));
-
-
-update assessment_tool set name = 'MP DH' where
-    name = 'District Hospital (DH)' and state_id = (select id from state where name = 'Madhya Pradesh');
