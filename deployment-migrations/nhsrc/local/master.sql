@@ -28,10 +28,10 @@
 -- \i ./4-3-3-tn-nqas-chc.sql
 -- \i ./4-3-4-tn-nqas-sdh.sql
 -- \i ./4-4-1-meghalaya-nqas-chc.sql
-\i ./4-4-2-meghalaya-nqas-mch.sql
+-- \i ./4-4-2-meghalaya-nqas-mch.sql
 -- \i ./4-5-1-hp-nqas-30-50-bedded.sql
--- \i ./4-5-3-hp-nqas-200-bed.sql
 -- \i ./4-5-2-hp-nqas-100-199-bed.sql
+\i ./4-5-3-hp-nqas-200-bed.sql
 -- \i ./4-6-1-jk-nqas-dh.sql
 -- \i ./4-7-1-nqas-odisha-dh.sql
 -- \i ./4-8-1-nqas-punjab-dh.sql
