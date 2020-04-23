@@ -3,4 +3,6 @@ write query to list down the number of checkpoints, standards, etc for each asse
 
 missing
 4-5-2-hp-nqas-100-199-bed.sql. D11, G10, G8. E18.10, E5.4, EA4.3, ED9.2.
-4-5-3-hp-nqas-200-bed.sql. E18.10,
+4-5-3-hp-nqas-200-bed.sql. E18.10.
+Punjab DH. E18.10
+Punjab SDH.  G10.6, G7.4, G7.5, G7.7, G8.1, G8.2, H1.1, H2.1, H3.1, H4.1, E18.10. Whole file not done.
