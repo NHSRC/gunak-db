@@ -85,6 +85,8 @@ define _deploy_migrations_local
 endef
 
 deploy-migrations-to-nhsrc-local:
+	find deployment-migrations/nhsrc/local -type f -exec sed -i '' 's/"insert/insert/g' {} \;
+	find deployment-migrations/nhsrc/local -type f -exec sed -i '' 's/;"/;/g' {} \;
 	$(call _deploy_migrations_local,facilities_assessment_nhsrc,nhsrc)
 
 deploy-migrations-to-nhsrc-qa-local:
