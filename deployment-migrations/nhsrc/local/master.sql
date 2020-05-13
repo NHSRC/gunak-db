@@ -42,9 +42,3 @@
 \i ./4-11-kar-kk-taluka.sql
 
 update assessment_tool_mode set name = 'NQAS' where name = 'nqas';
-
-
-
-
-
-
