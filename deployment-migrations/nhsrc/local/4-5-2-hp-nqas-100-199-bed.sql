@@ -38404,68 +38404,68 @@ where measurable_element.reference = 'H4.1' and a2.name = '100-199 Bedded (HP)')
 -- added later
 insert into standard (name, reference, area_of_concern_id) values ('Roles & Responsibilities of administrative and clinical staff are determined as per govt. regulations and standards operating procedures.', 'D11', (select max(id) from area_of_concern where reference = 'D'));
 
-insert into standard (name, reference, area_of_concern_id) values ('Facility has established procedures for assessing, reporting, evaluating and managing risk as per Risk Management Plan', 'G10', (select max(id) from area_of_concern where reference = 'G10'));
-insert into standard (name, reference, area_of_concern_id) values ('The facility seeks continually improvement by practicing Quality method and tools.', 'G8', (select max(id) from area_of_concern where reference = 'G8'));
+insert into standard (name, reference, area_of_concern_id) values ('Facility has established procedures for assessing, reporting, evaluating and managing risk as per Risk Management Plan', 'G10', (select max(id) from area_of_concern where reference = 'G'));
+insert into standard (name, reference, area_of_concern_id) values ('The facility seeks continually improvement by practicing Quality method and tools.', 'G8', (select max(id) from area_of_concern where reference = 'G'));
 
 
 
-"insert into measurable_element (name, reference, standard_id) values ('The facility has an established procedure for duty roster and deputation to different departments', 'D11.2', (select max(standard.id) from standard
+insert into measurable_element (name, reference, standard_id) values ('The facility has an established procedure for duty roster and deputation to different departments', 'D11.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
 join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'D11' and a2.name = '100-199 Bedded (HP)')) on conflict do nothing;"
-"insert into measurable_element (name, reference, standard_id) values ('The facility ensures the adherence to dress code as mandated by its administration / the health department', 'D11.3', (select max(standard.id) from standard
+where standard.reference = 'D11' and a2.name = '100-199 Bedded (HP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility ensures the adherence to dress code as mandated by its administration / the health department', 'D11.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
 join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'D11' and a2.name = '100-199 Bedded (HP)')) on conflict do nothing;"
+where standard.reference = 'D11' and a2.name = '100-199 Bedded (HP)')) on conflict do nothing;
 
 
-"insert into measurable_element (name, reference, standard_id) values ('The facility uses method for quality improvement in services', 'G8.1', (select max(standard.id) from standard
+insert into measurable_element (name, reference, standard_id) values ('The facility uses method for quality improvement in services', 'G8.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
 join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'G8' and a2.name = '100-199 Bedded (HP)')) on conflict do nothing;"
-"insert into measurable_element (name, reference, standard_id) values ('The facility uses tools for quality improvement in services', 'G8.2', (select max(standard.id) from standard
+where standard.reference = 'G8' and a2.name = '100-199 Bedded (HP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('The facility uses tools for quality improvement in services', 'G8.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
 join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'G8' and a2.name = '100-199 Bedded (HP)')) on conflict do nothing;"
-"insert into measurable_element (name, reference, standard_id) values ('Periodic assessment for Medication and Patient care safety risks is done as per defined criteria.', 'G10.6', (select max(standard.id) from standard
+where standard.reference = 'G8' and a2.name = '100-199 Bedded (HP)')) on conflict do nothing;
+insert into measurable_element (name, reference, standard_id) values ('Periodic assessment for Medication and Patient care safety risks is done as per defined criteria.', 'G10.6', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
 join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'G10' and a2.name = '100-199 Bedded (HP)')) on conflict do nothing;"
+where standard.reference = 'G10' and a2.name = '100-199 Bedded (HP)')) on conflict do nothing;
 
-"insert into measurable_element (name, reference, standard_id) values ('There is Established protocol for newborn resuscitation is followed at the facility.', 'E18.10', (select max(standard.id) from standard
+insert into measurable_element (name, reference, standard_id) values ('There is Established protocol for newborn resuscitation is followed at the facility.', 'E18.10', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
 join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E18' and a2.name = '100-199 Bedded (HP)')) on conflict do nothing;"
+where standard.reference = 'E18' and a2.name = '100-199 Bedded (HP)')) on conflict do nothing;
 
 
 
 
 -- added later
-"insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Skin Smear Examination', '0', TRUE, TRUE, FALSE, FALSE, (select max(measurable_element.id) from measurable_element
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Availability of Skin Smear Examination', '0', TRUE, TRUE, FALSE, FALSE, (select max(measurable_element.id) from measurable_element
   join standard on measurable_element.standard_id = standard.id
   join area_of_concern a on standard.area_of_concern_id = a.id
   join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -38473,11 +38473,11 @@ where standard.reference = 'E18' and a2.name = '100-199 Bedded (HP)')) on confli
   join assessment_tool_checklist c4 on c2.id = c4.checklist_id
   join assessment_tool a2 on c4.assessment_tool_id = a2.id
   join state on a2.state_id = state.id
-where measurable_element.reference = 'A4.3' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'Lab'));"
+where measurable_element.reference = 'A4.3' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'Lab'));
 
 
 
-"insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('There is procedure to ensure that staff is available on duty as per duty roster', 'Check for system for recording time of reporting and relieving (Attendance register/ Biometrics etc)', FALSE, TRUE, FALSE, TRUE, (select max(measurable_element.id) from measurable_element
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('There is procedure to ensure that staff is available on duty as per duty roster', 'Check for system for recording time of reporting and relieving (Attendance register/ Biometrics etc)', FALSE, TRUE, FALSE, TRUE, (select max(measurable_element.id) from measurable_element
   join standard on measurable_element.standard_id = standard.id
   join area_of_concern a on standard.area_of_concern_id = a.id
   join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -38485,8 +38485,8 @@ where measurable_element.reference = 'A4.3' and a2.name = '100-199 Bedded (HP)')
   join assessment_tool_checklist c4 on c2.id = c4.checklist_id
   join assessment_tool a2 on c4.assessment_tool_id = a2.id
   join state on a2.state_id = state.id
-where measurable_element.reference = 'D11.2' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'Labour Room'));"
-"insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Staff posted in the labor room should not be rotated outside the labor room', 'Check with the duty roster', FALSE, TRUE, FALSE, TRUE, (select max(measurable_element.id) from measurable_element
+where measurable_element.reference = 'D11.2' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'Labour Room'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Staff posted in the labor room should not be rotated outside the labor room', 'Check with the duty roster', FALSE, TRUE, FALSE, TRUE, (select max(measurable_element.id) from measurable_element
   join standard on measurable_element.standard_id = standard.id
   join area_of_concern a on standard.area_of_concern_id = a.id
   join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -38494,8 +38494,8 @@ where measurable_element.reference = 'D11.2' and a2.name = '100-199 Bedded (HP)'
   join assessment_tool_checklist c4 on c2.id = c4.checklist_id
   join assessment_tool a2 on c4.assessment_tool_id = a2.id
   join state on a2.state_id = state.id
-where measurable_element.reference = 'D11.2' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'Labour Room'));"
-"insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Doctor, nursing staff and support staff adhere to their respective dress code', 'As per hospital administration or state policy', TRUE, FALSE, FALSE, FALSE, (select max(measurable_element.id) from measurable_element
+where measurable_element.reference = 'D11.2' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'Labour Room'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Doctor, nursing staff and support staff adhere to their respective dress code', 'As per hospital administration or state policy', TRUE, FALSE, FALSE, FALSE, (select max(measurable_element.id) from measurable_element
   join standard on measurable_element.standard_id = standard.id
   join area_of_concern a on standard.area_of_concern_id = a.id
   join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -38503,8 +38503,8 @@ where measurable_element.reference = 'D11.2' and a2.name = '100-199 Bedded (HP)'
   join assessment_tool_checklist c4 on c2.id = c4.checklist_id
   join assessment_tool a2 on c4.assessment_tool_id = a2.id
   join state on a2.state_id = state.id
-where measurable_element.reference = 'D11.3' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'Labour Room'));"
-"insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Facility staff adheres to standard protocol for resuscitating the newborn within 30 seconds.', 'Performs initial steps of resuscitation within 30 seconds: immediate cord cutting and PSSR at radiant warmer.', TRUE, TRUE, FALSE, FALSE, (select max(measurable_element.id) from measurable_element
+where measurable_element.reference = 'D11.3' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'Labour Room'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Facility staff adheres to standard protocol for resuscitating the newborn within 30 seconds.', 'Performs initial steps of resuscitation within 30 seconds: immediate cord cutting and PSSR at radiant warmer.', TRUE, TRUE, FALSE, FALSE, (select max(measurable_element.id) from measurable_element
   join standard on measurable_element.standard_id = standard.id
   join area_of_concern a on standard.area_of_concern_id = a.id
   join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -38512,8 +38512,8 @@ where measurable_element.reference = 'D11.3' and a2.name = '100-199 Bedded (HP)'
   join assessment_tool_checklist c4 on c2.id = c4.checklist_id
   join assessment_tool a2 on c4.assessment_tool_id = a2.id
   join state on a2.state_id = state.id
-where measurable_element.reference = 'E18.10' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'Labour Room'));"
-"insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Facility staff adheres to standard protocol for preforming bag and mask ventilation for 30 seconds if baby is still not breathing.', 'Initiates bag and mask ventilation using room air with 5 ventilator breaths and continues ventilation for next 30 seconds if baby still does not breathe.', TRUE, TRUE, FALSE, FALSE, (select max(measurable_element.id) from measurable_element
+where measurable_element.reference = 'E18.10' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'Labour Room'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Facility staff adheres to standard protocol for preforming bag and mask ventilation for 30 seconds if baby is still not breathing.', 'Initiates bag and mask ventilation using room air with 5 ventilator breaths and continues ventilation for next 30 seconds if baby still does not breathe.', TRUE, TRUE, FALSE, FALSE, (select max(measurable_element.id) from measurable_element
   join standard on measurable_element.standard_id = standard.id
   join area_of_concern a on standard.area_of_concern_id = a.id
   join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -38521,8 +38521,8 @@ where measurable_element.reference = 'E18.10' and a2.name = '100-199 Bedded (HP)
   join assessment_tool_checklist c4 on c2.id = c4.checklist_id
   join assessment_tool a2 on c4.assessment_tool_id = a2.id
   join state on a2.state_id = state.id
-where measurable_element.reference = 'E18.10' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'Labour Room'));"
-"insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Facility staff adheres to standard protocol for taking appropriate actions if baby does not respond to bag and mask ventilation after golden minute.', 'If baby still not breathing/ breathing well, continues ventilation with oxygen, calls or arranges for advanced help or referral.', TRUE, TRUE, FALSE, FALSE, (select max(measurable_element.id) from measurable_element
+where measurable_element.reference = 'E18.10' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'Labour Room'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Facility staff adheres to standard protocol for taking appropriate actions if baby does not respond to bag and mask ventilation after golden minute.', 'If baby still not breathing/ breathing well, continues ventilation with oxygen, calls or arranges for advanced help or referral.', TRUE, TRUE, FALSE, FALSE, (select max(measurable_element.id) from measurable_element
   join standard on measurable_element.standard_id = standard.id
   join area_of_concern a on standard.area_of_concern_id = a.id
   join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -38530,8 +38530,8 @@ where measurable_element.reference = 'E18.10' and a2.name = '100-199 Bedded (HP)
   join assessment_tool_checklist c4 on c2.id = c4.checklist_id
   join assessment_tool a2 on c4.assessment_tool_id = a2.id
   join state on a2.state_id = state.id
-where measurable_element.reference = 'E18.10' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'Labour Room'));"
-"insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Basic quality improvement method', 'PDCA & 5S', TRUE, TRUE, FALSE, FALSE, (select max(measurable_element.id) from measurable_element
+where measurable_element.reference = 'E18.10' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'Labour Room'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Basic quality improvement method', 'PDCA & 5S', TRUE, TRUE, FALSE, FALSE, (select max(measurable_element.id) from measurable_element
   join standard on measurable_element.standard_id = standard.id
   join area_of_concern a on standard.area_of_concern_id = a.id
   join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -38539,8 +38539,8 @@ where measurable_element.reference = 'E18.10' and a2.name = '100-199 Bedded (HP)
   join assessment_tool_checklist c4 on c2.id = c4.checklist_id
   join assessment_tool a2 on c4.assessment_tool_id = a2.id
   join state on a2.state_id = state.id
-where measurable_element.reference = 'G8.1' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'Labour Room'));"
-"insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('7 basic tools of Quality', 'Minimum 2 applicable tools are used in each department', FALSE, TRUE, FALSE, TRUE, (select max(measurable_element.id) from measurable_element
+where measurable_element.reference = 'G8.1' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'Labour Room'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('7 basic tools of Quality', 'Minimum 2 applicable tools are used in each department', FALSE, TRUE, FALSE, TRUE, (select max(measurable_element.id) from measurable_element
   join standard on measurable_element.standard_id = standard.id
   join area_of_concern a on standard.area_of_concern_id = a.id
   join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -38548,8 +38548,8 @@ where measurable_element.reference = 'G8.1' and a2.name = '100-199 Bedded (HP)')
   join assessment_tool_checklist c4 on c2.id = c4.checklist_id
   join assessment_tool a2 on c4.assessment_tool_id = a2.id
   join state on a2.state_id = state.id
-where measurable_element.reference = 'G8.2' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'Labour Room'));"
-"insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Check periodic assessment of medication and patient care safety risk is done using defined checklist periodically', 'Verify with the records. A comprehensive risk assessment of all clinical processes should be done using pre define criteria at least once in three month.', FALSE, TRUE, FALSE, TRUE, (select max(measurable_element.id) from measurable_element
+where measurable_element.reference = 'G8.2' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'Labour Room'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Check periodic assessment of medication and patient care safety risk is done using defined checklist periodically', 'Verify with the records. A comprehensive risk assessment of all clinical processes should be done using pre define criteria at least once in three month.', FALSE, TRUE, FALSE, TRUE, (select max(measurable_element.id) from measurable_element
   join standard on measurable_element.standard_id = standard.id
   join area_of_concern a on standard.area_of_concern_id = a.id
   join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -38557,8 +38557,8 @@ where measurable_element.reference = 'G8.2' and a2.name = '100-199 Bedded (HP)')
   join assessment_tool_checklist c4 on c2.id = c4.checklist_id
   join assessment_tool a2 on c4.assessment_tool_id = a2.id
   join state on a2.state_id = state.id
-where measurable_element.reference = 'G10.6' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'Labour Room'));"
-"insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Doctor, nursing staff and support staff adhere to their respective dress code', 'Check staff is wearing dress as per their dress code.', TRUE, FALSE, FALSE, FALSE, (select max(measurable_element.id) from measurable_element
+where measurable_element.reference = 'G10.6' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'Labour Room'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Doctor, nursing staff and support staff adhere to their respective dress code', 'Check staff is wearing dress as per their dress code.', TRUE, FALSE, FALSE, FALSE, (select max(measurable_element.id) from measurable_element
   join standard on measurable_element.standard_id = standard.id
   join area_of_concern a on standard.area_of_concern_id = a.id
   join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -38566,8 +38566,8 @@ where measurable_element.reference = 'G10.6' and a2.name = '100-199 Bedded (HP)'
   join assessment_tool_checklist c4 on c2.id = c4.checklist_id
   join assessment_tool a2 on c4.assessment_tool_id = a2.id
   join state on a2.state_id = state.id
-where measurable_element.reference = 'D11.3' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'MOT'));"
-"insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('New born Resuscitation', 'Ask Nursing staff to demonstrate Resuscitation Technique', FALSE, TRUE, FALSE, TRUE, (select max(measurable_element.id) from measurable_element
+where measurable_element.reference = 'D11.3' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'MOT'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('New born Resuscitation', 'Ask Nursing staff to demonstrate Resuscitation Technique', FALSE, TRUE, FALSE, TRUE, (select max(measurable_element.id) from measurable_element
   join standard on measurable_element.standard_id = standard.id
   join area_of_concern a on standard.area_of_concern_id = a.id
   join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -38575,8 +38575,8 @@ where measurable_element.reference = 'D11.3' and a2.name = '100-199 Bedded (HP)'
   join assessment_tool_checklist c4 on c2.id = c4.checklist_id
   join assessment_tool a2 on c4.assessment_tool_id = a2.id
   join state on a2.state_id = state.id
-where measurable_element.reference = 'E18.10' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'MOT'));"
-"insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Basic quality improvement method', 'PDCA & 5S', TRUE, TRUE, FALSE, FALSE, (select max(measurable_element.id) from measurable_element
+where measurable_element.reference = 'E18.10' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'MOT'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Basic quality improvement method', 'PDCA & 5S', TRUE, TRUE, FALSE, FALSE, (select max(measurable_element.id) from measurable_element
   join standard on measurable_element.standard_id = standard.id
   join area_of_concern a on standard.area_of_concern_id = a.id
   join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -38584,8 +38584,8 @@ where measurable_element.reference = 'E18.10' and a2.name = '100-199 Bedded (HP)
   join assessment_tool_checklist c4 on c2.id = c4.checklist_id
   join assessment_tool a2 on c4.assessment_tool_id = a2.id
   join state on a2.state_id = state.id
-where measurable_element.reference = 'G8.1' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'MOT'));"
-"insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('7 basic tools of Quality', 'Minimum 2 applicable tools are used in each department', FALSE, TRUE, FALSE, TRUE, (select max(measurable_element.id) from measurable_element
+where measurable_element.reference = 'G8.1' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'MOT'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('7 basic tools of Quality', 'Minimum 2 applicable tools are used in each department', FALSE, TRUE, FALSE, TRUE, (select max(measurable_element.id) from measurable_element
   join standard on measurable_element.standard_id = standard.id
   join area_of_concern a on standard.area_of_concern_id = a.id
   join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -38593,8 +38593,8 @@ where measurable_element.reference = 'G8.1' and a2.name = '100-199 Bedded (HP)')
   join assessment_tool_checklist c4 on c2.id = c4.checklist_id
   join assessment_tool a2 on c4.assessment_tool_id = a2.id
   join state on a2.state_id = state.id
-where measurable_element.reference = 'G8.2' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'MOT'));"
-"insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Check periodic assessment of medication and patient care safety risk is done using defined checklist periodically', 'Verify with the records. A comprehensive risk assessment of all clinical processes should be done using pre define criteria at least once in three month.', FALSE, TRUE, FALSE, TRUE, (select max(measurable_element.id) from measurable_element
+where measurable_element.reference = 'G8.2' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'MOT'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Check periodic assessment of medication and patient care safety risk is done using defined checklist periodically', 'Verify with the records. A comprehensive risk assessment of all clinical processes should be done using pre define criteria at least once in three month.', FALSE, TRUE, FALSE, TRUE, (select max(measurable_element.id) from measurable_element
   join standard on measurable_element.standard_id = standard.id
   join area_of_concern a on standard.area_of_concern_id = a.id
   join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -38602,8 +38602,8 @@ where measurable_element.reference = 'G8.2' and a2.name = '100-199 Bedded (HP)')
   join assessment_tool_checklist c4 on c2.id = c4.checklist_id
   join assessment_tool a2 on c4.assessment_tool_id = a2.id
   join state on a2.state_id = state.id
-where measurable_element.reference = 'G10.6' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'MOT'));"
-"insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Action plan is prepared', '0', FALSE, TRUE, FALSE, TRUE, (select max(measurable_element.id) from measurable_element
+where measurable_element.reference = 'G10.6' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'MOT'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('There is procedure to ensure that staff is available on duty as per duty roster', 'Check for system for recording time of reporting and relieving (Attendance register/ Biometrics etc)', FALSE, TRUE, FALSE, TRUE, (select max(measurable_element.id) from measurable_element
   join standard on measurable_element.standard_id = standard.id
   join area_of_concern a on standard.area_of_concern_id = a.id
   join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -38611,8 +38611,8 @@ where measurable_element.reference = 'G10.6' and a2.name = '100-199 Bedded (HP)'
   join assessment_tool_checklist c4 on c2.id = c4.checklist_id
   join assessment_tool a2 on c4.assessment_tool_id = a2.id
   join state on a2.state_id = state.id
-where measurable_element.reference = 'E5.4' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'Pharmacy'));"
-"insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('There is procedure to ensure that staff is available on duty as per duty roster', 'Check for system for recording time of reporting and relieving (Attendance register/ Biometrics etc)', FALSE, TRUE, FALSE, TRUE, (select max(measurable_element.id) from measurable_element
+where measurable_element.reference = 'E9.2' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'BSU'));
+insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('There is designated in charge for department', '0', FALSE, TRUE, FALSE, FALSE, (select max(measurable_element.id) from measurable_element
   join standard on measurable_element.standard_id = standard.id
   join area_of_concern a on standard.area_of_concern_id = a.id
   join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -38620,13 +38620,4 @@ where measurable_element.reference = 'E5.4' and a2.name = '100-199 Bedded (HP)')
   join assessment_tool_checklist c4 on c2.id = c4.checklist_id
   join assessment_tool a2 on c4.assessment_tool_id = a2.id
   join state on a2.state_id = state.id
-where measurable_element.reference = 'ED9.2' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'BSU'));"
-"insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('There is designated in charge for department', '0', FALSE, TRUE, FALSE, FALSE, (select max(measurable_element.id) from measurable_element
-  join standard on measurable_element.standard_id = standard.id
-  join area_of_concern a on standard.area_of_concern_id = a.id
-  join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
-  join checklist c2 on c3.checklist_id = c2.id
-  join assessment_tool_checklist c4 on c2.id = c4.checklist_id
-  join assessment_tool a2 on c4.assessment_tool_id = a2.id
-  join state on a2.state_id = state.id
-where measurable_element.reference = 'ED9.2' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'BSU'));"
+where measurable_element.reference = 'E9.2' and a2.name = '100-199 Bedded (HP)'), (select max(id) from checklist where name = 'BSU'));

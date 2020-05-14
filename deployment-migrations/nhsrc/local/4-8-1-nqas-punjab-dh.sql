@@ -9600,14 +9600,14 @@ insert into checkpoint (name, means_of_verification, am_observation, am_staff_in
 
 -- added later
 
-"insert into measurable_element (name, reference, standard_id) values ('There is Established protocol for newborn resuscitation is followed at the facility.', 'E18.10', (select max(standard.id) from standard
+insert into measurable_element (name, reference, standard_id) values ('There is Established protocol for newborn resuscitation is followed at the facility.', 'E18.10', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
 join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E18' and a2.name = 'District Hospital (Punjab)')) on conflict do nothing;"
+where standard.reference = 'E18' and a2.name = 'District Hospital (Punjab)')) on conflict do nothing;
 
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Facility staff adheres to standard protocol for resuscitating the newborn within 30 seconds.', 'Performs initial steps of resuscitation within 30 seconds: immediate cord cutting and PSSR at radiant warmer.', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E18.10'), (select max(id) from checklist where name = 'Labour Room (LaQshya)'));
 insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('Facility staff adheres to standard protocol for preforming bag and mask ventilation for 30 seconds if baby is still not breathing.', 'Initiates bag and mask ventilation using room air with 5 ventilator breaths and continues ventilation for next 30 seconds if baby still does not breathe.', TRUE, TRUE, FALSE, FALSE, (select max(id) from measurable_element where reference = 'E18.10'), (select max(id) from checklist where name = 'Labour Room (LaQshya)'));
