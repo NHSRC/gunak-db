@@ -140,6 +140,7 @@ insert into standard (name, reference, area_of_concern_id) values ('The facility
 
 
 
+
 insert into measurable_element (name, reference, standard_id) values ('A1.1', 'A1.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -1947,7 +1948,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.1', 'E10.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -1955,7 +1956,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.1', 'E10.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -1963,7 +1964,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.1', 'E10.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -1971,7 +1972,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.2', 'E10.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -1979,7 +1980,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.2', 'E10.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -1987,7 +1988,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.2', 'E10.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -1995,7 +1996,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.3', 'E10.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2003,7 +2004,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.3', 'E10.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2011,7 +2012,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.3', 'E10.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2019,7 +2020,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.3', 'E10.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2027,7 +2028,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.3', 'E10.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2035,7 +2036,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.3', 'E10.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2043,7 +2044,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.4', 'E10.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2051,7 +2052,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.4', 'E10.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2059,7 +2060,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.4', 'E10.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2067,7 +2068,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.4', 'E10.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2075,7 +2076,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.4', 'E10.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2083,7 +2084,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.4', 'E10.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2091,7 +2092,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.4', 'E10.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2099,7 +2100,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.4', 'E10.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2107,7 +2108,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.5', 'E10.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2115,7 +2116,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.5', 'E10.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2123,7 +2124,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.5', 'E10.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2131,7 +2132,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.5', 'E10.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2139,7 +2140,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.1', 'E11.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2147,7 +2148,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.3', 'E11.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2155,7 +2156,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E14.1', 'E14.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2163,7 +2164,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E14' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E14.1', 'E14.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2171,7 +2172,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E14' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E15.1', 'E15.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2179,7 +2180,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E15' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E15.1', 'E15.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2187,7 +2188,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E15' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E15.2', 'E15.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2195,7 +2196,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E15' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E15.2', 'E15.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2203,7 +2204,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E15' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E15.2', 'E15.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2211,7 +2212,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E15' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E15.2', 'E15.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2219,7 +2220,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E15' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E15.3', 'E15.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2227,7 +2228,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E15' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E15.3', 'E15.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2235,7 +2236,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E15' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E15.3', 'E15.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -2243,7 +2244,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E15' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('F1.4', 'F1.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4731,7 +4732,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.3', 'E10.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4739,7 +4740,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.1', 'E11.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4747,7 +4748,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.3', 'E11.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4755,7 +4756,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.1', 'E16.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4763,7 +4764,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.1', 'E16.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4771,7 +4772,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.2', 'E16.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4779,7 +4780,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.2', 'E16.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4787,7 +4788,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.2', 'E16.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4795,7 +4796,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.2', 'E16.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4803,7 +4804,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.2', 'E16.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4811,7 +4812,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.2', 'E16.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4819,7 +4820,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.2', 'E16.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4827,7 +4828,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.2', 'E16.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4835,7 +4836,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.2', 'E16.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4843,7 +4844,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.2', 'E16.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4851,7 +4852,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.2', 'E16.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4859,7 +4860,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.3', 'E16.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4867,7 +4868,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.4', 'E16.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4875,7 +4876,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.5', 'E16.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4883,7 +4884,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.5', 'E16.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4891,7 +4892,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.5', 'E16.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4899,7 +4900,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.6', 'E16.6', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4907,7 +4908,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.6', 'E16.6', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4915,7 +4916,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.6', 'E16.6', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4923,7 +4924,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.6', 'E16.6', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4931,7 +4932,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.6', 'E16.6', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4939,7 +4940,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.6', 'E16.6', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4947,7 +4948,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.6', 'E16.6', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4955,7 +4956,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.1', 'E19.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4963,7 +4964,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.1', 'E19.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4971,7 +4972,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.1', 'E19.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4979,7 +4980,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.1', 'E19.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4987,7 +4988,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.1', 'E19.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -4995,7 +4996,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.1', 'E19.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5003,7 +5004,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.1', 'E19.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5011,7 +5012,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.1', 'E19.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5019,7 +5020,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.1', 'E19.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5027,7 +5028,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.1', 'E19.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5035,7 +5036,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.1', 'E19.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5043,7 +5044,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.1', 'E19.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5051,7 +5052,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.1', 'E19.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5059,7 +5060,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.1', 'E19.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5067,7 +5068,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.1', 'E19.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5075,7 +5076,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.2', 'E19.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5083,7 +5084,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.5', 'E19.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5091,7 +5092,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.6', 'E19.6', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5099,7 +5100,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.7', 'E19.7', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5107,7 +5108,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.7', 'E19.7', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5115,7 +5116,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E20.1', 'E20.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5123,7 +5124,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E20' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E20.1', 'E20.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5131,7 +5132,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E20' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E20.1', 'E20.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5139,7 +5140,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E20' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E20.2', 'E20.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5147,7 +5148,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E20' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E20.2', 'E20.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5155,7 +5156,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E20' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E20.2', 'E20.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5163,7 +5164,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E20' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E20.2', 'E20.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5171,7 +5172,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E20' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E20.2', 'E20.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5179,7 +5180,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E20' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E20.2', 'E20.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5187,7 +5188,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E20' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E20.2', 'E20.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5195,7 +5196,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E20' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E20.2', 'E20.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5203,7 +5204,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E20' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E21.1', 'E21.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5211,7 +5212,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E21' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E21.1', 'E21.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5219,7 +5220,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E21' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E21.1', 'E21.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5227,7 +5228,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E21' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E21.1', 'E21.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5235,7 +5236,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E21' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E21.1', 'E21.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5243,7 +5244,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E21' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E21.2', 'E21.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5251,7 +5252,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E21' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E21.2', 'E21.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5259,7 +5260,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E21' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E21.2', 'E21.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5267,7 +5268,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E21' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E21.2', 'E21.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5275,7 +5276,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E21' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E21.3', 'E21.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5283,7 +5284,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E21' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E21.3', 'E21.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5291,7 +5292,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E21' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E21.3', 'E21.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5299,7 +5300,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E21' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E21.3', 'E21.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5307,7 +5308,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E21' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E21.4', 'E21.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5315,7 +5316,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E21' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E21.4', 'E21.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5323,7 +5324,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E21' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.1', 'E22.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5331,7 +5332,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.1', 'E22.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5339,7 +5340,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.1', 'E22.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5347,7 +5348,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.2', 'E22.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5355,7 +5356,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.2', 'E22.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5363,7 +5364,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.2', 'E22.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5371,7 +5372,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.2', 'E22.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5379,7 +5380,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.2', 'E22.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5387,7 +5388,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.2', 'E22.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5395,7 +5396,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.3', 'E22.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5403,7 +5404,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.3', 'E22.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5411,7 +5412,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.3', 'E22.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5419,7 +5420,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.3', 'E22.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5427,7 +5428,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.3', 'E22.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5435,7 +5436,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.3', 'E22.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5443,7 +5444,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.3', 'E22.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5451,7 +5452,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.3', 'E22.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5459,7 +5460,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.3', 'E22.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5467,7 +5468,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.4', 'E22.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5475,7 +5476,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.4', 'E22.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5483,7 +5484,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.4', 'E22.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5491,7 +5492,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.4', 'E22.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5499,7 +5500,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.6', 'E22.6', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5507,7 +5508,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.7', 'E22.7', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5515,7 +5516,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.8', 'E22.8', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5523,7 +5524,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.8', 'E22.8', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5531,7 +5532,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.8', 'E22.8', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5539,7 +5540,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.9', 'E22.9', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5547,7 +5548,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.10', 'E22.10', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -5555,7 +5556,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('F1.4', 'F1.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8147,7 +8148,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.3', 'E10.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8155,7 +8156,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.1', 'E11.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8163,7 +8164,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.3', 'E11.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8171,7 +8172,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.5', 'E12.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8179,7 +8180,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.5', 'E12.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8187,7 +8188,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.5', 'E12.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8195,7 +8196,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.5', 'E12.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8203,7 +8204,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.5', 'E12.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8211,7 +8212,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.6', 'E12.6', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8219,7 +8220,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.1', 'E16.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8227,7 +8228,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.3', 'E16.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8235,7 +8236,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.1', 'E17.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8243,7 +8244,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.1', 'E17.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8251,7 +8252,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.1', 'E17.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8259,7 +8260,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.1', 'E17.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8267,7 +8268,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.1', 'E17.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8275,7 +8276,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.1', 'E17.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8283,7 +8284,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.2', 'E17.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8291,7 +8292,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.3', 'E17.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8299,7 +8300,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.3', 'E17.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8307,7 +8308,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.3', 'E17.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8315,7 +8316,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.3', 'E17.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8323,7 +8324,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.3', 'E17.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8331,7 +8332,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.3', 'E17.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8339,7 +8340,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.3', 'E17.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8347,7 +8348,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.4', 'E17.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8355,7 +8356,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.4', 'E17.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8363,7 +8364,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.4', 'E17.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8371,7 +8372,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.4', 'E17.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8379,7 +8380,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.4', 'E17.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8387,7 +8388,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.4', 'E17.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8395,7 +8396,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.4', 'E17.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8403,7 +8404,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.4', 'E17.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8411,7 +8412,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E18.1', 'E18.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8419,7 +8420,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E18' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E18.1', 'E18.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8427,7 +8428,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E18' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E18.1', 'E18.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8435,7 +8436,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E18' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E18.1', 'E18.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8443,7 +8444,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E18' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E18.3', 'E18.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8451,7 +8452,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E18' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E18.4', 'E18.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8459,7 +8460,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E18' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E20.2', 'E20.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8467,7 +8468,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E20' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E20.2', 'E20.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8475,7 +8476,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E20' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E20.3', 'E20.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8483,7 +8484,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E20' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E20.3', 'E20.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8491,7 +8492,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E20' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E20.3', 'E20.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8499,7 +8500,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E20' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E20.3', 'E20.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8507,7 +8508,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E20' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E20.4', 'E20.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8515,7 +8516,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E20' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E20.4', 'E20.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8523,7 +8524,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E20' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E20.4', 'E20.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8531,7 +8532,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E20' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E20.5', 'E20.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8539,7 +8540,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E20' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E20.5', 'E20.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8547,7 +8548,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E20' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E20.6', 'E20.6', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8555,7 +8556,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E20' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E20.6', 'E20.6', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -8563,7 +8564,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E20' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('F1.2', 'F1.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11363,7 +11364,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.3', 'E10.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11371,7 +11372,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.1', 'E11.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11379,7 +11380,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.3', 'E11.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11387,7 +11388,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.5', 'E12.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11395,7 +11396,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.5', 'E12.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11403,7 +11404,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.5', 'E12.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11411,7 +11412,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.5', 'E12.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11419,7 +11420,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.5', 'E12.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11427,7 +11428,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.6', 'E12.6', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11435,7 +11436,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E13.1', 'E13.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11443,7 +11444,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E13' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E15.1', 'E15.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11451,7 +11452,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E15' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E15.1', 'E15.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11459,7 +11460,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E15' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E15.1', 'E15.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11467,7 +11468,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E15' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E15.2', 'E15.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11475,7 +11476,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E15' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E15.4', 'E15.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11483,7 +11484,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E15' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.1', 'E16.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11491,7 +11492,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.4', 'E16.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11499,7 +11500,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.4', 'E16.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11507,7 +11508,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.4', 'E16.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11515,7 +11516,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E16.5', 'E16.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11523,7 +11524,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E16' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E18.1', 'E18.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11531,7 +11532,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E18' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E18.1', 'E18.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11539,7 +11540,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E18' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E18.1', 'E18.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11547,7 +11548,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E18' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E18.2', 'E18.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11555,7 +11556,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E18' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E18.3', 'E18.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11563,7 +11564,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E18' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E18.4', 'E18.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11571,7 +11572,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E18' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E18.5', 'E18.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11579,7 +11580,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E18' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.1', 'E19.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11587,7 +11588,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.2', 'E19.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11595,7 +11596,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.2', 'E19.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11603,7 +11604,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.2', 'E19.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11611,7 +11612,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.2', 'E19.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11619,7 +11620,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.2', 'E19.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11627,7 +11628,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.3', 'E19.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11635,7 +11636,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.5', 'E19.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11643,7 +11644,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.5', 'E19.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11651,7 +11652,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.5', 'E19.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11659,7 +11660,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.7', 'E19.7', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11667,7 +11668,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.9', 'E22.9', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -11675,7 +11676,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('F1.3', 'F1.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -13899,7 +13900,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.3', 'E10.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -13907,7 +13908,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.4', 'E10.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -13915,7 +13916,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.4', 'E10.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -13923,7 +13924,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.4', 'E10.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -13931,7 +13932,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.4', 'E10.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -13939,7 +13940,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.4', 'E10.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -13947,7 +13948,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.4', 'E10.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -13955,7 +13956,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.4', 'E10.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -13963,7 +13964,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.5', 'E12.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -13971,7 +13972,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.5', 'E12.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -13979,7 +13980,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.5', 'E12.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -13987,7 +13988,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.5', 'E12.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -13995,7 +13996,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.5', 'E12.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -14003,7 +14004,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.6', 'E12.6', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -14011,7 +14012,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E15.1', 'E15.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -14019,7 +14020,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E15' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E15.1', 'E15.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -14027,7 +14028,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E15' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E15.1', 'E15.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -14035,7 +14036,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E15' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E15.2', 'E15.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -14043,7 +14044,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E15' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E15.2', 'E15.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -14051,7 +14052,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E15' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E15.2', 'E15.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -14059,7 +14060,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E15' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E15.3', 'E15.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -14067,7 +14068,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E15' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E15.3', 'E15.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -14075,7 +14076,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E15' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.3', 'E19.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -14083,7 +14084,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.4', 'E19.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -14091,7 +14092,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('F1.4', 'F1.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16571,7 +16572,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.5', 'E12.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16579,7 +16580,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.5', 'E12.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16587,7 +16588,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.5', 'E12.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16595,7 +16596,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.5', 'E12.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16603,7 +16604,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.6', 'E12.6', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16611,7 +16612,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.6', 'E12.6', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16619,7 +16620,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E13.1', 'E13.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16627,7 +16628,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E13' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E13.1', 'E13.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16635,7 +16636,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E13' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E13.2', 'E13.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16643,7 +16644,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E13' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E13.2', 'E13.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16651,7 +16652,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E13' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E13.2', 'E13.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16659,7 +16660,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E13' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E13.2', 'E13.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16667,7 +16668,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E13' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E13.2', 'E13.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16675,7 +16676,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E13' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E13.2', 'E13.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16683,7 +16684,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E13' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E13.2', 'E13.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16691,7 +16692,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E13' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E13.3', 'E13.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16699,7 +16700,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E13' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E14.1', 'E14.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16707,7 +16708,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E14' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E14.2', 'E14.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16715,7 +16716,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E14' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E14.2', 'E14.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16723,7 +16724,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E14' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E14.2', 'E14.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16731,7 +16732,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E14' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E14.2', 'E14.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16739,7 +16740,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E14' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E14.2', 'E14.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16747,7 +16748,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E14' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E14.3', 'E14.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16755,7 +16756,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E14' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E14.3', 'E14.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16763,7 +16764,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E14' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E14.3', 'E14.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16771,7 +16772,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E14' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E14.3', 'E14.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16779,7 +16780,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E14' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E14.4', 'E14.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16787,7 +16788,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E14' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E14.4', 'E14.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16795,7 +16796,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E14' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.2', 'E17.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16803,7 +16804,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.2', 'E17.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16811,7 +16812,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.2', 'E17.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16819,7 +16820,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.2', 'E17.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16827,7 +16828,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.3', 'E17.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16835,7 +16836,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.3', 'E17.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16843,7 +16844,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.3', 'E17.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16851,7 +16852,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.3', 'E17.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16859,7 +16860,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.4', 'E17.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16867,7 +16868,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.4', 'E17.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16875,7 +16876,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.4', 'E17.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16883,7 +16884,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.4', 'E17.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16891,7 +16892,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E17.4', 'E17.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16899,7 +16900,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E17' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E18.1', 'E18.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16907,7 +16908,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E18' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E18.1', 'E18.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16915,7 +16916,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E18' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E18.4', 'E18.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -16923,7 +16924,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E18' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('F1.2', 'F1.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -18883,7 +18884,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.3', 'E10.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -18891,7 +18892,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.5', 'E10.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -18899,7 +18900,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.1', 'E11.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -18907,7 +18908,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.1', 'E11.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -18915,7 +18916,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.1', 'E11.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -18923,7 +18924,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.1', 'E11.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -18931,7 +18932,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.1', 'E11.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -18939,7 +18940,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.2', 'E11.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -18947,7 +18948,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.2', 'E11.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -18955,7 +18956,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.2', 'E11.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -18963,7 +18964,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.3', 'E11.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -18971,7 +18972,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.3', 'E11.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -18979,7 +18980,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.3', 'E11.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -18987,7 +18988,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.3', 'E11.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -18995,7 +18996,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.3', 'E11.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -19003,7 +19004,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.3', 'E11.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -19011,7 +19012,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E22.9', 'E22.9', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -19019,7 +19020,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E2' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E22' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('F1.4', 'F1.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -20835,7 +20836,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.3', 'E10.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -20843,7 +20844,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.5', 'E10.5', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -20851,7 +20852,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.1', 'E11.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -20859,7 +20860,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.1', 'E11.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -20867,7 +20868,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.1', 'E11.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -20875,7 +20876,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.1', 'E11.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -20883,7 +20884,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.1', 'E11.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -20891,7 +20892,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.1', 'E11.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -20899,7 +20900,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.1', 'E11.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -20907,7 +20908,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.2', 'E11.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -20915,7 +20916,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.2', 'E11.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -20923,7 +20924,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.2', 'E11.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -20931,7 +20932,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.3', 'E11.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -20939,7 +20940,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E11.3', 'E11.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -20947,7 +20948,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E11' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('F1.4', 'F1.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -22563,7 +22564,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.3', 'E10.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -22571,7 +22572,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.3', 'E10.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -22579,7 +22580,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('F1.4', 'F1.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -23627,7 +23628,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.1', 'E12.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -23635,7 +23636,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.1', 'E12.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -23643,7 +23644,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.2', 'E12.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -23651,7 +23652,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.2', 'E12.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -23659,7 +23660,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.2', 'E12.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -23667,7 +23668,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.2', 'E12.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -23675,7 +23676,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.2', 'E12.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -23683,7 +23684,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.2', 'E12.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -23691,7 +23692,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.2', 'E12.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -23699,7 +23700,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.3', 'E12.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -23707,7 +23708,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.3', 'E12.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -23715,7 +23716,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.3', 'E12.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -23723,7 +23724,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.4', 'E12.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -23731,7 +23732,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.4', 'E12.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -23739,7 +23740,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.4', 'E12.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -23747,7 +23748,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.4', 'E12.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -23755,7 +23756,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.4', 'E12.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -23763,7 +23764,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.6', 'E12.6', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -23771,7 +23772,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E12.6', 'E12.6', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -23779,7 +23780,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E12' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('F1.4', 'F1.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -25027,7 +25028,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'D1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'D10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E8.6', 'E8.6', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -25131,7 +25132,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.3', 'E10.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -25139,7 +25140,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('F1.4', 'F1.4', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -28459,7 +28460,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'D1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'D10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('D10.1', 'D10.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -28467,7 +28468,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'D1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'D10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('D10.1', 'D10.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -28475,7 +28476,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'D1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'D10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('D10.1', 'D10.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -28483,7 +28484,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'D1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'D10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('D10.2', 'D10.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -28491,7 +28492,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'D1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'D10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('D10.2', 'D10.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -28499,7 +28500,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'D1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'D10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('D10.2', 'D10.2', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -28507,7 +28508,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'D1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'D10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E1.3', 'E1.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -28731,7 +28732,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E10.3', 'E10.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -28739,7 +28740,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E10' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E15.1', 'E15.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -28747,7 +28748,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E15' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E15.3', 'E15.3', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -28755,7 +28756,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E15' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.1', 'E19.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -28763,7 +28764,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('E19.1', 'E19.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -28771,7 +28772,7 @@ join checklist c2 on c3.checklist_id = c2.id
 join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
-where standard.reference = 'E1' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
+where standard.reference = 'E19' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
 insert into measurable_element (name, reference, standard_id) values ('F1.1', 'F1.1', (select max(standard.id) from standard
 join area_of_concern a on standard.area_of_concern_id = a.id
 join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
@@ -29956,7 +29957,6 @@ join assessment_tool_checklist c4 on c2.id = c4.checklist_id
 join assessment_tool a2 on c4.assessment_tool_id = a2.id
 join state on a2.state_id = state.id
 where standard.reference = 'H4' and a2.name = 'Community Health Center (Meghalaya)')) on conflict do nothing;
-
 
 
 
