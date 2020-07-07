@@ -1,0 +1,2 @@
+update indicator_definition set last_modified_date = current_timestamp where id = (select max(id) from indicator_definition);
+update checklist set last_modified_date = current_timestamp where id = (select max(id) from checklist);

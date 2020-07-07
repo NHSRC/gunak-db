@@ -1,0 +1,1 @@
+update user_role set role_id = (select id from role where name = 'ADMIN') where user_id = (select id from users where email = 'petmongrels@gmail.com');

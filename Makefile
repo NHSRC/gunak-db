@@ -37,6 +37,9 @@ define _restore_latest_db_local
 	$(call _restore_db,$1,temp/facilities_assessment_$(shell date +%a).sql)
 endef
 
+define _alert_success
+	osascript -e 'tell application (path to frontmost application as text) to display dialog "Script Completed" buttons {"OK"} with icon stop'
+endef
 
 db-backup-location:
 	-mkdir temp
@@ -72,6 +75,7 @@ apply-latest-db-from-nhsrc-prod-to-nhsrc-qa:
 
 restore-db-from-latest-file-db-to-nhsrc-local:
 	$(call _restore_db,facilities_assessment_nhsrc,temp/facilities_assessment_latest.sql)
+	$(call _alert_success)
 
 #############################
 define _deploy_migrations
@@ -107,3 +111,11 @@ deploy-migrations-to-jss-prod:
 
 backup-db-nhsrc-to-latest-file:
 	pg_dump -Unhsrc -hlocalhost -d facilities_assessment_nhsrc > temp/facilities_assessment_latest.sql
+
+backup-and-download-db-backup-nhsrc-qa: backup-db-nhsrc-qa
+	$(call _download_db_backup,gunak-other,qa-server)
+	mv temp/facilities_assessment_$(shell date +%a).sql temp/uat_facilities_assessment_$(shell date +%a).sql
+	$(call _alert_success)
+
+backup-db-nhsrc-qa:
+	ssh gunak-other "pg_dump -Unhsrc -hlocalhost -d facilities_assessment_qa > /home/app/qa-server/facilities-assessment-host/backup/facilities_assessment_$(shell date +%a).sql"
