@@ -49,18 +49,23 @@ init-db:
 
 apply-latest-db-from-jss-to-local: db-backup-location ## Downloads and applies the database dump
 	$(call _apply_latest_db_local,igunatmac,facilities_assessment_cg)
+	$(call _alert_success)
 
 apply-latest-db-from-nhsrc-prod-to-local: db-backup-location
 	$(call _apply_latest_db_local,gunak-main,facilities_assessment_nhsrc)
+	$(call _alert_success)
 
 apply-latest-db-from-nhsrc-qa-to-local: db-backup-location
 	$(call _apply_latest_db_local,gunak-other,facilities_assessment_nhsrc,qa-server)
+	$(call _alert_success)
 
 download-latest-db-from-nhsrc-prod-to-local: db-backup-location
 	$(call _download_db_backup,gunak-main)
+	$(call _alert_success)
 
 download-latest-db-from-jss-prod-to-local: db-backup-location
 	$(call _download_db_backup,igunatmac)
+	$(call _alert_success)
 
 apply-latest-db-from-nhsrc-prod-to-nhsrc-qa:
 #	@echo "NOTE: Not downloading file from prod"
@@ -72,6 +77,7 @@ apply-latest-db-from-nhsrc-prod-to-nhsrc-qa:
 	ssh gunak-other "sudo -u postgres psql postgres -c 'create database facilities_assessment_qa with owner nhsrc'"
 	ssh gunak-other "sudo -u postgres psql facilities_assessment_qa -c 'create extension if not exists \"uuid-ossp\"'"
 	ssh gunak-other "sudo -u postgres psql facilities_assessment_qa -f /home/app/qa-server/facilities-assessment-host/backup/facilities_assessment_$(shell date +%a).sql > /dev/null"
+	$(call _alert_success)
 
 restore-db-from-latest-file-db-to-nhsrc-local:
 	$(call _restore_db,facilities_assessment_nhsrc,temp/facilities_assessment_latest.sql)
@@ -92,25 +98,29 @@ deploy-migrations-to-nhsrc-local:
 	find deployment-migrations/nhsrc/local -type f -exec sed -i '' 's/"insert/insert/g' {} \;
 	find deployment-migrations/nhsrc/local -type f -exec sed -i '' 's/;"/;/g' {} \;
 	$(call _deploy_migrations_local,facilities_assessment_nhsrc,nhsrc)
+	$(call _alert_success)
 
-deploy-migrations-to-nhsrc-qa-local:
+# Cannot do it remotely because it would require checkout locally anyway and it is faster to do locally
+deploy-migrations-to-nhsrc-qa-locally:
 	$(call _deploy_migrations_local,facilities_assessment_qa,nhsrc)
+	$(call _alert_success)
 
-deploy-migrations-to-nhsrc-qa:
-	$(call _deploy_migrations,qa-server,qa,facilities_assessment_qa,gunak-other,nhsrc)
-
-deploy-migrations-to-nhsrc-prod:
-	$(call _deploy_migrations,,qa,facilities_assessment,gunak-main,nhsrc)
+deploy-migrations-to-nhsrc-prod-locally:
+	$(call _deploy_migrations_local,facilities_assessment,nhsrc)
+	$(call _alert_success)
 
 deploy-migrations-to-jss-local:
 	$(call _deploy_migrations_local,facilities_assessment_cg,jss)
+	$(call _alert_success)
 
 deploy-migrations-to-jss-prod:
 	$(call _deploy_migrations,,prod,facilities_assessment,igunatmac,jss)
+	$(call _alert_success)
 #############################
 
 backup-db-nhsrc-to-latest-file:
 	pg_dump -Unhsrc -hlocalhost -d facilities_assessment_nhsrc > temp/facilities_assessment_latest.sql
+	$(call _alert_success)
 
 backup-and-download-db-backup-nhsrc-qa: backup-db-nhsrc-qa
 	$(call _download_db_backup,gunak-other,qa-server)
@@ -119,3 +129,4 @@ backup-and-download-db-backup-nhsrc-qa: backup-db-nhsrc-qa
 
 backup-db-nhsrc-qa:
 	ssh gunak-other "pg_dump -Unhsrc -hlocalhost -d facilities_assessment_qa > /home/app/qa-server/facilities-assessment-host/backup/facilities_assessment_$(shell date +%a).sql"
+	$(call _alert_success)
