@@ -94,26 +94,26 @@ define _deploy_migrations_local
 	cd deployment-migrations/$2/local && cat master.sql | psql -h localhost -d $1 nhsrc -1
 endef
 
-deploy-migrations-to-nhsrc-local:
+migrations-to-nhsrc-local:
 	find deployment-migrations/nhsrc/local -type f -exec sed -i '' 's/"insert/insert/g' {} \;
 	find deployment-migrations/nhsrc/local -type f -exec sed -i '' 's/;"/;/g' {} \;
 	$(call _deploy_migrations_local,facilities_assessment_nhsrc,nhsrc)
 	$(call _alert_success)
 
 # Cannot do it remotely because it would require checkout locally anyway and it is faster to do locally
-deploy-migrations-to-nhsrc-qa-locally:
+migrations-to-nhsrc-qa-locally:
 	$(call _deploy_migrations_local,facilities_assessment_qa,nhsrc)
 	$(call _alert_success)
 
-deploy-migrations-to-nhsrc-prod-locally:
+migrations-to-nhsrc-prod-locally:
 	$(call _deploy_migrations_local,facilities_assessment,nhsrc)
 	$(call _alert_success)
 
-deploy-migrations-to-jss-local:
+migrations-to-jss-local:
 	$(call _deploy_migrations_local,facilities_assessment_cg,jss)
 	$(call _alert_success)
 
-deploy-migrations-to-jss-prod:
+migrations-to-jss-prod:
 	$(call _deploy_migrations,,prod,facilities_assessment,igunatmac,jss)
 	$(call _alert_success)
 #############################
