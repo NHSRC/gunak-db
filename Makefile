@@ -63,6 +63,10 @@ download-latest-db-from-nhsrc-prod-to-local: db-backup-location
 	$(call _download_db_backup,gunak-main)
 	$(call _alert_success)
 
+download-latest-db-from-nhsrc-qa-to-local: db-backup-location
+	$(call _download_db_backup,gunak-other,qa-server)
+	$(call _alert_success)
+
 download-latest-db-from-jss-prod-to-local: db-backup-location
 	$(call _download_db_backup,igunatmac)
 	$(call _alert_success)
@@ -122,8 +126,7 @@ backup-db-nhsrc-to-latest-file:
 	pg_dump -Unhsrc -hlocalhost -d facilities_assessment_nhsrc > temp/facilities_assessment_latest.sql
 	$(call _alert_success)
 
-backup-and-download-db-backup-nhsrc-qa: backup-db-nhsrc-qa
-	$(call _download_db_backup,gunak-other,qa-server)
+backup-and-download-db-backup-nhsrc-qa: backup-db-nhsrc-qa download-latest-db-from-nhsrc-qa-to-local
 	mv temp/facilities_assessment_$(shell date +%a).sql temp/uat_facilities_assessment_$(shell date +%a).sql
 	$(call _alert_success)
 
