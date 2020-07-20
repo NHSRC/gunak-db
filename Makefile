@@ -95,26 +95,26 @@ define _deploy_migrations
 endef
 
 define _deploy_migrations_local
-	cd deployment-migrations/$2/local && cat master.sql | psql -h localhost -d $1 nhsrc -1
+	cd deployment-migrations/$2/$3 && cat master.sql | psql -h localhost -d $1 nhsrc -1
 endef
 
 migrations-to-nhsrc-local:
 	find deployment-migrations/nhsrc/local -type f -exec sed -i '' 's/"insert/insert/g' {} \;
 	find deployment-migrations/nhsrc/local -type f -exec sed -i '' 's/;"/;/g' {} \;
-	$(call _deploy_migrations_local,facilities_assessment_nhsrc,nhsrc)
+	$(call _deploy_migrations_local,facilities_assessment_nhsrc,nhsrc,local)
 	$(call _alert_success)
 
 # Cannot do it remotely because it would require checkout locally anyway and it is faster to do locally
 migrations-to-nhsrc-qa-locally:
-	$(call _deploy_migrations_local,facilities_assessment_qa,nhsrc)
+	$(call _deploy_migrations_local,facilities_assessment_qa,nhsrc,qa)
 	$(call _alert_success)
 
 migrations-to-nhsrc-prod-locally:
-	$(call _deploy_migrations_local,facilities_assessment,nhsrc)
+	$(call _deploy_migrations_local,facilities_assessment,nhsrc,prod)
 	$(call _alert_success)
 
 migrations-to-jss-local:
-	$(call _deploy_migrations_local,facilities_assessment_cg,jss)
+	$(call _deploy_migrations_local,facilities_assessment_cg,jss,local)
 	$(call _alert_success)
 
 migrations-to-jss-prod:
