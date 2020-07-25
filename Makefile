@@ -100,6 +100,7 @@ endef
 
 migrations-to-nhsrc-local:
 	find deployment-migrations/nhsrc/local -type f -exec sed -i '' 's/"insert/insert/g' {} \;
+	find deployment-migrations/nhsrc/local -type f -exec sed -i '' 's/"update/update/g' {} \;
 	find deployment-migrations/nhsrc/local -type f -exec sed -i '' 's/;"/;/g' {} \;
 	$(call _deploy_migrations_local,facilities_assessment_nhsrc,nhsrc,local)
 	$(call _alert_success)
