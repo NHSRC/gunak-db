@@ -1,2 +1,2 @@
--- \i ./nqas-dh-mot.sql
-\i ./nqas-phc-am-sort-order.sql
+\i ./nqas-dh-mot.sql
+-- \i ./nqas-phc-am-sort-order.sql
