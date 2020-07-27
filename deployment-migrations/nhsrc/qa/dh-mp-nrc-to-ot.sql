@@ -1,6 +1,88 @@
 insert into department (name) values ('OT') on conflict do nothing;	insert into checklist (name, department_id, state_id) values ('OT', (select id from department where name = 'OT'), (select id from state where name = 'Madhya Pradesh'));	insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select assessment_tool.id from assessment_tool join assessment_tool_mode a on assessment_tool.assessment_tool_mode_id = a.id where a.name = 'NQAS' and assessment_tool.name = 'District Hospital (MP)'), (select max(id) from checklist where name = 'OT'));
 
 
+insert into checklist_area_of_concern (checklist_id, area_of_concern_id) values
+        ((select checklist.id from checklist
+         join assessment_tool_checklist a on checklist.id = a.checklist_id
+         join assessment_tool a2 on a.assessment_tool_id = a2.id
+         where checklist.name = 'OT' and a2.name = 'District Hospital (MP)'), (select area_of_concern.id from area_of_concern
+              join checklist_area_of_concern c3 on area_of_concern.id = c3.area_of_concern_id
+              join checklist c2 on c3.checklist_id = c2.id
+              join assessment_tool_checklist a on c2.id = a.checklist_id
+              join assessment_tool a2 on a.assessment_tool_id = a2.id
+  where area_of_concern.reference = 'A' and a2.name = 'District Hospital (MP)' and c2.name = 'NRC'));
+insert into checklist_area_of_concern (checklist_id, area_of_concern_id) values
+        ((select checklist.id from checklist
+         join assessment_tool_checklist a on checklist.id = a.checklist_id
+         join assessment_tool a2 on a.assessment_tool_id = a2.id
+         where checklist.name = 'OT' and a2.name = 'District Hospital (MP)'), (select area_of_concern.id from area_of_concern
+              join checklist_area_of_concern c3 on area_of_concern.id = c3.area_of_concern_id
+              join checklist c2 on c3.checklist_id = c2.id
+              join assessment_tool_checklist a on c2.id = a.checklist_id
+              join assessment_tool a2 on a.assessment_tool_id = a2.id
+  where area_of_concern.reference = 'B' and a2.name = 'District Hospital (MP)' and c2.name = 'NRC'));
+insert into checklist_area_of_concern (checklist_id, area_of_concern_id) values
+        ((select checklist.id from checklist
+         join assessment_tool_checklist a on checklist.id = a.checklist_id
+         join assessment_tool a2 on a.assessment_tool_id = a2.id
+         where checklist.name = 'OT' and a2.name = 'District Hospital (MP)'), (select area_of_concern.id from area_of_concern
+              join checklist_area_of_concern c3 on area_of_concern.id = c3.area_of_concern_id
+              join checklist c2 on c3.checklist_id = c2.id
+              join assessment_tool_checklist a on c2.id = a.checklist_id
+              join assessment_tool a2 on a.assessment_tool_id = a2.id
+  where area_of_concern.reference = 'C' and a2.name = 'District Hospital (MP)' and c2.name = 'NRC'));
+insert into checklist_area_of_concern (checklist_id, area_of_concern_id) values
+        ((select checklist.id from checklist
+         join assessment_tool_checklist a on checklist.id = a.checklist_id
+         join assessment_tool a2 on a.assessment_tool_id = a2.id
+         where checklist.name = 'OT' and a2.name = 'District Hospital (MP)'), (select area_of_concern.id from area_of_concern
+              join checklist_area_of_concern c3 on area_of_concern.id = c3.area_of_concern_id
+              join checklist c2 on c3.checklist_id = c2.id
+              join assessment_tool_checklist a on c2.id = a.checklist_id
+              join assessment_tool a2 on a.assessment_tool_id = a2.id
+  where area_of_concern.reference = 'D' and a2.name = 'District Hospital (MP)' and c2.name = 'NRC'));
+insert into checklist_area_of_concern (checklist_id, area_of_concern_id) values
+        ((select checklist.id from checklist
+         join assessment_tool_checklist a on checklist.id = a.checklist_id
+         join assessment_tool a2 on a.assessment_tool_id = a2.id
+         where checklist.name = 'OT' and a2.name = 'District Hospital (MP)'), (select area_of_concern.id from area_of_concern
+              join checklist_area_of_concern c3 on area_of_concern.id = c3.area_of_concern_id
+              join checklist c2 on c3.checklist_id = c2.id
+              join assessment_tool_checklist a on c2.id = a.checklist_id
+              join assessment_tool a2 on a.assessment_tool_id = a2.id
+  where area_of_concern.reference = 'E' and a2.name = 'District Hospital (MP)' and c2.name = 'NRC'));
+insert into checklist_area_of_concern (checklist_id, area_of_concern_id) values
+        ((select checklist.id from checklist
+         join assessment_tool_checklist a on checklist.id = a.checklist_id
+         join assessment_tool a2 on a.assessment_tool_id = a2.id
+         where checklist.name = 'OT' and a2.name = 'District Hospital (MP)'), (select area_of_concern.id from area_of_concern
+              join checklist_area_of_concern c3 on area_of_concern.id = c3.area_of_concern_id
+              join checklist c2 on c3.checklist_id = c2.id
+              join assessment_tool_checklist a on c2.id = a.checklist_id
+              join assessment_tool a2 on a.assessment_tool_id = a2.id
+  where area_of_concern.reference = 'F' and a2.name = 'District Hospital (MP)' and c2.name = 'NRC'));
+insert into checklist_area_of_concern (checklist_id, area_of_concern_id) values
+        ((select checklist.id from checklist
+         join assessment_tool_checklist a on checklist.id = a.checklist_id
+         join assessment_tool a2 on a.assessment_tool_id = a2.id
+         where checklist.name = 'OT' and a2.name = 'District Hospital (MP)'), (select area_of_concern.id from area_of_concern
+              join checklist_area_of_concern c3 on area_of_concern.id = c3.area_of_concern_id
+              join checklist c2 on c3.checklist_id = c2.id
+              join assessment_tool_checklist a on c2.id = a.checklist_id
+              join assessment_tool a2 on a.assessment_tool_id = a2.id
+  where area_of_concern.reference = 'G' and a2.name = 'District Hospital (MP)' and c2.name = 'NRC'));
+insert into checklist_area_of_concern (checklist_id, area_of_concern_id) values
+        ((select checklist.id from checklist
+         join assessment_tool_checklist a on checklist.id = a.checklist_id
+         join assessment_tool a2 on a.assessment_tool_id = a2.id
+         where checklist.name = 'OT' and a2.name = 'District Hospital (MP)'), (select area_of_concern.id from area_of_concern
+              join checklist_area_of_concern c3 on area_of_concern.id = c3.area_of_concern_id
+              join checklist c2 on c3.checklist_id = c2.id
+              join assessment_tool_checklist a on c2.id = a.checklist_id
+              join assessment_tool a2 on a.assessment_tool_id = a2.id
+  where area_of_concern.reference = 'H' and a2.name = 'District Hospital (MP)' and c2.name = 'NRC'));
+
+
 
 update checkpoint set checklist_id = (select checklist.id from checklist
                                        join assessment_tool_checklist a on checklist.id = a.checklist_id
