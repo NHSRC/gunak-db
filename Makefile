@@ -85,7 +85,6 @@ apply-latest-db-from-nhsrc-prod-to-nhsrc-qa:
 
 restore-db-from-latest-file-db-to-nhsrc-local:
 	$(call _restore_db,facilities_assessment_nhsrc,temp/facilities_assessment_latest.sql)
-	$(call _alert_success)
 
 #############################
 define _deploy_migrations

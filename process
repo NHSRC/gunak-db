@@ -2,3 +2,13 @@
 2. change AT name by putting the state name
 3. Ensure to remove ' from the file itself. MP NQAS DH Customized for REGEX TO FIX STANDARD IN ME SHEET (if required)
 4. For copying sql - Sheet1, All sql except cp from checkpoints sheet, AOC, Stand, ME, CP
+
+From Reference file
+- Replace headers and footers in the tab. Change font for last two columns.
+- Replace ' with '' in text columns
+- Replace empty A,B column via =INDIRECT(concatenate("A",ROW()-1)) and =INDIRECT(concatenate("B",ROW()-1))  ^$
+
+- Copy SQL. Change dept.
+- Remove text in rows of AOC and Standard.
+- Find and replace 'BC.
+- Search for >values ('', '',< after pasting
