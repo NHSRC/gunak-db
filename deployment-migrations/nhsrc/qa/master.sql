@@ -11,3 +11,6 @@
 \i ./kar-nqas-taluka-phar.sql
 \echo Running kar-nqas-taluka-radio.sql
 \i ./kar-nqas-taluka-radio.sql
+
+\echo Running megh-chc-me-std-move.sql
+\i ./megh-chc-me-std-move.sql
