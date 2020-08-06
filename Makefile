@@ -100,6 +100,7 @@ endef
 migrations-to-nhsrc-local:
 	find deployment-migrations/nhsrc/local -type f -exec sed -i '' 's/"insert/insert/g' {} \;
 	find deployment-migrations/nhsrc/local -type f -exec sed -i '' 's/"update/update/g' {} \;
+	find deployment-migrations/nhsrc/local -type f -exec sed -i '' 's/"delete/delete/g' {} \;
 	find deployment-migrations/nhsrc/local -type f -exec sed -i '' 's/;"/;/g' {} \;
 	$(call _deploy_migrations_local,facilities_assessment_nhsrc,nhsrc,local)
 	$(call _alert_success)
@@ -126,7 +127,8 @@ backup-db-nhsrc-to-latest-file:
 	pg_dump -Unhsrc -hlocalhost -d facilities_assessment_nhsrc > temp/facilities_assessment_latest.sql
 	$(call _alert_success)
 
-backup-and-download-db-backup-nhsrc-qa: backup-db-nhsrc-qa download-latest-db-from-nhsrc-qa-to-local
+backup-nhsrc-qa-and-download-to-latest-file: backup-db-nhsrc-qa download-latest-db-from-nhsrc-qa-to-local
+	cp temp/facilities_assessment_$(shell date +%a).sql temp/facilities_assessment_latest.sql
 	mv temp/facilities_assessment_$(shell date +%a).sql temp/uat_facilities_assessment_$(shell date +%a).sql
 	$(call _alert_success)
 

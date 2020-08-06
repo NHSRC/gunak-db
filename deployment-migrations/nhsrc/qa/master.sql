@@ -1,1 +1,2 @@
-\i ./mp-nqas-dwh.sql
+\echo Running kar-nqas-taluka.sql
+\i ./kar-nqas-taluka.sql
