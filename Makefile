@@ -12,16 +12,16 @@ help:
 postgres_user := $(shell id -un)
 
 define _restore_db
-	$(call _reset_db,$1)
-	sudo -u $(postgres_user) psql $1 -f $2 >/dev/null
+	$(call _reset_db,$1,$3)
+	sudo -u $3 psql $1 -f $2 >/dev/null
 endef
 
 define _reset_db
-	sudo -u $(postgres_user) psql postgres -c "SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = '$1' AND pid <> pg_backend_pid()"
-	-sudo -u $(postgres_user) psql postgres -c "create user nhsrc with password 'password'";
-	-sudo -u $(postgres_user) psql postgres -c 'drop database $1'
-	sudo -u $(postgres_user) psql postgres -c 'create database $1 with owner nhsrc'
-	sudo -u $(postgres_user) psql $1 -c 'create extension if not exists "uuid-ossp"'
+	sudo -u $2 psql postgres -c "SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = '$1' AND pid <> pg_backend_pid()"
+	-sudo -u $2 psql postgres -c "create user nhsrc with password 'password'";
+	-sudo -u $2 psql postgres -c 'drop database $1'
+	sudo -u $2 psql postgres -c 'create database $1 with owner nhsrc'
+	sudo -u $2 psql $1 -c 'create extension if not exists "uuid-ossp"'
 endef
 
 define _download_db_backup
@@ -34,7 +34,7 @@ define _apply_latest_db_local
 endef
 
 define _restore_latest_db_local
-	$(call _restore_db,$1,temp/facilities_assessment_$(shell date +%a).sql)
+	$(call _restore_db,$1,temp/facilities_assessment_$(shell date +%a).sql,$(postgres_user))
 endef
 
 define _alert_success
@@ -84,10 +84,10 @@ apply-latest-db-from-nhsrc-prod-to-nhsrc-qa:
 	$(call _alert_success)
 
 restore-db-from-latest-file-db-to-nhsrc-local:
-	$(call _restore_db,facilities_assessment_nhsrc,temp/facilities_assessment_latest.sql)
+	$(call _restore_db,facilities_assessment_nhsrc,temp/facilities_assessment_latest.sql,$(postgres_user))
 
 restore-db-nhsrc-qa-for-todays-backup:
-	$(call _restore_db,facilities_assessment_qa,/home/app/qa-server/facilities-assessment-host/backup/facilities_assessment_$(shell date +%a).sql)
+	$(call _restore_db,facilities_assessment_qa,/home/app/qa-server/facilities-assessment-host/backup/facilities_assessment_$(shell date +%a).sql,postgres)
 
 #############################
 define _deploy_migrations
