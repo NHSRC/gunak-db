@@ -1,6 +1,13 @@
 insert into checklist (name, department_id) values ('Maternity-OT', (select id from department where name = 'Maternity OT'));
 insert into assessment_tool_checklist (assessment_tool_id, checklist_id) values ((select id from assessment_tool where name = 'District Hospital (DH)' and state_id is null), (select max(id) from checklist where name = 'Maternity-OT'));
 
+insert into checklist_area_of_concern (area_of_concern_id, checklist_id)
+  SELECT area_of_concern.id, (select max(id) from checklist) from area_of_concern
+join checklist_area_of_concern c3 on area_of_concern.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist a on c2.id = a.checklist_id
+join assessment_tool a2 on a.assessment_tool_id = a2.id
+where a2.name = 'District Hospital (DH)' and c2.name = 'Admin';
 
 
 
