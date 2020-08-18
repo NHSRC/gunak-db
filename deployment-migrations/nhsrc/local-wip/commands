@@ -1,3 +1,0 @@
-psql facilities_assessment_nhsrc < checkpoint_prod.sql
-psql facilities_assessment_nhsrc < measurable_element_prod.sql
-psql facilities_assessment_nhsrc < standard_prod.sql

@@ -1,0 +1,84 @@
+Standards and ME sheet
+AOC text
+Delete fourth type of color rows
+enter ME formula in a and b column
+    =INDIRECT(concatenate("A",ROW()-1))
+    =INDIRECT(concatenate("B",ROW()-1))
+replace ' with ''
+
+psql facilities_assessment_nhsrc < checkpoint_prod.sql
+psql facilities_assessment_nhsrc < measurable_element_prod.sql
+psql facilities_assessment_nhsrc < standard_prod.sql
+
+
+=INDIRECT(concatenate("A",ROW()-1))
+=INDIRECT(concatenate("B",ROW()-1))
+
+
+=CONCATENATE(insert into standard (name, reference, area_of_concern_id)
+values ('", TRIM(B3), "', '", REGEXEXTRACT(A3,".[0-9+]"), "', (select distinct area_of_concern.id
+               from area_of_concern
+                      join checklist_area_of_concern on area_of_concern.id = checklist_area_of_concern.area_of_concern_id
+                      join checklist on checklist_area_of_concern.checklist_id = checklist.id
+                      join assessment_tool_checklist on checklist.id = assessment_tool_checklist.checklist_id
+                      join assessment_tool on assessment_tool_checklist.assessment_tool_id = assessment_tool.id
+               where assessment_tool.name = 'District Hospital (DH)'
+                 and assessment_tool.state_id is null
+                 and area_of_concern.reference = '", TRIM(REGEXEXTRACT(A3,"\s.")), "'))
+on conflict do nothing;)
+
+
+=CONCATENATE(update standard set name = '",B3,
+"', last_modified_date = current_timestamp where id = (
+           select distinct standard.id from standard
+                                              join area_of_concern on standard.area_of_concern_id = area_of_concern.id
+                                              join checklist_area_of_concern on area_of_concern.id = checklist_area_of_concern.area_of_concern_id
+                                              join checklist on checklist_area_of_concern.checklist_id = checklist.id
+                                              join assessment_tool_checklist on checklist.id = assessment_tool_checklist.checklist_id
+                                              join assessment_tool on assessment_tool_checklist.assessment_tool_id = assessment_tool.id
+           where assessment_tool.name = 'District Hospital (DH)'
+             and assessment_tool.state_id is null
+             and standard.reference = '", REGEXEXTRACT(A3,".[0-9+]"),"');)
+
+
+
+=CONCATENATE(insert into measurable_element (name, reference, standard_id) values ('", TRIM(B4), "', '", REGEXEXTRACT(A4,".[0-9+].[0-9+]"), "', (select max(standard.id) from standard
+join area_of_concern a on standard.area_of_concern_id = a.id
+join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+join checklist c2 on c3.checklist_id = c2.id
+join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+join assessment_tool a2 on c4.assessment_tool_id = a2.id
+where standard.reference = '", TRIM(REGEXEXTRACT(A4,"\s.[0-9]+")), "' and a2.name = 'District Hospital (DH)')) on conflict on constraint measurable_element_reference_standard_id_key do
+  update set last_modified_date = current_timestamp, name = '", TRIM(B4), "'
+    where measurable_element.id = (
+    select distinct measurable_element.id from measurable_element
+    join standard on standard.id = measurable_element.standard_id
+    join area_of_concern a on standard.area_of_concern_id = a.id
+    join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+    join checklist c2 on c3.checklist_id = c2.id
+    join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+    join assessment_tool a2 on c4.assessment_tool_id = a2.id
+    where a2.name = 'District Hospital (DH)' and measurable_element.reference = '", REGEXEXTRACT(A4,".[0-9+].[0-9+]"),"');)
+
+
+
+
+=CONCATENATE(insert into checkpoint (name, means_of_verification, am_observation, am_staff_interview, am_patient_interview, am_record_review, measurable_element_id, checklist_id) values ('", TRIM(C4), "', '", TRIM(F4), "', ", IF(REGEXMATCH(E4, "OB"), TRUE, FALSE), ", ", IF(REGEXMATCH(E4, "SI"), TRUE, FALSE), ", ", IF(REGEXMATCH(E4, "PI"), TRUE, FALSE), ", ", IF(REGEXMATCH(E4, "RR"), TRUE, FALSE), ", (select max(m2.id) from measurable_element m2
+                join standard s2 on m2.standard_id = s2.id
+                join area_of_concern a on s2.area_of_concern_id = a.id
+                join checklist_area_of_concern c3 on a.id = c3.area_of_concern_id
+                join checklist c2 on c3.checklist_id = c2.id
+                join assessment_tool_checklist c4 on c2.id = c4.checklist_id
+                join assessment_tool a2 on c4.assessment_tool_id = a2.id
+where a2.name = 'District Hospital (DH)' and m2.reference = '", REGEXEXTRACT(A4,".[0-9+].[0-9+]"), "'), (select checklist.id from checklist
+join assessment_tool_checklist a on checklist.id = a.checklist_id
+join assessment_tool a2 on a.assessment_tool_id = a2.id
+where checklist.name = 'Emergency' and a2.name = 'District Hospital (DH)')) on conflict on constraint  checkpoint_checklist_id_measurable_element_id_name_inactive_key do update set  last_modified_date = current_timestamp, name = '", TRIM(C4), "', means_of_verification = '", TRIM(F4), "', am_observation = '", IF(REGEXMATCH(E4, "OB"), TRUE, FALSE), "', am_staff_interview = '", IF(REGEXMATCH(E4, "SI"), TRUE, FALSE), "', am_patient_interview = '", IF(REGEXMATCH(E4, "PI"), TRUE, FALSE), "', am_record_review = '", IF(REGEXMATCH(E4, "RR"), TRUE, FALSE), "'
+where checkpoint.name = '", TRIM(C4), "' and checkpoint.id = (
+  select checkpoint.id from checkpoint
+    join checklist c2 on checkpoint.checklist_id = c2.id
+    join assessment_tool_checklist a on c2.id = a.checklist_id
+join assessment_tool a2 on a.assessment_tool_id = a2.id
+join assessment_tool_mode a3 on a2.assessment_tool_mode_id = a3.id
+join measurable_element m2 on checkpoint.measurable_element_id = m2.id
+where c2.name = 'Emergency' and a2.name = 'District Hospital (DH)' and m2.reference = '", REGEXEXTRACT(A4,".[0-9+].[0-9+]"), "');)
