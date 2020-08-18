@@ -86,6 +86,9 @@ apply-latest-db-from-nhsrc-prod-to-nhsrc-qa:
 restore-db-from-latest-file-db-to-nhsrc-local:
 	$(call _restore_db,facilities_assessment_nhsrc,temp/facilities_assessment_latest.sql)
 
+restore-db-nhsrc-qa-for-todays-backup:
+	$(call _restore_db,facilities_assessment_qa,/home/app/qa-server/facilities-assessment-host/backup/facilities_assessment_$(shell date +%a).sql)
+
 #############################
 define _deploy_migrations
 	-ssh $4 "rm /home/app/$1/facilities-assessment-host/db/*.sql"

@@ -3,8 +3,8 @@
 \i ./checkpoint_prod.sql
 \i ./restore-back.sql
 \i ./dh/dh-standards.sql
-\i ./dh/emergency.sql
-\i ./dh/opd.sql
+\i ./dh/Emergency.sql
+\i ./dh/OPD.sql
 \i ./dh/Labour-Room.sql
 \i ./dh/Maternity-Ward.sql
 \i ./dh/Ped-Ward.sql
