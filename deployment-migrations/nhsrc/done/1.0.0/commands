@@ -1,6 +1,5 @@
-Standards and ME sheet
-AOC text
-Delete fourth type of color rows
+Create a copy of First Sheet for STD and MEs
+Delete all colors except blue and white
 enter ME formula in a and b column
     =INDIRECT(concatenate("A",ROW()-1))
     =INDIRECT(concatenate("B",ROW()-1))
@@ -10,6 +9,7 @@ psql facilities_assessment_nhsrc < checkpoint_prod.sql
 psql facilities_assessment_nhsrc < measurable_element_prod.sql
 psql facilities_assessment_nhsrc < standard_prod.sql
 
+AOC text
 
 =INDIRECT(concatenate("A",ROW()-1))
 =INDIRECT(concatenate("B",ROW()-1))
