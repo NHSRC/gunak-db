@@ -9,7 +9,8 @@ DROP VIEW if exists recent_facility_assessment_view;
 
 DROP VIEW if exists checkpoint_scores_aoc;
 CREATE or replace VIEW checkpoint_scores_aoc AS
-  SELECT to_number(fa.series_name, '9999')                                     AS assessment_number,
+  SELECT
+         NULLIF(regexp_replace(fa.series_name, '\D','','g'), '')::numeric      AS assessment_number,
          format('%s (%s)', aoc.reference, aoc.name)                            AS area_of_concern,
          department.name                                                       AS department_name,
          format('[%s, %s] - %s', aoc.reference, s.name, c.name)                AS checkpoint_description,
@@ -33,7 +34,8 @@ CREATE or replace VIEW checkpoint_scores_aoc AS
          c.inactive                                                            as checkpoint_inactive,
          c.id                                                                  as checkpoint_id,
          format('%s - %s - %s - %s', aoc.reference, aoc.name, s.name, me.name) as measurable_element_full_name,
-         state.name                                                            as state_name
+         state.name                                                            as state_name,
+         fa.series_name                                                        AS assessment_user_given_name
   FROM checkpoint_score cs
          INNER JOIN checkpoint c ON cs.checkpoint_id = c.id
          LEFT OUTER JOIN checklist cl ON cl.id = cs.checklist_id
@@ -122,7 +124,7 @@ CREATE VIEW assessment_denormalised AS
          facility.name                     facility_name,
          facility_assessment.facility_name non_coded_facility_name,
          facility_type.name                facility_type_name,
-         facility_assessment.series_name   assessment_number,
+         facility_assessment.series_name   assessment_user_given_name,
          facility_assessment.start_date    start_date,
          facility_assessment.end_date      end_date,
          state.name                        state_name,
