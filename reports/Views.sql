@@ -54,7 +54,7 @@ CREATE or replace VIEW checkpoint_scores_aoc AS
 
 DROP VIEW if exists checkpoint_scores_aoc_export;
 CREATE or replace VIEW checkpoint_scores_aoc_export AS
-  SELECT to_number(fa.series_name, '9999')                        AS assessment_number,
+  SELECT NULLIF(regexp_replace(fa.series_name, '\D','','g'), '')::numeric                        AS assessment_number,
          format('%s (%s)', aoc.reference, aoc.name)               AS area_of_concern,
          department.name                                          AS department_name,
          format('[%s, %s] - %s', aoc.reference, s.name, c.name)   AS checkpoint_description,
@@ -75,7 +75,8 @@ CREATE or replace VIEW checkpoint_scores_aoc_export AS
          fa.facility_name                                         as non_coded_facility_name,
          fa.id                                                    as facility_assessment_id,
          assessment_type.name                                     as assessment_type_name,
-         c.inactive                                               as checkpoint_inactive
+         c.inactive                                               as checkpoint_inactive,
+         fa.series_name                                                        AS assessment_user_given_name
   FROM checkpoint c
          JOIN checklist cl ON cl.id = c.checklist_id
          JOIN department ON cl.department_id = department.id
