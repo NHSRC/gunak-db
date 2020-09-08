@@ -25,11 +25,14 @@ define _reset_db
 endef
 
 define _download_db_backup
-	scp $1:/home/app/$2/facilities-assessment-host/backup/facilities_assessment_$(shell date +%a).sql temp/
+	-mkdir backups
+	-mkdir backups/$3
+	-mkdir backups/$3/$4
+	scp $1:/home/app/$2/facilities-assessment-host/backup/facilities_assessment_$(shell date +%a).sql backups/$3/$4
 endef
 
 define _apply_latest_db_local
-	$(call _download_db_backup,$1,$3)
+	$(call _download_db_backup,$1,$3,$4,$5)
 	$(call _restore_latest_db_local,$2)
 endef
 
@@ -38,37 +41,38 @@ define _restore_latest_db_local
 endef
 
 define _alert_success
-	osascript -e 'tell application (path to frontmost application as text) to display dialog "Script Completed" buttons {"OK"} with icon stop'
+	$(call _alert_message,Script Completed)
 endef
 
-db-backup-location:
-	-mkdir temp
+define _alert_message
+	osascript -e 'tell application (path to frontmost application as text) to display dialog "$1" buttons {"OK"} with icon stop'
+endef
 
 init-db:
 	-psql postgres -c "create user nhsrc with password 'password'";
 
-apply-latest-db-from-jss-to-local: db-backup-location ## Downloads and applies the database dump
-	$(call _apply_latest_db_local,igunatmac,facilities_assessment_cg)
+apply-latest-db-from-jss-to-local: ## Downloads and applies the database dump
+	$(call _apply_latest_db_local,igunatmac,facilities_assessment_cg,jss,prod)
 	$(call _alert_success)
 
-apply-latest-db-from-nhsrc-prod-to-local: db-backup-location
-	$(call _apply_latest_db_local,gunak-main,facilities_assessment_nhsrc)
+apply-latest-db-from-nhsrc-prod-to-local:
+	$(call _apply_latest_db_local,gunak-main,facilities_assessment_nhsrc,nhsrc,prod)
 	$(call _alert_success)
 
-apply-latest-db-from-nhsrc-qa-to-local: db-backup-location
-	$(call _apply_latest_db_local,gunak-other,facilities_assessment_nhsrc,qa-server)
+apply-latest-db-from-nhsrc-qa-to-local:
+	$(call _apply_latest_db_local,gunak-other,facilities_assessment_nhsrc,qa-server,nhsrc,qa)
 	$(call _alert_success)
 
-download-latest-db-from-nhsrc-prod-to-local: db-backup-location
-	$(call _download_db_backup,gunak-main)
+download-latest-db-from-nhsrc-prod-to-local:
+	$(call _download_db_backup,gunak-main,,nhsrc,prod)
 	$(call _alert_success)
 
-download-latest-db-from-nhsrc-qa-to-local: db-backup-location
-	$(call _download_db_backup,gunak-other,qa-server)
+download-latest-db-from-nhsrc-qa-to-local:
+	$(call _download_db_backup,gunak-other,qa-server,nhsrc,qa)
 	$(call _alert_success)
 
-download-latest-db-from-jss-prod-to-local: db-backup-location
-	$(call _download_db_backup,igunatmac)
+download-latest-db-from-jss-prod-to-local:
+	$(call _download_db_backup,igunatmac,,jss,prod)
 	$(call _alert_success)
 
 apply-latest-db-from-nhsrc-prod-to-nhsrc-qa:
@@ -86,8 +90,24 @@ apply-latest-db-from-nhsrc-prod-to-nhsrc-qa:
 restore-db-from-latest-file-db-to-nhsrc-local:
 	$(call _restore_db,facilities_assessment_nhsrc,temp/facilities_assessment_latest.sql,$(postgres_user))
 
-restore-db-nhsrc-qa-for-todays-backup:
+restore-nhsrc-qa-db-for-todays-backup:
 	$(call _restore_db,facilities_assessment_qa,/home/app/qa-server/facilities-assessment-host/backup/facilities_assessment_$(shell date +%a).sql,postgres)
+
+restore-nhsrc-local-db-from-nhsrc-qa-local-backup:
+ifndef day
+	@echo "VARIABLE MISSING: day"
+	ls -lt backups/nhsrc/qa
+else
+	$(call _restore_db,facilities_assessment_nhsrc,backups/nhsrc/qa/facilities_assessment_$(day).sql,$(postgres_user))
+endif
+
+restore-nhsrc-local-db-from-nhsrc-prod-local-backup:
+ifndef day
+	@echo "VARIABLE MISSING: day"
+	ls -lt backups/nhsrc/prod
+else
+	$(call _restore_db,facilities_assessment_nhsrc,backups/nhsrc/prod/facilities_assessment_$(day).sql,$(postgres_user))
+endif
 
 #############################
 define _deploy_migrations
