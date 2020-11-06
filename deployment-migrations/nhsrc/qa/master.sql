@@ -16,3 +16,4 @@
 \i ./ped.sql
 \i ./pharmacy.sql
 \i ./radiology.sql
+\i ./nqas-levels.sql
