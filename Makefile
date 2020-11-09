@@ -90,8 +90,11 @@ apply-latest-db-from-nhsrc-prod-to-nhsrc-qa:
 restore-db-from-latest-file-db-to-nhsrc-local:
 	$(call _restore_db,facilities_assessment_nhsrc,temp/facilities_assessment_latest.sql,$(postgres_user))
 
-restore-nhsrc-qa-db-for-todays-backup:
+restore-nhsrc-qa-db-from-todays-backup:
 	$(call _restore_db,facilities_assessment_qa,/home/app/qa-server/facilities-assessment-host/backup/facilities_assessment_$(shell date +%a).sql,postgres)
+
+restore-nhsrc-prod-db-from-backup-file:
+	$(call _restore_db,facilities_assessment,/home/app/facilities-assessment-host/backup/backup.sql,postgres)
 
 restore-nhsrc-local-db-from-nhsrc-qa-local-backup:
 ifndef day
