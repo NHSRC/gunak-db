@@ -48,6 +48,13 @@ define _alert_message
 	osascript -e 'tell application (path to frontmost application as text) to display dialog "$1" buttons {"OK"} with icon stop'
 endef
 
+define _fix_sql_file
+	find deployment-migrations/$1/local -type f -exec sed -i '' 's/"insert/insert/g' {} \;
+	find deployment-migrations/$1/local -type f -exec sed -i '' 's/"update/update/g' {} \;
+	find deployment-migrations/$1/local -type f -exec sed -i '' 's/"delete/delete/g' {} \;
+	find deployment-migrations/$1/local -type f -exec sed -i '' 's/;"/;/g' {} \;
+endef
+
 init-db:
 	-psql postgres -c "create user nhsrc with password 'password'";
 
@@ -90,6 +97,9 @@ apply-latest-db-from-nhsrc-prod-to-nhsrc-qa:
 restore-db-from-latest-file-db-to-nhsrc-local:
 	$(call _restore_db,facilities_assessment_nhsrc,temp/facilities_assessment_latest.sql,$(postgres_user))
 
+restore-db-from-latest-file-db-to-jss-local:
+	$(call _restore_db,facilities_assessment_cg,temp/facilities_assessment_latest.sql,$(postgres_user))
+
 restore-nhsrc-qa-db-from-todays-backup:
 	$(call _restore_db,facilities_assessment_qa,/home/app/qa-server/facilities-assessment-host/backup/facilities_assessment_$(shell date +%a).sql,postgres)
 
@@ -124,10 +134,7 @@ define _deploy_migrations_local
 endef
 
 migrations-to-nhsrc-local:
-	find deployment-migrations/nhsrc/local -type f -exec sed -i '' 's/"insert/insert/g' {} \;
-	find deployment-migrations/nhsrc/local -type f -exec sed -i '' 's/"update/update/g' {} \;
-	find deployment-migrations/nhsrc/local -type f -exec sed -i '' 's/"delete/delete/g' {} \;
-	find deployment-migrations/nhsrc/local -type f -exec sed -i '' 's/;"/;/g' {} \;
+	$(call _fix_sql_file,nhsrc)
 	$(call _deploy_migrations_local,facilities_assessment_nhsrc,nhsrc,local)
 	$(call _alert_success)
 
@@ -141,6 +148,7 @@ migrations-to-nhsrc-prod-locally:
 	$(call _alert_success)
 
 migrations-to-jss-local:
+	$(call _fix_sql_file,jss)
 	$(call _deploy_migrations_local,facilities_assessment_cg,jss,local)
 	$(call _alert_success)
 
@@ -151,6 +159,10 @@ migrations-to-jss-prod:
 
 backup-db-nhsrc-to-latest-file:
 	pg_dump -Unhsrc -hlocalhost -d facilities_assessment_nhsrc > temp/facilities_assessment_latest.sql
+	$(call _alert_success)
+
+backup-db-jss-to-latest-file:
+	pg_dump -Unhsrc -hlocalhost -d facilities_assessment_cg > temp/facilities_assessment_latest.sql
 	$(call _alert_success)
 
 backup-nhsrc-qa-and-download-to-latest-file: backup-db-nhsrc-qa download-latest-db-from-nhsrc-qa-to-local
