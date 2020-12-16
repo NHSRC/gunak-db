@@ -13,7 +13,7 @@ postgres_user := $(shell id -un)
 
 define _restore_db
 	$(call _reset_db,$1,$3)
-	sudo -u $3 psql $1 -f $2 >/dev/null
+	sudo -u $3 psql $1 -f $2
 endef
 
 define _reset_db
@@ -160,4 +160,8 @@ backup-nhsrc-qa-and-download-to-latest-file: backup-db-nhsrc-qa download-latest-
 
 backup-db-nhsrc-qa:
 	ssh gunak-other "pg_dump -Unhsrc -hlocalhost -d facilities_assessment_qa > /home/app/qa-server/facilities-assessment-host/backup/facilities_assessment_$(shell date +%a).sql"
+	$(call _alert_success)
+
+backup-db-nhsrc-prod:
+	ssh gunak-main "pg_dump -Unhsrc -hlocalhost facilities_assessment > /home/app/facilities-assessment-host/backup/facilities_assessment_$(shell date +%a).sql"
 	$(call _alert_success)
