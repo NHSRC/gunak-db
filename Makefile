@@ -170,6 +170,10 @@ backup-nhsrc-qa-and-download-to-latest-file: backup-db-nhsrc-qa download-latest-
 	mv temp/facilities_assessment_$(shell date +%a).sql temp/uat_facilities_assessment_$(shell date +%a).sql
 	$(call _alert_success)
 
+backup-db-jss-prod:
+	ssh igunatmac "pg_dump -Unhsrc -hlocalhost -d facilities_assessment > /home/app/facilities-assessment-host/backup/facilities_assessment_$(shell date +%a).sql"
+	$(call _alert_success)
+
 backup-db-nhsrc-qa:
 	ssh gunak-other "pg_dump -Unhsrc -hlocalhost -d facilities_assessment_qa > /home/app/qa-server/facilities-assessment-host/backup/facilities_assessment_$(shell date +%a).sql"
 	$(call _alert_success)
