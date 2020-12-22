@@ -1,1 +1,0 @@
-\i ./laq-indicators.sql
