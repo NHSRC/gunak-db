@@ -12,3 +12,11 @@ insert into facility_type (name, short_name) values ('Maternity Home', 'MH');
 insert into facility_type (name, short_name) values ('Urban Health Posts', 'UHP');
 insert into facility_type (name, short_name) values ('Post Partum Unit', 'PPU');
 insert into facility_type (name, short_name) values ('M&CW Center', 'MCW');
+
+insert into state (name, short_name) values ('Ladakh', 'LK');
+update state set name = 'Andaman and Nicobar Islands' where name = 'A and N Islands';
+
+insert into facility_type (name, short_name) values ('Ayush Dispensaries', 'AD');
+insert into facility_type (name, short_name) values ('100-500 Bedded Hospital', 'MBH');
+insert into facility_type (name, short_name) values ('<100 Bedded Hospital', 'SBH');
+insert into facility_type (name, short_name) values ('>500 Bedded Hospital', 'LBH');
