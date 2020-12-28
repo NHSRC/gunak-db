@@ -109,6 +109,15 @@ restore-nhsrc-prod-db-from-backup-file:
 restore-nhsrc-qa-db-from-backup-file:
 	$(call _restore_db,facilities_assessment_qa,/home/app/qa-server/facilities-assessment-host/backup/backup.sql,postgres)
 
+
+restore-jss-local-db-from-jss-prod-local-backup:
+ifndef day
+	@echo "VARIABLE MISSING: day"
+	ls -lt backups/jss/prod
+else
+	$(call _restore_db,facilities_assessment_cg,backups/jss/prod/facilities_assessment_$(day).sql,$(postgres_user))
+endif
+
 restore-nhsrc-local-db-from-nhsrc-qa-local-backup:
 ifndef day
 	@echo "VARIABLE MISSING: day"

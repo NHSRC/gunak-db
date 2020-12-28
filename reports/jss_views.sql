@@ -9,8 +9,7 @@ DROP VIEW if exists recent_facility_assessment_view;
 
 DROP VIEW if exists checkpoint_scores_aoc;
 CREATE or replace VIEW checkpoint_scores_aoc AS
-  SELECT
-         NULLIF(regexp_replace(fa.series_name, '\D','','g'), '')::numeric      AS assessment_number,
+  SELECT NULLIF(regexp_replace(fa.series_name, '\D', '', 'g'), '') :: numeric  AS assessment_number,
          format('%s (%s)', aoc.reference, aoc.name)                            AS area_of_concern,
          department.name                                                       AS department_name,
          format('[%s, %s] - %s', aoc.reference, s.name, c.name)                AS checkpoint_description,
@@ -35,7 +34,8 @@ CREATE or replace VIEW checkpoint_scores_aoc AS
          c.id                                                                  as checkpoint_id,
          format('%s - %s - %s - %s', aoc.reference, aoc.name, s.name, me.name) as measurable_element_full_name,
          state.name                                                            as state_name,
-         fa.series_name                                                        AS assessment_user_given_name
+         fa.series_name                                                        AS assessment_user_given_name,
+         assessment_tool.name                                                  AS assessment_tool_name
   FROM checkpoint_score cs
          INNER JOIN checkpoint c ON cs.checkpoint_id = c.id
          LEFT OUTER JOIN checklist cl ON cl.id = cs.checklist_id

@@ -1,0 +1,2 @@
+insert into entity_type_metadata (name, type, value_date) values ('BulkModificationDate', 'District', '2019-01-01');
+insert into entity_type_metadata (name, type, value_date) values ('BulkModificationDate', 'Facility', '2019-01-01');

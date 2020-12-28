@@ -20,3 +20,6 @@ insert into facility_type (name, short_name) values ('Ayush Dispensaries', 'AD')
 insert into facility_type (name, short_name) values ('100-500 Bedded Hospital', 'MBH');
 insert into facility_type (name, short_name) values ('<100 Bedded Hospital', 'SBH');
 insert into facility_type (name, short_name) values ('>500 Bedded Hospital', 'LBH');
+
+update district set inactive = true, last_modified_date = '2018-12-01';
+update facility set inactive = true, last_modified_date = '2018-12-01';
