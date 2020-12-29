@@ -23,3 +23,5 @@ insert into facility_type (name, short_name) values ('>500 Bedded Hospital', 'LB
 
 update district set inactive = true, last_modified_date = '2018-12-01';
 update facility set inactive = true, last_modified_date = '2018-12-01';
+
+update facility_assessment set inactive = true;
