@@ -177,11 +177,6 @@ backup-db-jss-to-latest-file:
 	pg_dump -Unhsrc -hlocalhost -d facilities_assessment_cg > temp/facilities_assessment_latest.sql
 	$(call _alert_success)
 
-backup-nhsrc-qa-and-download-to-latest-file: backup-db-nhsrc-qa download-latest-db-from-nhsrc-qa-to-local
-	cp temp/facilities_assessment_$(shell date +%a).sql temp/facilities_assessment_latest.sql
-	mv temp/facilities_assessment_$(shell date +%a).sql temp/uat_facilities_assessment_$(shell date +%a).sql
-	$(call _alert_success)
-
 backup-db-jss-prod:
 	ssh igunatmac "pg_dump -Unhsrc -hlocalhost -d facilities_assessment > /home/app/facilities-assessment-host/backup/facilities_assessment_$(shell date +%a).sql"
 	$(call _alert_success)
