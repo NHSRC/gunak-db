@@ -94,7 +94,7 @@ apply-latest-db-from-nhsrc-prod-to-nhsrc-qa:
 	ssh gunak-other "sudo -u postgres psql facilities_assessment_qa -f /home/app/qa-server/facilities-assessment-host/backup/facilities_assessment_$(shell date +%a).sql > /dev/null"
 	$(call _alert_success)
 
-restore-local-nhsrc-db-from-file:
+restore-nhsrc-local-db-from-file:
 ifndef file
 	@echo "VARIABLE MISSING: file"
 	ls -lt backups/nhsrc/local
@@ -103,7 +103,7 @@ else
 	$(call _restore_db,facilities_assessment_nhsrc,backups/nhsrc/local/${file},$(postgres_user))
 endif
 
-restore-local-jss-db-from-latest-file:
+restore-jss-local-db-from-latest-file:
 	$(call _restore_db,facilities_assessment_cg,backups/jss/facilities_assessment_latest.sql,$(postgres_user))
 
 restore-nhsrc-qa-db-from-todays-backup:
@@ -115,7 +115,7 @@ restore-nhsrc-prod-db-from-backup-file:
 restore-nhsrc-qa-db-from-backup-file:
 	$(call _restore_db,facilities_assessment_qa,/home/app/qa-server/facilities-assessment-host/backup/backup.sql,postgres)
 
-restore-local-jss-db-from-prod-local-backup:
+restore-jss-local-db-from-prod-local-backup:
 ifndef day
 	@echo "VARIABLE MISSING: day"
 	ls -lt backups/jss/prod
@@ -131,7 +131,7 @@ else
 	$(call _restore_db,facilities_assessment_nhsrc,backups/nhsrc/qa/facilities_assessment_$(day).sql,$(postgres_user))
 endif
 
-restore-local-nhsrc-db-from-prod-local-backup:
+restore-nhsrc-local-db-from-prod-local-backup:
 ifndef day
 	@echo "VARIABLE MISSING: day"
 	ls -lt backups/nhsrc/prod
