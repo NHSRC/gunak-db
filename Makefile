@@ -83,15 +83,21 @@ download-latest-db-from-jss-prod-to-local:
 	$(call _alert_success)
 
 apply-latest-db-from-nhsrc-prod-to-nhsrc-qa:
-#	@echo "NOTE: Not downloading file from prod"
-	scp gunak-main:/home/app/$2/facilities-assessment-host/backup/facilities_assessment_$(shell date +%a).sql temp/
-#	@echo "NOTE: Not uploading file to QA server"
-	scp temp/facilities_assessment_$(shell date +%a).sql gunak-other:/home/app/qa-server/facilities-assessment-host/backup/
+	ssh gunak-other "scp gunak-main:/home/app/facilities-assessment-host/backup/facilities_assessment_$(date +%a).sql /home/app/qa-server/facilities-assessment-host/backup/"
 	ssh gunak-other "sudo -u postgres psql postgres -c \"SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = 'facilities_assessment_qa' AND pid <> pg_backend_pid()\""
 	-ssh gunak-other "sudo -u postgres psql postgres -c 'drop database facilities_assessment_qa'"
 	ssh gunak-other "sudo -u postgres psql postgres -c 'create database facilities_assessment_qa with owner nhsrc'"
 	ssh gunak-other "sudo -u postgres psql facilities_assessment_qa -c 'create extension if not exists \"uuid-ossp\"'"
-	ssh gunak-other "sudo -u postgres psql facilities_assessment_qa -f /home/app/qa-server/facilities-assessment-host/backup/facilities_assessment_$(shell date +%a).sql > /dev/null"
+	ssh gunak-other "sudo -u postgres psql facilities_assessment_qa -f /home/app/qa-server/facilities-assessment-host/backup/facilities_assessment_$(date +%a).sql > /dev/null"
+	$(call _alert_success)
+
+apply-latest-db-from-nhsrc-qa-to-nhsrc-prod:
+	ssh gunak-main "scp gunak-other:/home/app/qa-server/facilities-assessment-host/backup/facilities_assessment_$(shell date +%a).sql /home/app/facilities-assessment-host/backup/qa-backup.sql"
+	ssh gunak-main "sudo -u postgres psql postgres -c \"SELECT pg_terminate_backend(pg_stat_activity.pid) FROM pg_stat_activity WHERE pg_stat_activity.datname = 'facilities_assessment' AND pid <> pg_backend_pid()\""
+	-ssh gunak-main "sudo -u postgres psql postgres -c 'drop database facilities_assessment'"
+	ssh gunak-main "sudo -u postgres psql postgres -c 'create database facilities_assessment with owner nhsrc'"
+	ssh gunak-main "sudo -u postgres psql facilities_assessment -c 'create extension if not exists \"uuid-ossp\"'"
+	ssh gunak-main "sudo -u postgres psql facilities_assessment -f /home/app/facilities-assessment-host/backup/qa-backup.sql > /dev/null"
 	$(call _alert_success)
 
 restore-nhsrc-local-db-from-file:
