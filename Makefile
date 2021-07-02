@@ -74,6 +74,9 @@ download-latest-db-from-nhsrc-prod-to-local:
 	$(call _download_db_backup,gunak-main,,nhsrc,prod)
 	$(call _alert_success)
 
+copy-latest-db-from-nhsrc-prod-to-nhsrc-qa:
+	ssh gunak-other "scp gunak-main:/home/app/facilities-assessment-host/backup/facilities_assessment_$(shell date +%a).sql /home/app/qa-server/facilities-assessment-host/backup"
+
 download-latest-db-from-nhsrc-qa-to-local:
 	$(call _download_db_backup,gunak-other,qa-server,nhsrc,qa)
 	$(call _alert_success)
