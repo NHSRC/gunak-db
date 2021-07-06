@@ -115,6 +115,9 @@ endif
 restore-jss-local-db-from-latest-file:
 	$(call _restore_db,facilities_assessment_cg,backups/jss/facilities_assessment_latest.sql,$(postgres_user))
 
+restore-nhsrc-local-db-from-latest-file:
+	$(call _restore_db,facilities_assessment_nhsrc,backups/nhsrc/local/facilities_assessment_latest.sql,$(postgres_user))
+
 restore-nhsrc-qa-db-from-todays-backup:
 	$(call _restore_db,facilities_assessment_qa,/home/app/qa-server/facilities-assessment-host/backup/facilities_assessment_$(shell date +%a).sql,postgres)
 

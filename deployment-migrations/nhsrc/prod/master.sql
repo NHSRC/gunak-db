@@ -1,5 +1,3 @@
-\i ./laq-indicators.sql
-\i ./hp-chc-upto-standard.sql
-\i ./hp-chc-me.sql
-\i ./hp-chc-cp.sql
-\i ./hp-chc-cp-2.sql
+\i ./nqas-hwc/nqas-hwc.sql
+\i ./nqas-hwc/me.sql
+\i ./nqas-hwc/cp.sql
