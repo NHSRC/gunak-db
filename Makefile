@@ -175,7 +175,6 @@ migrations-to-nhsrc-qa-locally:
 
 migrations-to-nhsrc-prod-locally:
 	$(call _deploy_migrations_local,facilities_assessment_qa,nhsrc,prod)
-	$(call _alert_success)
 
 migrations-to-jss-local:
 	$(call _fix_sql_file,jss)
