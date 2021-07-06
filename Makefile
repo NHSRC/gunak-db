@@ -170,11 +170,11 @@ migrations-to-nhsrc-local:
 
 # Cannot do it remotely because it would require checkout locally anyway and it is faster to do locally
 migrations-to-nhsrc-qa-locally:
-	$(call _deploy_migrations_local,facilities_assessment_qa,nhsrc,qa)
+	$(call _deploy_migrations_local,facilities_assessment_xxx,nhsrc,qa)
 	$(call _alert_success)
 
 migrations-to-nhsrc-prod-locally:
-	$(call _deploy_migrations_local,facilities_assessment,nhsrc,prod)
+	$(call _deploy_migrations_local,facilities_assessment_qa,nhsrc,prod)
 	$(call _alert_success)
 
 migrations-to-jss-local:
