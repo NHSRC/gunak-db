@@ -30,8 +30,8 @@ CREATE or replace VIEW checkpoint_scores_aoc_export AS
          JOIN assessment_tool ON assessment_tool_checklist.assessment_tool_id = assessment_tool.id
          JOIN assessment_tool_mode ON assessment_tool_mode.id = assessment_tool.assessment_tool_mode_id
          JOIN facility_assessment fa ON fa.assessment_tool_id = assessment_tool.id
-         JOIN facility_type ON fa.facility_type_id = facility_type.id
          JOIN assessment_type on fa.assessment_type_id = assessment_type.id
+         left outer JOIN facility_type ON fa.facility_type_id = facility_type.id
          left outer join facility ON fa.facility_id = facility.id
          left outer JOIN district ON fa.district_id = district.id
          left outer JOIN state ON district.state_id = state.id
