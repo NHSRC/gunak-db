@@ -1,38 +1,76 @@
 DROP VIEW if exists states_assessment_tool;
 CREATE or replace VIEW states_assessment_tool AS
-  select assessment_tool.id,
-         assessment_tool.name,
-         assessment_tool.assessment_tool_mode_id,
-         state.id as state_id,
-         assessment_tool.created_date,
-         assessment_tool.inactive,
-         assessment_tool.uuid,
-         assessment_tool.last_modified_date,
-         assessment_tool.type,
-         assessment_tool.sort_order
-  from assessment_tool
+--     universal and not over-ridden
+select assessment_tool.id,
+       assessment_tool.name,
+       assessment_tool.assessment_tool_mode_id,
+       state.id   as state_id,
+       assessment_tool.created_date,
+       assessment_tool.inactive,
+       assessment_tool.uuid,
+       assessment_tool.last_modified_date,
+       assessment_tool.type,
+       assessment_tool.sort_order,
+       state.name as applicability
+from assessment_tool
          join state on 1 = 1
-  where assessment_tool.state_id is null
-    and assessment_tool.id not in (select assessment_tool_id from excluded_assessment_tool_state where state_id = state.id)
-  union
-  select assessment_tool.id,
-         assessment_tool.name,
-         assessment_tool.assessment_tool_mode_id,
-         state.id as state_id,
-         assessment_tool.created_date,
-         assessment_tool.inactive,
-         assessment_tool.uuid,
-         assessment_tool.last_modified_date,
-         assessment_tool.type,
-         assessment_tool.sort_order
-  from assessment_tool
-         join state on 1 = 1
-  where assessment_tool.state_id = state.id;
+where assessment_tool.state_id is null
+  and assessment_tool.id not in (select assessment_tool_id from excluded_assessment_tool_state where state_id = state.id)
+union
+--   state specific
+select assessment_tool.id,
+       assessment_tool.name,
+       assessment_tool.assessment_tool_mode_id,
+       state.id   as state_id,
+       assessment_tool.created_date,
+       assessment_tool.inactive,
+       assessment_tool.uuid,
+       assessment_tool.last_modified_date,
+       assessment_tool.type,
+       assessment_tool.sort_order,
+       state.name as applicability
+from assessment_tool
+         join state on assessment_tool.state_id = state.id
+-- all states
+union
+select overrides.id,
+       assessment_tool.name,
+       assessment_tool.assessment_tool_mode_id,
+       -1           as state_id,
+       overrides.created_date,
+       overrides.inactive,
+       overrides.uuid,
+       overrides.last_modified_date,
+       overrides.type,
+       overrides.sort_order,
+       'All States' as applicability
+from assessment_tool
+         join excluded_assessment_tool_state eats on assessment_tool.id = eats.assessment_tool_id
+         join assessment_tool overrides on overrides.id = eats.overriding_assessment_tool_id
+union
+select assessment_tool.id,
+       assessment_tool.name,
+       assessment_tool.assessment_tool_mode_id,
+       -1           as state_id,
+       assessment_tool.created_date,
+       assessment_tool.inactive,
+       assessment_tool.uuid,
+       assessment_tool.last_modified_date,
+       assessment_tool.type,
+       assessment_tool.sort_order,
+       'All States' as applicability
+from assessment_tool
+where assessment_tool.state_id is null;
+
+select name, count(*)
+from assessment_tool
+group by name
+having count(*) > 1;
 
 drop view if exists checklist_view;
 create or replace view checklist_view as
-  select checklist.id id, checklist.name as name, a2.id assessment_tool_id
-  from checklist
+select checklist.id id, checklist.name as name, a2.id assessment_tool_id
+from checklist
          join assessment_tool_checklist a on checklist.id = a.checklist_id
          join assessment_tool a2 on a.assessment_tool_id = a2.id;
 
